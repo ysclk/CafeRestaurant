@@ -43,8 +43,11 @@ Includes user login, order tracking, and database integration for efficient work
 ### User Add Panel
 !<img width="817" height="627" alt="image" src="https://github.com/user-attachments/assets/f8b1220a-ff5a-4ada-818b-d839001c35de" />
 
+## 📄 License
 
+This project is for educational/demo purposes only.
 
-
+---
+👨‍💻 Developed by [ysclk](https://github.com/ysclk) – feel free to reach out!
 
 

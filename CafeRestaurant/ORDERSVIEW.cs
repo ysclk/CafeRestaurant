@@ -15,16 +15,21 @@ namespace CafeRestaurant
     public partial class ORDERSVIEW
     {
         public int ORDERDETAILID { get; set; }
-        public Nullable<int> ORDERID { get; set; }
+        public int ORDERID { get; set; }
         public Nullable<int> CUSTOMERID { get; set; }
-        public string CUSTOMER { get; set; }
-        public string CUSTOMER_PHONE { get; set; }
-        public string PRODUCT { get; set; }
+        public string CUSTOMERNAME { get; set; }
+        public string USERPHONE { get; set; }
+        public Nullable<System.DateTime> ORDERDATE { get; set; }
+        public Nullable<decimal> TOTALAMOUNT { get; set; }
+        public Nullable<int> PRODUCTID { get; set; }
+        public string PRODUCTNAME { get; set; }
+        public Nullable<decimal> PRODUCTPRICE { get; set; }
         public Nullable<int> QUANTITY { get; set; }
         public Nullable<decimal> SUBTOTAL { get; set; }
-        public string ORDERPAID { get; set; }
-        public string ORDERNOTE { get; set; }
         public string ORDERTYPE { get; set; }
-        public Nullable<System.DateTime> ORDERDATE { get; set; }
+        public string ORDERNOTE { get; set; }
+        public Nullable<int> ORDERSTATUS { get; set; }
+        public string StatusCode { get; set; }
+        public Nullable<int> STOCK { get; set; }
     }
 }

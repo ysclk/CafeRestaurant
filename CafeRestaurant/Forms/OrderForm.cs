@@ -14,11 +14,13 @@ namespace CafeRestaurant.Forms
     {
 
         private readonly CategoryService cs = new CategoryService();
-        private readonly OrderService os = new OrderService();
-        private readonly OrderDetailService ods = new OrderDetailService();
+        private readonly OrderService orderService = new OrderService();
+        private readonly OrderDetailService orderDetailService = new OrderDetailService();
         private readonly ProductService ps = new ProductService();
         private readonly UserService us = new UserService();
+        private readonly StockTransactionService2 stockTransService  = new StockTransactionService2();
         private readonly CafeRestaurantEntities db = new CafeRestaurantEntities();
+        private readonly StockService stockService = new StockService();
 
         private readonly DataTable dtOrder = new DataTable();
         private readonly DataGridViewButtonColumn btnIncrease = new DataGridViewButtonColumn();
@@ -26,9 +28,10 @@ namespace CafeRestaurant.Forms
 
         private decimal subTotal = 0;
         private int userId;
-        private string custPhone = string.Empty;
-     
-
+        private string custPhone = string.Empty;      
+        private int change = 0;
+        
+        private int? stockProduct = 0;
         public OrderForm(int _userId)
         {
             InitializeComponent();
@@ -60,7 +63,10 @@ namespace CafeRestaurant.Forms
                 new DataColumn("CUSTOMERID", typeof(int)),
                 new DataColumn("CUSTOMERNAME", typeof(string)),
                 new DataColumn("ORDERPAID", typeof(string)),
-                new DataColumn("ORDERTYPE", typeof(string))
+                new DataColumn("ORDERTYPE", typeof(string)),
+                new DataColumn("STOCK", typeof(int)),
+                new DataColumn("ORDERID", typeof(int)),
+                new DataColumn("ORDERDETAILID", typeof(int))
             });
 
             dgOrders.DataSource = dtOrder;
@@ -102,7 +108,7 @@ namespace CafeRestaurant.Forms
         private void SetupOrderTypeAndPaymentComboBoxes()
         {
             cmbOrdertype.DataSource = Enum.GetValues(typeof(OrderType));
-            cmbPaid.DataSource = Enum.GetValues(typeof(PaymentStatus));
+            //cmbPaid.DataSource = Enum.GetValues(typeof(PaymentStatus));
         }
 
         //Category Combobox fill
@@ -139,17 +145,23 @@ namespace CafeRestaurant.Forms
             {
                 int productId = (int)cmbProducts.SelectedValue;
                 ndPrice.Value = ps.GetPrice(productId);
+                ndCurrent.Value = stockService.GetStock(productId);   
             }
         }
 
         private void ndQuantity_ValueChanged(object sender, EventArgs e)
         {
-            ndSubtotal.Value = Math.Round(ndQuantity.Value * ndPrice.Value,2);
+            if (ndPrice.Value != 0 && ndQuantity.Value != 0)
+            {
+                 ndSubtotal.Value = Math.Round(ndQuantity.Value * ndPrice.Value,2);
+            }
+           
         }
 
         //In Order and OrderDetail saving die Inputs
         private void btnCatSave_Click(object sender, EventArgs e)
         {
+            
             cmbCustomer.Enabled = true;
             lblTotalAmount.Text = subTotal.ToString();
 
@@ -163,7 +175,7 @@ namespace CafeRestaurant.Forms
                     CUSTOMERID = (int)cmbCustomer.SelectedValue,
                     TOTALAMOUNT = Convert.ToDecimal(lblTotalAmount.Text)
                 };
-                os.Insert(order);
+                orderService.Insert(order);
 
                 for (int i = 0; i < dgOrders.Rows.Count - 1; i++)
                 {
@@ -175,13 +187,26 @@ namespace CafeRestaurant.Forms
                         UNITPRICE = (decimal)dgOrders.Rows[i].Cells["PRODUCTPRICE"].Value,
                         SUBTOTAL = (decimal)dgOrders.Rows[i].Cells["SUBTOTAL"].Value,
                         ORDERNOTE = dgOrders.Rows[i].Cells["ORDERNOTE"].Value.ToString(),
-                        ORDERPAID = dgOrders.Rows[i].Cells["ORDERPAID"].Value.ToString(),
                         ORDERTYPE = dgOrders.Rows[i].Cells["ORDERTYPE"].Value.ToString(),
-                        STAFFID = userId
+                        ORDERPAID = dgOrders.Rows[i].Cells["ORDERPAID"].Value.ToString(),
+                        STAFFID = userId,
+                        ORDERSTATUS = 1
                     };
-                    ods.Insert(detail);
-                }
+                    orderDetailService.Insert(detail);
+                    
+                    
+                    var productStockEx = stockService.ProductStockByProductid((int)dgOrders.Rows[i].Cells["PRODUCTID"].Value);
+                    
+                    if (productStockEx != null) 
+                    {
+                        stockProduct = productStockEx.STOCK;
+                        productStockEx.STOCK = stockProduct - (int)dgOrders.Rows[i].Cells["QUANTITY"].Value;
 
+                    }
+                    stockService.Update(productStockEx);
+                    ndCurrent.Value = ndCurrent.Value - (int)dgOrders.Rows[i].Cells["QUANTITY"].Value;
+                }
+                
                 transaction.Commit();
                 MessageBox.Show("Order successfully inserted!");
             }
@@ -202,7 +227,7 @@ namespace CafeRestaurant.Forms
 
             string orderNote = txbOrdernote.Text;
             string customerName = (cmbCustomer.SelectedItem as UserListItem)?.Fullname ?? string.Empty;
-            string isPaid = cmbPaid.SelectedValue.ToString();
+       //     string isPaid = cmbPaid.SelectedValue.ToString();
             string orderType = cmbOrdertype.SelectedValue.ToString();
 
             cmbCustomer.Enabled = false;
@@ -216,7 +241,7 @@ namespace CafeRestaurant.Forms
                 orderNote,
                 (int)cmbCustomer.SelectedValue,
                 customerName,
-                isPaid,
+    //            isPaid,
                 orderType);
 
             ResetProductSelection();
@@ -231,12 +256,14 @@ namespace CafeRestaurant.Forms
             ndPrice.Value = 0;
             ndSubtotal.Value = 0;
             cmbOrdertype.SelectedIndex = 0;
-            cmbPaid.SelectedIndex = 0;
+            //cmbPaid.SelectedIndex = 0;
             txbOrdernote.Text = string.Empty;
         }
 
         private void dgOrders_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+               int changePlus = 0;
+               int changeMinus = 0;
 
             if (e.RowIndex < 0) return;
 
@@ -244,9 +271,35 @@ namespace CafeRestaurant.Forms
             int currentQty = Convert.ToInt32(dgOrders.Rows[e.RowIndex].Cells["QUANTITY"].Value);
 
             if (columnName == "Increase")
+            {
                 dgOrders.Rows[e.RowIndex].Cells["QUANTITY"].Value = currentQty + 1;
-            else if (columnName == "Decrease" && currentQty > 1)
+                changePlus++;
+                if (currentQty == Convert.ToInt32(dgOrders.Rows[e.RowIndex].Cells["STOCK"].Value) - 1)
+                {
+                    MessageBox.Show("Yeterli stock yok");
+
+                }
+                if (changePlus != 0)
+                {
+                    change = changePlus;
+                }
+            }
+                
+            else if (columnName == "Decrease" && currentQty > 0)
+            {
                 dgOrders.Rows[e.RowIndex].Cells["QUANTITY"].Value = currentQty - 1;
+                changeMinus--;
+                if (currentQty == 1)
+                {
+                    MessageBox.Show("Iptal edilsin mi?");
+                    
+                }
+                if (changeMinus != 0)
+                {
+                    change = -changeMinus;
+                }
+
+            }
 
             decimal unitPrice = Convert.ToDecimal(dgOrders.Rows[e.RowIndex].Cells["PRODUCTPRICE"].Value);
             int quantity = Convert.ToInt32(dgOrders.Rows[e.RowIndex].Cells["QUANTITY"].Value);
@@ -257,7 +310,7 @@ namespace CafeRestaurant.Forms
         private void btnOrderlistForDay_Click(object sender, EventArgs e)
         {
 
-            dgOrders.DataSource = os.UpdateOrderWithDetails(custPhone, DateTime.Parse("2025-07-18"));
+            dgOrders.DataSource = orderService.UpdateOrderWithDetails(custPhone, DateTime.Parse("2025-07-18"));
         }
       
         private void cmbCustomer_SelectedIndexChanged(object sender, EventArgs e)
@@ -275,5 +328,85 @@ namespace CafeRestaurant.Forms
             Application.Exit(); 
         }
 
+
+        private int tiklama = 0;
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            var transaction = db.Database.BeginTransaction();
+            try
+            {
+                if (tiklama == 0)
+                {
+                    if (txbCustomerPhone.Text.Trim() != string.Empty)
+                    {
+                        var orderdetails = orderService.UpdateOrder(txbCustomerPhone.Text, 3, DateTime.Now); //Convert.ToDateTime("2025-07-30"));
+                        dgOrders.AutoGenerateColumns = false;
+                        if (orderdetails != null)
+                        {
+                            dgOrders.DataSource = orderdetails;
+                        }
+                    }
+                    // Datagridview clear
+                    if (dgOrders.Columns.Contains("Increase"))
+                        dgOrders.Columns.Remove("Increase");
+
+                    if (dgOrders.Columns.Contains("Decrease"))
+                        dgOrders.Columns.Remove("Decrease");
+
+                    ConfigureOrderGridButtons();
+                    dgOrders.Columns["Increase"].DisplayIndex = dgOrders.Columns.Count - 2;
+                    dgOrders.Columns["Decrease"].DisplayIndex = dgOrders.Columns.Count - 1;
+                }
+
+                if (tiklama == 1)
+                {
+                    if (dgOrders.Rows.Count != 0)
+                    {
+                        int orderId = Convert.ToInt32(dgOrders.Rows[0].Cells["ORDERID"].Value);
+                        var orderEx = orderService.GetById(orderId);
+
+                        if (orderEx != null)
+                        {
+                            orderEx.TOTALAMOUNT = Convert.ToDecimal(lblTotalAmount.Text);
+                        }
+                        orderService.Update(orderEx);
+
+                        for (int i = 0; i < dgOrders.Rows.Count; i++)
+                        {
+                            int orderDetailId = Convert.ToInt32(dgOrders.Rows[i].Cells["ORDERDETAILID"].Value);
+                            var orderDetailEx = orderDetailService.GetById(orderDetailId);
+                            if (orderDetailEx != null)
+                            {
+                                orderDetailEx.QUANTITY = Convert.ToInt32(dgOrders.Rows[i].Cells["QUANTITY"].Value);
+                            }
+                            orderDetailService.Update(orderDetailEx);
+
+                            var stockTransaction = new STOCKTRANSACTION
+                            {
+                                PRODUCTID = (int)dgOrders.Rows[i].Cells["PRODUCTID"].Value,
+                                QUANTITY = change,
+                                TRANSACTIONDATE = DateTime.Now,                              
+                                REASON = "Artma veya azalma",
+                                PERFORMEDBY = "Ali Veli"
+
+                            };
+                            stockTransService.Insert(stockTransaction);
+
+                        }
+                    }
+                }
+                
+                transaction.Commit();
+                ((DataTable)dgOrders.DataSource).Rows.Clear();
+                tiklama = 0;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Transaction failed:" + ex.Message);
+            }
+            tiklama++;           
+        }
     }
 }

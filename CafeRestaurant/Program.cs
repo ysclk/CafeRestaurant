@@ -5,6 +5,8 @@ namespace CafeRestaurant
 
 {
     using CafeRestaurant.Forms;
+    using System.Web.UI.WebControls;
+
     internal static class Program
     {
         /// <summary>
@@ -15,7 +17,7 @@ namespace CafeRestaurant
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UserForm());
+            Application.Run(new OrdersViewForm());
         }
     }
 }

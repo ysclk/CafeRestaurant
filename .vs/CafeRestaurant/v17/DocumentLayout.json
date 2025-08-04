@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\enums\\ordertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\enums\\ordertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\forms\\resetpasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\resetpasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -74,23 +82,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "OrderType.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Enums\\OrderType.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Enums\\OrderType.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Enums\\OrderType.cs",
+              "RelativeToolTip": "CafeRestaurant\\Enums\\OrderType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T21:17:57.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PaymentStatus.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Enums\\PaymentStatus.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Enums\\PaymentStatus.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Enums\\PaymentStatus.cs",
+              "RelativeToolTip": "CafeRestaurant\\Enums\\PaymentStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T21:17:53.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ResetPasswordForm.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\ResetPasswordForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\ResetPasswordForm.cs",
               "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\ResetPasswordForm.cs",
               "RelativeToolTip": "CafeRestaurant\\Forms\\ResetPasswordForm.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-04T13:13:45.507Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:131:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "CafeRestaurant",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\CafeRestaurant.csproj",
               "RelativeDocumentMoniker": "CafeRestaurant\\CafeRestaurant.csproj",
@@ -101,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "OrdersViewForm.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrdersViewForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\OrdersViewForm.cs",
@@ -112,12 +142,8 @@
               "WhenOpened": "2025-08-04T13:41:24.375Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Program.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Program.cs",
@@ -129,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "OrdersViewForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrdersViewForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\OrdersViewForm.cs",
@@ -140,7 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "OrderForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrderForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\OrderForm.cs",
@@ -151,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "OrderForm.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrderForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\OrderForm.cs",
@@ -163,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "LoginForm.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\LoginForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\LoginForm.cs",
@@ -175,7 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "LoginForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\LoginForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\LoginForm.cs",
@@ -186,7 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "ResetPasswordForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\ResetPasswordForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\ResetPasswordForm.cs",
@@ -197,7 +223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "PasswordChangeForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\PasswordChangeForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\PasswordChangeForm.cs",

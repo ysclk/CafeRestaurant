@@ -8,18 +8,32 @@ namespace CafeRestaurant.Forms
 {
     public partial class UserForm : Form
     {
+        private readonly UserService _userService = new UserService();
+        private readonly UserroleService _userroleService = new UserroleService();
+
         public UserForm()
         {
             InitializeComponent();
-            cbRole.DataSource = new List<object>
-                {
-                    new { Text = "Admin", Value = 1 },
-                    new { Text = "Staff", Value = 2 }
-                };
+            InitializeRoleComboBox();
+            LoadUserList();
+        }
 
-            cbRole.DisplayMember = "Text";
-            cbRole.ValueMember = "Value";
-            dgUserList.DataSource = us.GetAllWithRoleName();
+        /// <summary>
+        /// Initializes the role ComboBox with role data.
+        /// </summary>
+        private void InitializeRoleComboBox()
+        {
+            cbRole.DataSource = _userroleService.GetAll();
+            cbRole.DisplayMember = "ROLENAME";
+            cbRole.ValueMember = "ROLEID";
+        }
+
+        /// <summary>
+        /// Loads user list into the DataGridView.
+        /// </summary>
+        private void LoadUserList()
+        {
+            dgUserList.DataSource = _userService.GetAllWithRoleName();
             dgUserList.Columns["USERID"].Visible = false;
             dgUserList.Columns["USERNAME"].HeaderText = "Name";
             dgUserList.Columns["USERSURNAME"].HeaderText = "Surname";
@@ -28,18 +42,14 @@ namespace CafeRestaurant.Forms
             dgUserList.Columns["ROLENAME"].HeaderText = "Role";
             dgUserList.Columns["ROLEID"].Visible = false;
             dgUserList.Columns["USERADDRESS"].Visible = false;
-
-            cbRole.DataSource = urs.GetAll();
-            cbRole.DisplayMember = "ROLENAME";
-            cbRole.ValueMember = "ROLEID";
-
         }
 
-        private UserService us = new UserService();
-        private UserroleService urs = new UserroleService();
+        /// <summary>
+        /// Handles the Save button click to insert a new user.
+        /// </summary>
         private void btnProdSave_Click(object sender, EventArgs e)
         {
-            var User = new USER
+            var user = new USER
             {
                 USERNAME = txbName.Text,
                 USERSURNAME = txbSurName.Text,
@@ -48,106 +58,105 @@ namespace CafeRestaurant.Forms
                 USERADDRESS = txbAddress.Text,
                 USERROLEID = (int)cbRole.SelectedValue
             };
+
             try
             {
-                us.Insert(User);
+                _userService.Insert(user);
                 MessageBox.Show("User inserted!");
-                dgUserList.DataSource = us.GetAll();
-                txbAddress.Clear();
-                txbEmail.Clear();
-                txbName.Clear();
-                txbPhone.Clear();
-                txbSurName.Clear();
-
+                LoadUserList();
+                ClearInputs();
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Failed: " + ex.Message);
             }
         }
 
+        /// <summary>
+        /// Handles the Update button click to modify an existing user.
+        /// </summary>
         private void btnProdUpdate_Click(object sender, EventArgs e)
         {
-            int userid = Convert.ToInt32(lblSifre.Text);
-            var userEx = us.GetById(userid);
-            if (userEx != null)
-            {
-                userEx.USERID = userid;
-                userEx.USERNAME = txbName.Text;
-                userEx.USERSURNAME = txbSurName.Text;
-                userEx.USERPHONE = txbPhone.Text;
-                userEx.USEREMAIL = txbEmail.Text;
-                userEx.USERADDRESS = txbAddress.Text;
-                userEx.USERROLEID = 3;
-              
+            int userId = Convert.ToInt32(lblSifre.Text);
+            var user = _userService.GetById(userId);
+            if (user == null) return;
 
-            }
+            user.USERNAME = txbName.Text;
+            user.USERSURNAME = txbSurName.Text;
+            user.USERPHONE = txbPhone.Text;
+            user.USEREMAIL = txbEmail.Text;
+            user.USERADDRESS = txbAddress.Text;
+            user.USERROLEID = (int)cbRole.SelectedValue;
+
             try
             {
-                us.Update(userEx);
+                _userService.Update(user);
                 MessageBox.Show("User updated!");
-                dgUserList.DataSource = us.GetAll();
-                txbAddress.Clear();
-                txbEmail.Clear();
-                txbName.Clear();
-                txbPhone.Clear();
-                txbSurName.Clear();
-
+                LoadUserList();
+                ClearInputs();
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Failed: " + ex.Message);
             }
         }
 
+        /// <summary>
+        /// Handles the Delete button click to remove a user.
+        /// </summary>
         private void btnProdDelete_Click(object sender, EventArgs e)
         {
-            if (lblSifre.Text != "label1")
-            {
-                int userId = Convert.ToInt32(lblSifre.Text);
-                try
-                {
-                    us.Delete(userId);
-                    MessageBox.Show("User deleted!");
-                    dgUserList.DataSource = us.GetAll();
-                    txbAddress.Clear();
-                    txbEmail.Clear();
-                    txbName.Clear();
-                    txbPhone.Clear();
-                    txbSurName.Clear();
-                }
-                catch (Exception ex)
-                {
+            if (lblSifre.Text == "label1") return;
 
-                    MessageBox.Show("Failed: " + ex.Message);
-                }
+            int userId = Convert.ToInt32(lblSifre.Text);
+            try
+            {
+                _userService.Delete(userId);
+                MessageBox.Show("User deleted!");
+                LoadUserList();
+                ClearInputs();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed: " + ex.Message);
             }
         }
 
+        /// <summary>
+        /// Populates form fields when a user row is selected in the DataGridView.
+        /// </summary>
         private void dgUserList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int rowIndex = e.RowIndex;
-            if (rowIndex >= 0)
-            {
-                DataGridViewRow dgrow = dgUserList.Rows[rowIndex];
-                int userId = Convert.ToInt32(dgrow.Cells[0].Value?.ToString());
-                string name = dgrow.Cells[1].Value?.ToString();
-                string surname = dgrow.Cells[2].Value?.ToString();
-                string phone = dgrow.Cells[3].Value?.ToString();
-                string email = dgrow.Cells[4].Value?.ToString();
-                string address = dgrow.Cells[5].Value?.ToString();
-                string role = urs.GetRoleName(Convert.ToInt32(dgrow.Cells[6].Value?.ToString()));
-                lblSifre.Text = userId.ToString();
-                txbName.Text = name;
-                txbSurName.Text = surname;
-                txbPhone.Text = phone;
-                txbEmail.Text = email;
-                txbAddress.Text = address;
-                cbRole.SelectedValue = role; ;
+            if (e.RowIndex < 0) return;
 
-            }
+            var row = dgUserList.Rows[e.RowIndex];
+
+            lblSifre.Text = row.Cells["USERID"].Value?.ToString();
+            txbName.Text = row.Cells["USERNAME"].Value?.ToString();
+            txbSurName.Text = row.Cells["USERSURNAME"].Value?.ToString();
+            txbPhone.Text = row.Cells["USERPHONE"].Value?.ToString();
+            txbEmail.Text = row.Cells["USEREMAIL"].Value?.ToString();
+            txbAddress.Text = row.Cells["USERADDRESS"].Value?.ToString();
+            cbRole.SelectedValue = Convert.ToInt32(row.Cells["ROLEID"].Value);
+        }
+
+        /// <summary>
+        /// Clears input fields on the form.
+        /// </summary>
+        private void ClearInputs()
+        {
+            txbName.Clear();
+            txbSurName.Clear();
+            txbPhone.Clear();
+            txbEmail.Clear();
+            txbAddress.Clear();
+            lblSifre.Text = string.Empty;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
+

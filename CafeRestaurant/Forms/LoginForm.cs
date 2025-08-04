@@ -51,14 +51,17 @@ namespace CafeRestaurant.Forms
                         case "ShowAdminForm":
                             var adminForm = new AdminForm(result.UserId);
                             adminForm.Show();
+                            this.Hide();
                             break;
                         case "ShowOrderForm":
                             var orderForm = new OrderForm(result.UserId);
-                            orderForm.Show();                            
+                            orderForm.Show();
+                            this.Hide();
                             break;
                         case "ShowPasswordResetForm":
                             var resetForm = new PasswordChangeForm(result.UserId, result.UserMail);
                             resetForm.Show();
+                            this.Hide();
                             break;
                         default:
                             MessageBox.Show("Unexpected action returned.");
@@ -70,6 +73,8 @@ namespace CafeRestaurant.Forms
 
                     MessageBox.Show("Failed:" + ex.Message);
                 }
+          
+          
         }
         // simple email validation method (with regex)
         private bool IsValidEmail(string email)
@@ -96,8 +101,10 @@ namespace CafeRestaurant.Forms
 
         private void lblPasswordForget_Click(object sender, EventArgs e)
         {
-            ResetPasswordForm form = new ResetPasswordForm();   
-            form.ShowDialog();
+            ResetPasswordForm form = new ResetPasswordForm();
+          
+            form.Show();
+            
         }
     }
     

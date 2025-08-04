@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CafeRestaurantModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ORDERSTATUSTYPES">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Byte" Nullable="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ORDERTYPES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="PRODUCTID" />
+    </Key>
+    <Property Name="PRODUCTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCTPRICE" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CATEGORYID" Type="Int32" />
+    <Property Name="STOCK" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PRODUCTSTOCK" Relationship="Self.FK_STOCK" FromRole="PRODUCT" ToRole="PRODUCTSTOCK" />
+  </EntityType>
+  <EntityType Name="STOCKTRANSACTION">
+    <Key>
+      <PropertyRef Name="STOCKID" />
+    </Key>
+    <Property Name="STOCKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCTID" Type="Int32" Nullable="false" />
+    <Property Name="QUANTITY" Type="Int32" Nullable="false" />
+    <Property Name="TRANSACTIONDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="REASON" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PERFORMEDBY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="CATEGORY">
+    <Key>
+      <PropertyRef Name="CATEGORYID" />
+    </Key>
+    <Property Name="CATEGORYID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CATEGORYNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CATEGORYDESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ORDER">
+    <Key>
+      <PropertyRef Name="ORDERID" />
+    </Key>
+    <Property Name="ORDERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUSTOMERID" Type="Int32" />
+    <Property Name="ORDERDATE" Type="DateTime" Precision="0" />
+    <Property Name="TOTALAMOUNT" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="STAFFID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ORDERDETAIL">
+    <Key>
+      <PropertyRef Name="ORDERDETAILID" />
+    </Key>
+    <Property Name="ORDERDETAILID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ORDERID" Type="Int32" />
+    <Property Name="PRODUCTID" Type="Int32" />
+    <Property Name="QUANTITY" Type="Int32" />
+    <Property Name="UNITPRICE" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SUBTOTAL" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="ORDERPAID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORDERTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORDERNOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STAFFID" Type="Int32" />
+    <Property Name="ORDERSTATUS" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PAYMENT">
+    <Key>
+      <PropertyRef Name="PAYMENTID" />
+    </Key>
+    <Property Name="PAYMENTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ORDERID" Type="Int32" />
+    <Property Name="PAYMENTMETHOD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PAYMENTAMOUNT" Type="Decimal" Precision="10" Scale="8" />
+    <Property Name="PAYMENTDATE" Type="DateTime" Precision="0" />
+    <Property Name="PAYMENTSTATU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PRODUCTSTOCK">
+    <Key>
+      <PropertyRef Name="PRODUCT_ID" />
+    </Key>
+    <Property Name="PRODUCT_ID" Type="Int32" Nullable="false" />
+    <Property Name="STOCK" Type="Int32" />
+    <NavigationProperty Name="PRODUCT" Relationship="Self.FK_STOCK" FromRole="PRODUCTSTOCK" ToRole="PRODUCT" />
+  </EntityType>
+  <EntityType Name="ROLES">
+    <Key>
+      <PropertyRef Name="ROLEID" />
+      <PropertyRef Name="ROLENAME" />
+    </Key>
+    <Property Name="ROLEID" Type="Int32" Nullable="false" />
+    <Property Name="ROLENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USERSURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USERPHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USEREMAIL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="USERADDRESS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="USERROLEID" Type="Int32" />
+    <Property Name="ISFIRSTLOGIN" Type="Boolean" />
+    <Property Name="PASSWORDHASH" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_STOCK">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="PRODUCTSTOCK" Type="Self.PRODUCTSTOCK" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="PRODUCTID" />
+      </Principal>
+      <Dependent Role="PRODUCTSTOCK">
+        <PropertyRef Name="PRODUCT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CafeRestaurantEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ORDERSTATUSTYPES" EntityType="Self.ORDERSTATUSTYPES" />
+    <EntitySet Name="ORDERTYPES" EntityType="Self.ORDERTYPES" />
+    <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" />
+    <EntitySet Name="STOCKTRANSACTION" EntityType="Self.STOCKTRANSACTION" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="CATEGORY" EntityType="Self.CATEGORY" />
+    <EntitySet Name="ORDER" EntityType="Self.ORDER" />
+    <EntitySet Name="ORDERDETAIL" EntityType="Self.ORDERDETAIL" />
+    <EntitySet Name="PAYMENT" EntityType="Self.PAYMENT" />
+    <EntitySet Name="PRODUCTSTOCK" EntityType="Self.PRODUCTSTOCK" />
+    <EntitySet Name="ROLES" EntityType="Self.ROLES" />
+    <EntitySet Name="USER" EntityType="Self.USER" />
+    <AssociationSet Name="FK_STOCK" Association="Self.FK_STOCK">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="PRODUCTSTOCK" EntitySet="PRODUCTSTOCK" />
+    </AssociationSet>
+    <EntitySet Name="ORDERSVIEW" EntityType="CafeRestaurantModel.ORDERSVIEW" />
+  </EntityContainer>
+  <EntityType Name="ORDERSVIEW">
+    <Key>
+      <PropertyRef Name="ORDERDETAILID" />
+      <PropertyRef Name="ORDERID" />
+    </Key>
+    <Property Name="ORDERDETAILID" Type="Int32" Nullable="false" />
+    <Property Name="ORDERID" Type="Int32" Nullable="false" />
+    <Property Name="CUSTOMERID" Type="Int32" />
+    <Property Name="CUSTOMERNAME" Type="String" MaxLength="101" FixedLength="false" Unicode="true" />
+    <Property Name="USERPHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ORDERDATE" Type="DateTime" Precision="0" />
+    <Property Name="TOTALAMOUNT" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="PRODUCTID" Type="Int32" />
+    <Property Name="PRODUCTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCTPRICE" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="QUANTITY" Type="Int32" />
+    <Property Name="SUBTOTAL" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="ORDERTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORDERNOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORDERSTATUS" Type="Int32" />
+    <Property Name="StatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STOCK" Type="Int32" />
+  </EntityType>
+</Schema>

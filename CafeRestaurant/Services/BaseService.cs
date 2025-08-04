@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace CafeRestaurant.Services
 {
-    internal class BaseService<T> : IBaseService<T> where T : class
+    public class BaseService<T> : IBaseService<T> where T : class
     {
         protected CafeRestaurantEntities db = new CafeRestaurantEntities();
 

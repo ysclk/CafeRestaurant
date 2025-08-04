@@ -24,5 +24,6 @@ namespace CafeRestaurant
         public string ORDERTYPE { get; set; }
         public string ORDERNOTE { get; set; }
         public Nullable<int> STAFFID { get; set; }
+        public Nullable<int> ORDERSTATUS { get; set; }
     }
 }

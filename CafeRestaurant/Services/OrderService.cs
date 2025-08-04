@@ -18,5 +18,16 @@ namespace CafeRestaurant.Services
             ).ToList();
             return result;
         }
+
+        public List<OrderDTO> UpdateOrder(string customerPhone, int userRole, DateTime date)
+        {
+            var result = db.Database.SqlQuery<OrderDTO>(
+                "EXEC SP_ORDERANDORDERDETAILS @USERPHONE,@USERROLEID, @DATEDAY",
+                new SqlParameter("@USERPHONE", customerPhone),
+                new SqlParameter("@USERROLEID", userRole),
+                new SqlParameter("@DATEDAY", date)
+            ).ToList();
+            return result;
+        }
     }
 }

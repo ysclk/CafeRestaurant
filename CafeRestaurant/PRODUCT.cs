@@ -19,5 +19,7 @@ namespace CafeRestaurant
         public Nullable<decimal> PRODUCTPRICE { get; set; }
         public Nullable<int> CATEGORYID { get; set; }
         public int STOCK { get; set; }
+    
+        public virtual PRODUCTSTOCK PRODUCTSTOCK { get; set; }
     }
 }

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CafeRestaurantModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CafeRestaurant.dbo.CATEGORY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CATEGORY">
+    <Key>
+      <PropertyRef Name="CATEGORYID" />
+    </Key>
+    <Property Name="CATEGORYID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CATEGORYNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="CATEGORYDESC" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CafeRestaurant.dbo.ORDER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ORDER">
+    <Key>
+      <PropertyRef Name="ORDERID" />
+    </Key>
+    <Property Name="ORDERID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CUSTOMERID" Type="int" />
+    <Property Name="ORDERNOTE" Type="nvarchar" MaxLength="150" />
+    <Property Name="ORDERTYPE" Type="nvarchar" MaxLength="50" />
+    <Property Name="ORDERPAID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ORDERQUANTITY" Type="int" />
+    <Property Name="ORDERDATE" Type="date" />
+    <Property Name="ORDERPROID" Type="int" />
+    <Property Name="SUBTOTAL" Type="decimal" Precision="8" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CafeRestaurant.dbo.ORDERDETAIL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ORDERDETAIL">
+    <Key>
+      <PropertyRef Name="ORDERDETAILID" />
+    </Key>
+    <Property Name="ORDERDETAILID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORDERID" Type="int" />
+    <Property Name="PRODUCTID" Type="int" />
+    <Property Name="QUANTITY" Type="int" />
+    <Property Name="UNITPRICE" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CafeRestaurant.dbo.PAYMENT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PAYMENT">
+    <Key>
+      <PropertyRef Name="PAYMENTID" />
+    </Key>
+    <Property Name="PAYMENTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORDERID" Type="int" />
+    <Property Name="PAYMENTMETHOD" Type="nvarchar" MaxLength="50" />
+    <Property Name="PAYMENTAMOUNT" Type="decimal" Precision="10" Scale="8" />
+    <Property Name="PAYMENTDATE" Type="date" />
+    <Property Name="PAYMENTSTATU" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CafeRestaurant.dbo.PRODUCT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="PRODUCTID" />
+    </Key>
+    <Property Name="PRODUCTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PRODUCTNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="PRODUCTPRICE" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="CATEGORYID" Type="int" />
+    <Property Name="STOCK" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CafeRestaurant.dbo.ROLES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ROLES">
+    <Key>
+      <PropertyRef Name="ROLEID" />
+      <PropertyRef Name="ROLENAME" />
+    </Key>
+    <Property Name="ROLEID" Type="int" Nullable="false" />
+    <Property Name="ROLENAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CafeRestaurant.dbo.USER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="USERSURNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="USERPHONE" Type="nvarchar" MaxLength="20" />
+    <Property Name="USEREMAIL" Type="nvarchar" MaxLength="200" />
+    <Property Name="USERADDRESS" Type="nvarchar" MaxLength="500" />
+    <Property Name="USERROLEID" Type="int" />
+  </EntityType>
+  <EntityContainer Name="CafeRestaurantModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CATEGORY" EntityType="Self.CATEGORY" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ORDER" EntityType="Self.ORDER" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ORDERDETAIL" EntityType="Self.ORDERDETAIL" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PAYMENT" EntityType="Self.PAYMENT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ROLES" EntityType="Self.ROLES" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="USER" EntityType="Self.USER" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+</Schema>

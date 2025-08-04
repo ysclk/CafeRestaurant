@@ -41,12 +41,11 @@
             this.btnCatSave = new Guna.UI2.WinForms.Guna2Button();
             this.ndPrice = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.ndSubtotal = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.cmbPaid = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblTarih = new System.Windows.Forms.Label();
             this.txbOrdernote = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgOrders = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnInsertOrderList = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2NumericUpDown1 = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.ndCurrent = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,17 +56,21 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lblTotalAmount = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txbCustomerPhone = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ndQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndSubtotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgOrders)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ndCurrent)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbCustomer
@@ -123,7 +126,7 @@
             this.ndQuantity.BackColor = System.Drawing.Color.Transparent;
             this.ndQuantity.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ndQuantity.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ndQuantity.Location = new System.Drawing.Point(12, 238);
+            this.ndQuantity.Location = new System.Drawing.Point(18, 53);
             this.ndQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ndQuantity.Maximum = new decimal(new int[] {
             10000,
@@ -145,7 +148,7 @@
             this.cmbOrdertype.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbOrdertype.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbOrdertype.ItemHeight = 35;
-            this.cmbOrdertype.Location = new System.Drawing.Point(597, 238);
+            this.cmbOrdertype.Location = new System.Drawing.Point(311, 238);
             this.cmbOrdertype.Name = "cmbOrdertype";
             this.cmbOrdertype.Size = new System.Drawing.Size(235, 41);
             this.cmbOrdertype.TabIndex = 14;
@@ -157,7 +160,7 @@
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(941, 639);
             this.btnDelete.Name = "btnDelete";
@@ -172,9 +175,9 @@
             this.btnOrderlistForDay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnOrderlistForDay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnOrderlistForDay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnOrderlistForDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
+            this.btnOrderlistForDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnOrderlistForDay.ForeColor = System.Drawing.Color.White;
-            this.btnOrderlistForDay.Location = new System.Drawing.Point(642, 639);
+            this.btnOrderlistForDay.Location = new System.Drawing.Point(689, 639);
             this.btnOrderlistForDay.Name = "btnOrderlistForDay";
             this.btnOrderlistForDay.Size = new System.Drawing.Size(180, 55);
             this.btnOrderlistForDay.TabIndex = 17;
@@ -188,9 +191,9 @@
             this.btnCatSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCatSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCatSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCatSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
+            this.btnCatSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnCatSave.ForeColor = System.Drawing.Color.White;
-            this.btnCatSave.Location = new System.Drawing.Point(337, 639);
+            this.btnCatSave.Location = new System.Drawing.Point(241, 639);
             this.btnCatSave.Name = "btnCatSave";
             this.btnCatSave.Size = new System.Drawing.Size(180, 55);
             this.btnCatSave.TabIndex = 16;
@@ -204,7 +207,7 @@
             this.ndPrice.DecimalPlaces = 2;
             this.ndPrice.Enabled = false;
             this.ndPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ndPrice.Location = new System.Drawing.Point(886, 133);
+            this.ndPrice.Location = new System.Drawing.Point(18, 136);
             this.ndPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ndPrice.Maximum = new decimal(new int[] {
             10000,
@@ -222,7 +225,7 @@
             this.ndSubtotal.DecimalPlaces = 2;
             this.ndSubtotal.Enabled = false;
             this.ndSubtotal.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ndSubtotal.Location = new System.Drawing.Point(144, 238);
+            this.ndSubtotal.Location = new System.Drawing.Point(150, 53);
             this.ndSubtotal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ndSubtotal.Maximum = new decimal(new int[] {
             10000,
@@ -233,25 +236,10 @@
             this.ndSubtotal.Size = new System.Drawing.Size(86, 41);
             this.ndSubtotal.TabIndex = 24;
             // 
-            // cmbPaid
-            // 
-            this.cmbPaid.BackColor = System.Drawing.Color.Transparent;
-            this.cmbPaid.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbPaid.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPaid.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbPaid.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbPaid.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbPaid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbPaid.ItemHeight = 35;
-            this.cmbPaid.Location = new System.Drawing.Point(886, 238);
-            this.cmbPaid.Name = "cmbPaid";
-            this.cmbPaid.Size = new System.Drawing.Size(235, 41);
-            this.cmbPaid.TabIndex = 25;
-            // 
             // lblTarih
             // 
             this.lblTarih.AutoSize = true;
-            this.lblTarih.Location = new System.Drawing.Point(544, 306);
+            this.lblTarih.Location = new System.Drawing.Point(552, 247);
             this.lblTarih.Name = "lblTarih";
             this.lblTarih.Size = new System.Drawing.Size(44, 16);
             this.lblTarih.TabIndex = 26;
@@ -269,7 +257,7 @@
             this.txbOrdernote.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbOrdernote.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txbOrdernote.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbOrdernote.Location = new System.Drawing.Point(306, 238);
+            this.txbOrdernote.Location = new System.Drawing.Point(20, 238);
             this.txbOrdernote.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.txbOrdernote.Multiline = true;
             this.txbOrdernote.Name = "txbOrdernote";
@@ -338,7 +326,7 @@
             this.btnInsertOrderList.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnInsertOrderList.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnInsertOrderList.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnInsertOrderList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
+            this.btnInsertOrderList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnInsertOrderList.ForeColor = System.Drawing.Color.White;
             this.btnInsertOrderList.Location = new System.Drawing.Point(12, 639);
             this.btnInsertOrderList.Name = "btnInsertOrderList";
@@ -347,23 +335,23 @@
             this.btnInsertOrderList.Text = "Insert To List";
             this.btnInsertOrderList.Click += new System.EventHandler(this.btnInsertOrderList_Click);
             // 
-            // guna2NumericUpDown1
+            // ndCurrent
             // 
-            this.guna2NumericUpDown1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2NumericUpDown1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2NumericUpDown1.DecimalPlaces = 2;
-            this.guna2NumericUpDown1.Enabled = false;
-            this.guna2NumericUpDown1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2NumericUpDown1.Location = new System.Drawing.Point(1035, 133);
-            this.guna2NumericUpDown1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2NumericUpDown1.Maximum = new decimal(new int[] {
+            this.ndCurrent.BackColor = System.Drawing.Color.Transparent;
+            this.ndCurrent.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ndCurrent.DecimalPlaces = 2;
+            this.ndCurrent.Enabled = false;
+            this.ndCurrent.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ndCurrent.Location = new System.Drawing.Point(150, 136);
+            this.ndCurrent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ndCurrent.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.guna2NumericUpDown1.Name = "guna2NumericUpDown1";
-            this.guna2NumericUpDown1.Size = new System.Drawing.Size(86, 41);
-            this.guna2NumericUpDown1.TabIndex = 35;
+            this.ndCurrent.Name = "ndCurrent";
+            this.ndCurrent.Size = new System.Drawing.Size(86, 41);
+            this.ndCurrent.TabIndex = 35;
             // 
             // btnCancel
             // 
@@ -445,7 +433,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 195);
+            this.label5.Location = new System.Drawing.Point(14, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 23);
             this.label5.TabIndex = 40;
@@ -455,7 +443,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(882, 96);
+            this.label6.Location = new System.Drawing.Point(14, 109);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 23);
             this.label6.TabIndex = 41;
@@ -465,7 +453,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(140, 195);
+            this.label7.Location = new System.Drawing.Point(146, 10);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 23);
             this.label7.TabIndex = 42;
@@ -475,27 +463,17 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(593, 195);
+            this.label8.Location = new System.Drawing.Point(307, 195);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(105, 23);
             this.label8.TabIndex = 43;
             this.label8.Text = "Order Type:";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(882, 195);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 23);
-            this.label9.TabIndex = 44;
-            this.label9.Text = "Is Paid:";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(302, 195);
+            this.label10.Location = new System.Drawing.Point(16, 195);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(106, 23);
             this.label10.TabIndex = 45;
@@ -505,7 +483,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(12, 306);
+            this.label11.Location = new System.Drawing.Point(593, 195);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(177, 23);
             this.label11.TabIndex = 46;
@@ -515,7 +493,7 @@
             // 
             this.lblTotalAmount.AutoSize = true;
             this.lblTotalAmount.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAmount.Location = new System.Drawing.Point(271, 306);
+            this.lblTotalAmount.Location = new System.Drawing.Point(611, 247);
             this.lblTotalAmount.Name = "lblTotalAmount";
             this.lblTotalAmount.Size = new System.Drawing.Size(20, 23);
             this.lblTotalAmount.TabIndex = 47;
@@ -525,43 +503,98 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1031, 96);
+            this.label12.Location = new System.Drawing.Point(146, 109);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(76, 23);
             this.label12.TabIndex = 48;
             this.label12.Text = "Current:";
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Controls.Add(this.ndQuantity);
+            this.guna2Panel2.Controls.Add(this.label12);
+            this.guna2Panel2.Controls.Add(this.ndSubtotal);
+            this.guna2Panel2.Controls.Add(this.label5);
+            this.guna2Panel2.Controls.Add(this.label7);
+            this.guna2Panel2.Controls.Add(this.ndPrice);
+            this.guna2Panel2.Controls.Add(this.ndCurrent);
+            this.guna2Panel2.Controls.Add(this.label6);
+            this.guna2Panel2.Location = new System.Drawing.Point(860, 86);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(261, 204);
+            this.guna2Panel2.TabIndex = 49;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BorderRadius = 8;
+            this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(477, 639);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(180, 55);
+            this.btnUpdate.TabIndex = 50;
+            this.btnUpdate.Text = "Update Order";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(16, 312);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(151, 23);
+            this.label13.TabIndex = 51;
+            this.label13.Text = "Customer Phone: ";
+            // 
+            // txbCustomerPhone
+            // 
+            this.txbCustomerPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbCustomerPhone.DefaultText = "";
+            this.txbCustomerPhone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txbCustomerPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txbCustomerPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txbCustomerPhone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txbCustomerPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txbCustomerPhone.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txbCustomerPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txbCustomerPhone.Location = new System.Drawing.Point(195, 301);
+            this.txbCustomerPhone.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
+            this.txbCustomerPhone.Multiline = true;
+            this.txbCustomerPhone.Name = "txbCustomerPhone";
+            this.txbCustomerPhone.PlaceholderText = "";
+            this.txbCustomerPhone.SelectedText = "";
+            this.txbCustomerPhone.Size = new System.Drawing.Size(235, 41);
+            this.txbCustomerPhone.TabIndex = 52;
             // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 714);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txbCustomerPhone);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.lblTotalAmount);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.guna2NumericUpDown1);
             this.Controls.Add(this.btnInsertOrderList);
             this.Controls.Add(this.dgOrders);
             this.Controls.Add(this.txbOrdernote);
             this.Controls.Add(this.lblTarih);
-            this.Controls.Add(this.cmbPaid);
-            this.Controls.Add(this.ndSubtotal);
-            this.Controls.Add(this.ndPrice);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnOrderlistForDay);
             this.Controls.Add(this.btnCatSave);
             this.Controls.Add(this.cmbOrdertype);
-            this.Controls.Add(this.ndQuantity);
             this.Controls.Add(this.cmbProducts);
             this.Controls.Add(this.cmbCategories);
             this.Controls.Add(this.cmbCustomer);
@@ -573,9 +606,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.ndPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndSubtotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgOrders)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ndCurrent)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -592,12 +627,11 @@
         private Guna.UI2.WinForms.Guna2Button btnCatSave;
         private Guna.UI2.WinForms.Guna2NumericUpDown ndPrice;
         private Guna.UI2.WinForms.Guna2NumericUpDown ndSubtotal;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbPaid;
         private System.Windows.Forms.Label lblTarih;
         private Guna.UI2.WinForms.Guna2TextBox txbOrdernote;
         private Guna.UI2.WinForms.Guna2DataGridView dgOrders;
         private Guna.UI2.WinForms.Guna2Button btnInsertOrderList;
-        private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown1;
+        private Guna.UI2.WinForms.Guna2NumericUpDown ndCurrent;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label1;
@@ -608,10 +642,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lblTotalAmount;
         private System.Windows.Forms.Label label12;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Button btnUpdate;
+        private System.Windows.Forms.Label label13;
+        private Guna.UI2.WinForms.Guna2TextBox txbCustomerPhone;
     }
 }

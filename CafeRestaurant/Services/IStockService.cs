@@ -12,5 +12,6 @@ namespace CafeRestaurant.Services
         void AddStock(int productId, int quantity, string reason = "Restock");
         void DecreaseStock(int productId, int quantity, string reason = "Sale");
         void IncreaseStock(int productId, int quantity, string reason = "OrderCancelled");
+
     }
 }

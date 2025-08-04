@@ -25,15 +25,18 @@ namespace CafeRestaurant
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<ORDERSTATUSTYPES> ORDERSTATUSTYPES { get; set; }
+        public virtual DbSet<ORDERTYPES> ORDERTYPES { get; set; }
+        public virtual DbSet<PRODUCT> PRODUCT { get; set; }
+        public virtual DbSet<STOCKTRANSACTION> STOCKTRANSACTION { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<CATEGORY> CATEGORY { get; set; }
         public virtual DbSet<ORDER> ORDER { get; set; }
         public virtual DbSet<ORDERDETAIL> ORDERDETAIL { get; set; }
         public virtual DbSet<PAYMENT> PAYMENT { get; set; }
-        public virtual DbSet<PRODUCT> PRODUCT { get; set; }
+        public virtual DbSet<PRODUCTSTOCK> PRODUCTSTOCK { get; set; }
         public virtual DbSet<ROLES> ROLES { get; set; }
         public virtual DbSet<USER> USER { get; set; }
         public virtual DbSet<ORDERSVIEW> ORDERSVIEW { get; set; }
-        public virtual DbSet<STOCKTRANSACTION> STOCKTRANSACTION { get; set; }
     }
 }

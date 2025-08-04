@@ -2,7 +2,7 @@
 A lightweight and modern **Windows Forms** application built in **C# (.NET Framework)** for managing cafe & restaurant operations.  
 Includes user login, order tracking, and database integration for efficient workflow.
 
-![CafeRestaurant] (https://img.shields.io/badge/Project-Type-WindowsForms-blue)
+![CafeRestaurant](https://img.shields.io/badge/Project-Type-WindowsForms-blue)
 🚧 This project is still under development. Most of the main features are complete, but some adjustments and improvements are ongoing.
 ![Language](https://img.shields.io/badge/Language-C%23-blueviolet)
 

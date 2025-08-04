@@ -8,6 +8,8 @@ namespace CafeRestaurant.Services
 {
     internal class StockTransactionService:IStockService
     {
+
+        // buna gerek duymayabilirim. diger service den bir extends yapip sadece 
         protected CafeRestaurantEntities db = new CafeRestaurantEntities();
 
         public StockTransactionService()

@@ -43,6 +43,21 @@ warning 6002: The table/view 'CafeRestaurant.dbo.ORDERDETAIL' does not have a pr
           <Property Name="ORDERTYPE" Type="nvarchar" MaxLength="50" />
           <Property Name="ORDERNOTE" Type="nvarchar" MaxLength="50" />
           <Property Name="STAFFID" Type="int" />
+          <Property Name="ORDERSTATUS" Type="int" />
+        </EntityType>
+        <EntityType Name="ORDERSTATUSTYPES">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="tinyint" Nullable="false" />
+          <Property Name="StatusCode" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ORDERTYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CafeRestaurant.dbo.PAYMENT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -57,18 +72,24 @@ warning 6002: The table/view 'CafeRestaurant.dbo.PAYMENT' does not have a primar
           <Property Name="PAYMENTDATE" Type="date" />
           <Property Name="PAYMENTSTATU" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CafeRestaurant.dbo.PRODUCT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRODUCT">
           <Key>
             <PropertyRef Name="PRODUCTID" />
-            
           </Key>
           <Property Name="PRODUCTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PRODUCTNAME" Type="nvarchar" MaxLength="50" />
           <Property Name="PRODUCTPRICE" Type="decimal" Precision="18" Scale="0" />
           <Property Name="CATEGORYID" Type="int" />
           <Property Name="STOCK" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CafeRestaurant.dbo.PRODUCTSTOCK' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PRODUCTSTOCK">
+          <Key>
+            <PropertyRef Name="PRODUCT_ID" />
+          </Key>
+          <Property Name="PRODUCT_ID" Type="int" Nullable="false" />
+          <Property Name="STOCK" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CafeRestaurant.dbo.ROLES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -122,112 +143,113 @@ warning 6002: The table/view 'CafeRestaurant.dbo.ORDERSVIEW' does not have a pri
         <EntityType Name="ORDERSVIEW">
           <Key>
             <PropertyRef Name="ORDERDETAILID" />
+            <PropertyRef Name="ORDERID" />
           </Key>
           <Property Name="ORDERDETAILID" Type="int" Nullable="false" />
-          <Property Name="ORDERID" Type="int" />
+          <Property Name="ORDERID" Type="int" Nullable="false" />
           <Property Name="CUSTOMERID" Type="int" />
-          <Property Name="CUSTOMER" Type="nvarchar" MaxLength="101" />
-          <Property Name="CUSTOMER PHONE" Type="nvarchar" MaxLength="20" />
-          <Property Name="PRODUCT" Type="nvarchar" MaxLength="50" />
+          <Property Name="CUSTOMERNAME" Type="nvarchar" MaxLength="101" />
+          <Property Name="USERPHONE" Type="nvarchar" MaxLength="20" />
+          <Property Name="ORDERDATE" Type="date" />
+          <Property Name="TOTALAMOUNT" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="PRODUCTID" Type="int" />
+          <Property Name="PRODUCTNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PRODUCTPRICE" Type="decimal" Precision="18" Scale="0" />
           <Property Name="QUANTITY" Type="int" />
           <Property Name="SUBTOTAL" Type="decimal" Precision="8" Scale="2" />
-          <Property Name="ORDERPAID" Type="nvarchar" MaxLength="50" />
-          <Property Name="ORDERNOTE" Type="nvarchar" MaxLength="50" />
           <Property Name="ORDERTYPE" Type="nvarchar" MaxLength="50" />
-          <Property Name="ORDERDATE" Type="date" />
+          <Property Name="ORDERNOTE" Type="nvarchar" MaxLength="50" />
+          <Property Name="ORDERSTATUS" Type="int" />
+          <Property Name="StatusCode" Type="varchar" MaxLength="50" />
+          <Property Name="STOCK" Type="int" />
         </EntityType>
+        <Association Name="FK_STOCK">
+          <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+          <End Role="PRODUCTSTOCK" Type="Self.PRODUCTSTOCK" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCT">
+              <PropertyRef Name="PRODUCTID" />
+            </Principal>
+            <Dependent Role="PRODUCTSTOCK">
+              <PropertyRef Name="PRODUCT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="CafeRestaurantModelStoreContainer">
+          <EntitySet Name="ORDERSTATUSTYPES" EntityType="Self.ORDERSTATUSTYPES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORDERTYPES" EntityType="Self.ORDERTYPES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="STOCKTRANSACTION" EntityType="Self.STOCKTRANSACTION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CATEGORY" EntityType="Self.CATEGORY" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [CATEGORY].[CATEGORYID] AS [CATEGORYID], 
-    [CATEGORY].[CATEGORYNAME] AS [CATEGORYNAME], 
-    [CATEGORY].[CATEGORYDESC] AS [CATEGORYDESC]
-    FROM [dbo].[CATEGORY] AS [CATEGORY]</DefiningQuery>
+          <EntitySet Name="CATEGORY" EntityType="Self.CATEGORY" store:Type="Tables" Schema="dbo">
+          
           </EntitySet>
-          <EntitySet Name="ORDER" EntityType="Self.ORDER" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ORDER].[ORDERID] AS [ORDERID], 
-    [ORDER].[CUSTOMERID] AS [CUSTOMERID], 
-    [ORDER].[ORDERDATE] AS [ORDERDATE], 
-    [ORDER].[TOTALAMOUNT] AS [TOTALAMOUNT], 
-    [ORDER].[STAFFID] AS [STAFFID]
-    FROM [dbo].[ORDER] AS [ORDER]</DefiningQuery>
+          <EntitySet Name="ORDER" EntityType="Self.ORDER" store:Type="Tables" Schema="dbo">
+          
           </EntitySet>
-          <EntitySet Name="ORDERDETAIL" EntityType="Self.ORDERDETAIL" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ORDERDETAIL].[ORDERDETAILID] AS [ORDERDETAILID], 
-    [ORDERDETAIL].[ORDERID] AS [ORDERID], 
-    [ORDERDETAIL].[PRODUCTID] AS [PRODUCTID], 
-    [ORDERDETAIL].[QUANTITY] AS [QUANTITY], 
-    [ORDERDETAIL].[UNITPRICE] AS [UNITPRICE], 
-    [ORDERDETAIL].[SUBTOTAL] AS [SUBTOTAL], 
-    [ORDERDETAIL].[ORDERPAID] AS [ORDERPAID], 
-    [ORDERDETAIL].[ORDERTYPE] AS [ORDERTYPE], 
-    [ORDERDETAIL].[ORDERNOTE] AS [ORDERNOTE], 
-    [ORDERDETAIL].[STAFFID] AS [STAFFID]
-    FROM [dbo].[ORDERDETAIL] AS [ORDERDETAIL]</DefiningQuery>
+          <EntitySet Name="ORDERDETAIL" EntityType="Self.ORDERDETAIL" store:Type="Tables" Schema="dbo">
+         
           </EntitySet>
-          <EntitySet Name="PAYMENT" EntityType="Self.PAYMENT" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [PAYMENT].[PAYMENTID] AS [PAYMENTID], 
-    [PAYMENT].[ORDERID] AS [ORDERID], 
-    [PAYMENT].[PAYMENTMETHOD] AS [PAYMENTMETHOD], 
-    [PAYMENT].[PAYMENTAMOUNT] AS [PAYMENTAMOUNT], 
-    [PAYMENT].[PAYMENTDATE] AS [PAYMENTDATE], 
-    [PAYMENT].[PAYMENTSTATU] AS [PAYMENTSTATU]
-    FROM [dbo].[PAYMENT] AS [PAYMENT]</DefiningQuery>
+          <EntitySet Name="PAYMENT" EntityType="Self.PAYMENT" store:Type="Tables" Schema="dbo">
+        
           </EntitySet>
-          <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [PRODUCT].[PRODUCTID] AS [PRODUCTID], 
-    [PRODUCT].[PRODUCTNAME] AS [PRODUCTNAME], 
-    [PRODUCT].[PRODUCTPRICE] AS [PRODUCTPRICE], 
-    [PRODUCT].[CATEGORYID] AS [CATEGORYID], 
-    [PRODUCT].[STOCK] AS [STOCK]
-    FROM [dbo].[PRODUCT] AS [PRODUCT]</DefiningQuery>
+          <EntitySet Name="PRODUCTSTOCK" EntityType="Self.PRODUCTSTOCK" store:Type="Tables" Schema="dbo">
+          
           </EntitySet>
-          <EntitySet Name="ROLES" EntityType="Self.ROLES" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ROLES].[ROLEID] AS [ROLEID], 
-    [ROLES].[ROLENAME] AS [ROLENAME]
-    FROM [dbo].[ROLES] AS [ROLES]</DefiningQuery>
+          <EntitySet Name="ROLES" EntityType="Self.ROLES" store:Type="Tables" Schema="dbo">
+        
           </EntitySet>
-          <EntitySet Name="USER" EntityType="Self.USER" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [USER].[USERID] AS [USERID], 
-    [USER].[USERNAME] AS [USERNAME], 
-    [USER].[USERSURNAME] AS [USERSURNAME], 
-    [USER].[USERPHONE] AS [USERPHONE], 
-    [USER].[USEREMAIL] AS [USEREMAIL], 
-    [USER].[USERADDRESS] AS [USERADDRESS], 
-    [USER].[USERROLEID] AS [USERROLEID], 
-    [USER].[ISFIRSTLOGIN] AS [ISFIRSTLOGIN], 
-    [USER].[PASSWORDHASH] AS [PASSWORDHASH]
-    FROM [dbo].[USER] AS [USER]</DefiningQuery>
+          <EntitySet Name="USER" EntityType="Self.USER" store:Type="Tables" Schema="dbo">
+          
           </EntitySet>
-          <EntitySet Name="ORDERSVIEW" EntityType="Self.ORDERSVIEW" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ORDERSVIEW].[ORDERDETAILID] AS [ORDERDETAILID], 
-    [ORDERSVIEW].[ORDERID] AS [ORDERID], 
-    [ORDERSVIEW].[CUSTOMERID] AS [CUSTOMERID], 
-    [ORDERSVIEW].[CUSTOMER] AS [CUSTOMER], 
-    [ORDERSVIEW].[CUSTOMER PHONE] AS [CUSTOMER PHONE], 
-    [ORDERSVIEW].[PRODUCT] AS [PRODUCT], 
-    [ORDERSVIEW].[QUANTITY] AS [QUANTITY], 
-    [ORDERSVIEW].[SUBTOTAL] AS [SUBTOTAL], 
-    [ORDERSVIEW].[ORDERPAID] AS [ORDERPAID], 
-    [ORDERSVIEW].[ORDERNOTE] AS [ORDERNOTE], 
-    [ORDERSVIEW].[ORDERTYPE] AS [ORDERTYPE], 
-    [ORDERSVIEW].[ORDERDATE] AS [ORDERDATE]
-    FROM [dbo].[ORDERSVIEW] AS [ORDERSVIEW]</DefiningQuery>
+          <EntitySet Name="ORDERSVIEW" EntityType="Self.ORDERSVIEW" store:Type="Views" Schema="dbo">
+          
           </EntitySet>
+          <AssociationSet Name="FK_STOCK" Association="Self.FK_STOCK">
+            <End Role="PRODUCT" EntitySet="PRODUCT" />
+            <End Role="PRODUCTSTOCK" EntitySet="PRODUCTSTOCK" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CafeRestaurantModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ORDERSTATUSTYPES">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="Byte" Nullable="false" />
+          <Property Name="StatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORDERTYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PRODUCT">
+          <Key>
+            <PropertyRef Name="PRODUCTID" />
+          </Key>
+          <Property Name="PRODUCTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PRODUCTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRODUCTPRICE" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CATEGORYID" Type="Int32" />
+          <Property Name="STOCK" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PRODUCTSTOCK" Relationship="Self.FK_STOCK" FromRole="PRODUCT" ToRole="PRODUCTSTOCK" />
+        </EntityType>
+        <EntityType Name="STOCKTRANSACTION">
+          <Key>
+            <PropertyRef Name="STOCKID" />
+          </Key>
+          <Property Name="STOCKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PRODUCTID" Type="Int32" Nullable="false" />
+          <Property Name="QUANTITY" Type="Int32" Nullable="false" />
+          <Property Name="TRANSACTIONDATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="REASON" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PERFORMEDBY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -270,6 +292,7 @@ warning 6002: The table/view 'CafeRestaurant.dbo.ORDERSVIEW' does not have a pri
           <Property Name="ORDERTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ORDERNOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="STAFFID" Type="Int32" />
+          <Property Name="ORDERSTATUS" Type="Int32" />
         </EntityType>
         <EntityType Name="PAYMENT">
           <Key>
@@ -282,15 +305,13 @@ warning 6002: The table/view 'CafeRestaurant.dbo.ORDERSVIEW' does not have a pri
           <Property Name="PAYMENTDATE" Type="DateTime" Precision="0" />
           <Property Name="PAYMENTSTATU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="PRODUCT">
+        <EntityType Name="PRODUCTSTOCK">
           <Key>
-            <PropertyRef Name="PRODUCTID" />
+            <PropertyRef Name="PRODUCT_ID" />
           </Key>
-          <Property Name="PRODUCTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PRODUCTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PRODUCTPRICE" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="CATEGORYID" Type="Int32" />
-          <Property Name="STOCK" Type="Int32" Nullable="false" />
+          <Property Name="PRODUCT_ID" Type="Int32" Nullable="false" />
+          <Property Name="STOCK" Type="Int32" />
+          <NavigationProperty Name="PRODUCT" Relationship="Self.FK_STOCK" FromRole="PRODUCTSTOCK" ToRole="PRODUCT" />
         </EntityType>
         <EntityType Name="ROLES">
           <Key>
@@ -314,45 +335,59 @@ warning 6002: The table/view 'CafeRestaurant.dbo.ORDERSVIEW' does not have a pri
           <Property Name="ISFIRSTLOGIN" Type="Boolean" />
           <Property Name="PASSWORDHASH" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="ORDERSVIEW">
-          <Key>
-            <PropertyRef Name="ORDERDETAILID" />
-          </Key>
-          <Property Name="ORDERDETAILID" Type="Int32" Nullable="false" />
-          <Property Name="ORDERID" Type="Int32" />
-          <Property Name="CUSTOMERID" Type="Int32" />
-          <Property Name="CUSTOMER" Type="String" MaxLength="101" FixedLength="false" Unicode="true" />
-          <Property Name="CUSTOMER_PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="PRODUCT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="QUANTITY" Type="Int32" />
-          <Property Name="SUBTOTAL" Type="Decimal" Precision="8" Scale="2" />
-          <Property Name="ORDERPAID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ORDERNOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ORDERTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ORDERDATE" Type="DateTime" Precision="0" />
-        </EntityType>
+        <Association Name="FK_STOCK">
+          <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+          <End Role="PRODUCTSTOCK" Type="Self.PRODUCTSTOCK" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCT">
+              <PropertyRef Name="PRODUCTID" />
+            </Principal>
+            <Dependent Role="PRODUCTSTOCK">
+              <PropertyRef Name="PRODUCT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="CafeRestaurantEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ORDERSTATUSTYPES" EntityType="Self.ORDERSTATUSTYPES" />
+          <EntitySet Name="ORDERTYPES" EntityType="Self.ORDERTYPES" />
+          <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" />
+          <EntitySet Name="STOCKTRANSACTION" EntityType="Self.STOCKTRANSACTION" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="CATEGORY" EntityType="Self.CATEGORY" />
           <EntitySet Name="ORDER" EntityType="Self.ORDER" />
           <EntitySet Name="ORDERDETAIL" EntityType="Self.ORDERDETAIL" />
           <EntitySet Name="PAYMENT" EntityType="Self.PAYMENT" />
-          <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" />
+          <EntitySet Name="PRODUCTSTOCK" EntityType="Self.PRODUCTSTOCK" />
           <EntitySet Name="ROLES" EntityType="Self.ROLES" />
           <EntitySet Name="USER" EntityType="Self.USER" />
-          <EntitySet Name="ORDERSVIEW" EntityType="Self.ORDERSVIEW" />
-          <EntitySet Name="STOCKTRANSACTION" EntityType="CafeRestaurantModel.STOCKTRANSACTION" />
+          <AssociationSet Name="FK_STOCK" Association="Self.FK_STOCK">
+            <End Role="PRODUCT" EntitySet="PRODUCT" />
+            <End Role="PRODUCTSTOCK" EntitySet="PRODUCTSTOCK" />
+          </AssociationSet>
+          <EntitySet Name="ORDERSVIEW" EntityType="CafeRestaurantModel.ORDERSVIEW" />
         </EntityContainer>
-        <EntityType Name="STOCKTRANSACTION">
+        <EntityType Name="ORDERSVIEW">
           <Key>
-            <PropertyRef Name="STOCKID" />
+            <PropertyRef Name="ORDERDETAILID" />
+            <PropertyRef Name="ORDERID" />
           </Key>
-          <Property Name="STOCKID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PRODUCTID" Type="Int32" Nullable="false" />
-          <Property Name="QUANTITY" Type="Int32" Nullable="false" />
-          <Property Name="TRANSACTIONDATE" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="REASON" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="PERFORMEDBY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ORDERDETAILID" Type="Int32" Nullable="false" />
+          <Property Name="ORDERID" Type="Int32" Nullable="false" />
+          <Property Name="CUSTOMERID" Type="Int32" />
+          <Property Name="CUSTOMERNAME" Type="String" MaxLength="101" FixedLength="false" Unicode="true" />
+          <Property Name="USERPHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ORDERDATE" Type="DateTime" Precision="0" />
+          <Property Name="TOTALAMOUNT" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="PRODUCTID" Type="Int32" />
+          <Property Name="PRODUCTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRODUCTPRICE" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="QUANTITY" Type="Int32" />
+          <Property Name="SUBTOTAL" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="ORDERTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ORDERNOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ORDERSTATUS" Type="Int32" />
+          <Property Name="StatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STOCK" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -360,6 +395,45 @@ warning 6002: The table/view 'CafeRestaurant.dbo.ORDERSVIEW' does not have a pri
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="CafeRestaurantModelStoreContainer" CdmEntityContainer="CafeRestaurantEntities">
+          <EntitySetMapping Name="ORDERSTATUSTYPES">
+            <EntityTypeMapping TypeName="CafeRestaurantModel.ORDERSTATUSTYPES">
+              <MappingFragment StoreEntitySet="ORDERSTATUSTYPES">
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDERTYPES">
+            <EntityTypeMapping TypeName="CafeRestaurantModel.ORDERTYPES">
+              <MappingFragment StoreEntitySet="ORDERTYPES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCT">
+            <EntityTypeMapping TypeName="CafeRestaurantModel.PRODUCT">
+              <MappingFragment StoreEntitySet="PRODUCT">
+                <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
+                <ScalarProperty Name="PRODUCTNAME" ColumnName="PRODUCTNAME" />
+                <ScalarProperty Name="PRODUCTPRICE" ColumnName="PRODUCTPRICE" />
+                <ScalarProperty Name="CATEGORYID" ColumnName="CATEGORYID" />
+                <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STOCKTRANSACTION">
+            <EntityTypeMapping TypeName="CafeRestaurantModel.STOCKTRANSACTION">
+              <MappingFragment StoreEntitySet="STOCKTRANSACTION">
+                <ScalarProperty Name="STOCKID" ColumnName="STOCKID" />
+                <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
+                <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+                <ScalarProperty Name="TRANSACTIONDATE" ColumnName="TRANSACTIONDATE" />
+                <ScalarProperty Name="REASON" ColumnName="REASON" />
+                <ScalarProperty Name="PERFORMEDBY" ColumnName="PERFORMEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="CafeRestaurantModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -383,11 +457,11 @@ warning 6002: The table/view 'CafeRestaurant.dbo.ORDERSVIEW' does not have a pri
           <EntitySetMapping Name="ORDER">
             <EntityTypeMapping TypeName="CafeRestaurantModel.ORDER">
               <MappingFragment StoreEntitySet="ORDER">
-                <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
                 <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
                 <ScalarProperty Name="CUSTOMERID" ColumnName="CUSTOMERID" />
                 <ScalarProperty Name="ORDERDATE" ColumnName="ORDERDATE" />
                 <ScalarProperty Name="TOTALAMOUNT" ColumnName="TOTALAMOUNT" />
+                <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -404,6 +478,7 @@ warning 6002: The table/view 'CafeRestaurant.dbo.ORDERSVIEW' does not have a pri
                 <ScalarProperty Name="ORDERTYPE" ColumnName="ORDERTYPE" />
                 <ScalarProperty Name="ORDERNOTE" ColumnName="ORDERNOTE" />
                 <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
+                <ScalarProperty Name="ORDERSTATUS" ColumnName="ORDERSTATUS" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -419,13 +494,10 @@ warning 6002: The table/view 'CafeRestaurant.dbo.ORDERSVIEW' does not have a pri
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PRODUCT">
-            <EntityTypeMapping TypeName="CafeRestaurantModel.PRODUCT">
-              <MappingFragment StoreEntitySet="PRODUCT">
-                <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
-                <ScalarProperty Name="PRODUCTNAME" ColumnName="PRODUCTNAME" />
-                <ScalarProperty Name="PRODUCTPRICE" ColumnName="PRODUCTPRICE" />
-                <ScalarProperty Name="CATEGORYID" ColumnName="CATEGORYID" />
+          <EntitySetMapping Name="PRODUCTSTOCK">
+            <EntityTypeMapping TypeName="CafeRestaurantModel.PRODUCTSTOCK">
+              <MappingFragment StoreEntitySet="PRODUCTSTOCK">
+                <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
                 <ScalarProperty Name="STOCK" ColumnName="STOCK" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -456,30 +528,23 @@ warning 6002: The table/view 'CafeRestaurant.dbo.ORDERSVIEW' does not have a pri
           <EntitySetMapping Name="ORDERSVIEW">
             <EntityTypeMapping TypeName="CafeRestaurantModel.ORDERSVIEW">
               <MappingFragment StoreEntitySet="ORDERSVIEW">
-                <ScalarProperty Name="ORDERDETAILID" ColumnName="ORDERDETAILID" />
-                <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
-                <ScalarProperty Name="CUSTOMERID" ColumnName="CUSTOMERID" />
-                <ScalarProperty Name="CUSTOMER" ColumnName="CUSTOMER" />
-                <ScalarProperty Name="CUSTOMER_PHONE" ColumnName="CUSTOMER PHONE" />
-                <ScalarProperty Name="PRODUCT" ColumnName="PRODUCT" />
-                <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
-                <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
-                <ScalarProperty Name="ORDERPAID" ColumnName="ORDERPAID" />
+                <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+                <ScalarProperty Name="ORDERSTATUS" ColumnName="ORDERSTATUS" />
                 <ScalarProperty Name="ORDERNOTE" ColumnName="ORDERNOTE" />
                 <ScalarProperty Name="ORDERTYPE" ColumnName="ORDERTYPE" />
-                <ScalarProperty Name="ORDERDATE" ColumnName="ORDERDATE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="STOCKTRANSACTION">
-            <EntityTypeMapping TypeName="CafeRestaurantModel.STOCKTRANSACTION">
-              <MappingFragment StoreEntitySet="STOCKTRANSACTION">
-                <ScalarProperty Name="PERFORMEDBY" ColumnName="PERFORMEDBY" />
-                <ScalarProperty Name="REASON" ColumnName="REASON" />
-                <ScalarProperty Name="TRANSACTIONDATE" ColumnName="TRANSACTIONDATE" />
+                <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
                 <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+                <ScalarProperty Name="PRODUCTPRICE" ColumnName="PRODUCTPRICE" />
+                <ScalarProperty Name="PRODUCTNAME" ColumnName="PRODUCTNAME" />
                 <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
-                <ScalarProperty Name="STOCKID" ColumnName="STOCKID" />
+                <ScalarProperty Name="TOTALAMOUNT" ColumnName="TOTALAMOUNT" />
+                <ScalarProperty Name="ORDERDATE" ColumnName="ORDERDATE" />
+                <ScalarProperty Name="USERPHONE" ColumnName="USERPHONE" />
+                <ScalarProperty Name="CUSTOMERNAME" ColumnName="CUSTOMERNAME" />
+                <ScalarProperty Name="CUSTOMERID" ColumnName="CUSTOMERID" />
+                <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
+                <ScalarProperty Name="ORDERDETAILID" ColumnName="ORDERDETAILID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

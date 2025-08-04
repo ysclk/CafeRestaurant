@@ -12,6 +12,11 @@ namespace CafeRestaurant.Services
     {
         UserService userService = new UserService();
 
+        public int userId(string email)
+        {
+            USER user = userService.GetUserByEmail(email);
+            return user.USERID;
+        }
         public AuthResult Login(string email, string password)
         {
             USER user = userService.GetUserByEmail(email);

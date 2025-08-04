@@ -4,17 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="552c52656684432bb0ca71d840df8a27" Name="Diagram1">
-        <EntityTypeShape EntityType="CafeRestaurantModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CafeRestaurantModel.CATEGORY" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CafeRestaurantModel.ORDER" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CafeRestaurantModel.ORDERDETAIL" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CafeRestaurantModel.PAYMENT" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CafeRestaurantModel.PRODUCT" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CafeRestaurantModel.ROLES" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CafeRestaurantModel.USER" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CafeRestaurantModel.ORDERSVIEW" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CafeRestaurantModel.STOCKTRANSACTION" Width="1.5" PointX="3.375" PointY="7.75" />
+      <Diagram DiagramId="1f8866df2c3d41a09341c0d440ac1147" Name="Diagram1">
+        <EntityTypeShape EntityType="CafeRestaurantModel.ORDERSTATUSTYPES" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeRestaurantModel.ORDERTYPES" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeRestaurantModel.PRODUCT" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeRestaurantModel.STOCKTRANSACTION" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeRestaurantModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeRestaurantModel.CATEGORY" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeRestaurantModel.ORDER" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeRestaurantModel.ORDERDETAIL" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeRestaurantModel.PAYMENT" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeRestaurantModel.PRODUCTSTOCK" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeRestaurantModel.ROLES" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeRestaurantModel.USER" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="CafeRestaurantModel.FK_STOCK" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CafeRestaurantModel.ORDERSVIEW" Width="1.5" PointX="0.75" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

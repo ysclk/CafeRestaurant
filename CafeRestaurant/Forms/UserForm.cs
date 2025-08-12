@@ -153,10 +153,11 @@ namespace CafeRestaurant.Forms
             lblSifre.Text = string.Empty;
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+
+        //   private void btnCancel_Click(object sender, EventArgs e)
+        // {
+        //   Application.Exit();
+        // }
     }
 }
 

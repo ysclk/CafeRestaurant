@@ -142,11 +142,6 @@ namespace CafeRestaurant.Forms
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private bool ValidateInputs()
         {
             if (string.IsNullOrWhiteSpace(txbCatName.Text))

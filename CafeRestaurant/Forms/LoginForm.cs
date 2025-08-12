@@ -53,11 +53,11 @@ namespace CafeRestaurant.Forms
                             adminForm.Show();
                             this.Hide();
                             break;
-                        case "ShowOrderForm":
-                            var orderForm = new OrderForm(result.UserId);
-                            orderForm.Show();
-                            this.Hide();
-                            break;
+                     //   case "ShowOrderForm":
+                       //     var orderForm = new OrderForm(result.UserId);
+                         //   orderForm.Show();
+                           // this.Hide();
+                            //break;
                         case "ShowPasswordResetForm":
                             var resetForm = new PasswordChangeForm(result.UserId, result.UserMail);
                             resetForm.Show();
@@ -105,6 +105,11 @@ namespace CafeRestaurant.Forms
           
             form.Show();
             
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
     

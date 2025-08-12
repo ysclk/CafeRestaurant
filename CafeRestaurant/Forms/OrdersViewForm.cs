@@ -33,8 +33,8 @@ namespace CafeRestaurant.Forms
 
             HideUnnecessaryColumns();
 
-            guna2Panel2.Top = guna2Panel1.Bottom;
-            dgOrdersDetails.Top = guna2Panel1.Bottom;
+         //   guna2Panel2.Top = guna2Panel1.Bottom;
+         //   dgOrdersDetails.Top = guna2Panel1.Bottom;
 
             dgOrdersDetails.DataSource = orderViewService.GetAll();
         }

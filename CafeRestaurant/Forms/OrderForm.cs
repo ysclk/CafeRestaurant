@@ -62,7 +62,7 @@ namespace CafeRestaurant.Forms
                 new DataColumn("ORDERNOTE", typeof(string)),
                 new DataColumn("CUSTOMERID", typeof(int)),
                 new DataColumn("CUSTOMERNAME", typeof(string)),
-                new DataColumn("ORDERPAID", typeof(string)),
+           //     new DataColumn("ORDERPAID", typeof(string)),
                 new DataColumn("ORDERTYPE", typeof(string)),
                 new DataColumn("STOCK", typeof(int)),
                 new DataColumn("ORDERID", typeof(int)),
@@ -70,8 +70,11 @@ namespace CafeRestaurant.Forms
             });
 
             dgOrders.DataSource = dtOrder;
-            dgOrders.Columns["CustomerId"].Visible = false;
-            dgOrders.Columns["ProductID"].Visible = false;
+            dgOrders.Columns["CUSTOMERID"].Visible = false;
+            dgOrders.Columns["PRODUCTID"].Visible = false;
+            dgOrders.Columns["ORDERID"].Visible = false;
+            dgOrders.Columns["ORDERDETAILID"].Visible = false;
+      
 
             ConfigureOrderGridButtons();
         }
@@ -188,7 +191,7 @@ namespace CafeRestaurant.Forms
                         SUBTOTAL = (decimal)dgOrders.Rows[i].Cells["SUBTOTAL"].Value,
                         ORDERNOTE = dgOrders.Rows[i].Cells["ORDERNOTE"].Value.ToString(),
                         ORDERTYPE = dgOrders.Rows[i].Cells["ORDERTYPE"].Value.ToString(),
-                        ORDERPAID = dgOrders.Rows[i].Cells["ORDERPAID"].Value.ToString(),
+              //          ORDERPAID = dgOrders.Rows[i].Cells["ORDERPAID"].Value.ToString(),
                         STAFFID = userId,
                         ORDERSTATUS = 1
                     };
@@ -229,8 +232,10 @@ namespace CafeRestaurant.Forms
             string customerName = (cmbCustomer.SelectedItem as UserListItem)?.Fullname ?? string.Empty;
        //     string isPaid = cmbPaid.SelectedValue.ToString();
             string orderType = cmbOrdertype.SelectedValue.ToString();
+           
 
             cmbCustomer.Enabled = false;
+     
 
             dtOrder.Rows.Add(
                 (int)cmbProducts.SelectedValue,
@@ -242,7 +247,9 @@ namespace CafeRestaurant.Forms
                 (int)cmbCustomer.SelectedValue,
                 customerName,
     //            isPaid,
-                orderType);
+                orderType,
+                ndCurrent.Value
+                );
 
             ResetProductSelection();
         }
@@ -321,11 +328,6 @@ namespace CafeRestaurant.Forms
                 custPhone = selectCustomer.Phone;
               
             }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Application.Exit(); 
         }
 
 
@@ -407,6 +409,11 @@ namespace CafeRestaurant.Forms
                 MessageBox.Show("Transaction failed:" + ex.Message);
             }
             tiklama++;           
+        }
+
+        private void ndPrice_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

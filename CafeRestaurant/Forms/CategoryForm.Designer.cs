@@ -37,15 +37,13 @@
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.dgCatList = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.txbCatName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txbCatDesc = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblSifre = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCatList)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // errorProvider1
@@ -65,7 +63,7 @@
             this.btnCatSave.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
             this.btnCatSave.Location = new System.Drawing.Point(12, 463);
             this.btnCatSave.Name = "btnCatSave";
-            this.btnCatSave.Size = new System.Drawing.Size(180, 55);
+            this.btnCatSave.Size = new System.Drawing.Size(157, 41);
             this.btnCatSave.TabIndex = 8;
             this.btnCatSave.Text = "Insert";
             this.btnCatSave.Click += new System.EventHandler(this.btnCatSave_Click);
@@ -83,7 +81,7 @@
             this.btnUpdate.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
             this.btnUpdate.Location = new System.Drawing.Point(284, 463);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(180, 55);
+            this.btnUpdate.Size = new System.Drawing.Size(157, 41);
             this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -101,7 +99,7 @@
             this.btnDelete.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
             this.btnDelete.Location = new System.Drawing.Point(556, 463);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(180, 55);
+            this.btnDelete.Size = new System.Drawing.Size(157, 41);
             this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -110,7 +108,6 @@
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgCatList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgCatList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DeepSkyBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -123,19 +120,20 @@
             this.dgCatList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgCatList.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgCatList.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgCatList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgCatList.Location = new System.Drawing.Point(0, 86);
+            this.dgCatList.Location = new System.Drawing.Point(0, 0);
             this.dgCatList.Name = "dgCatList";
             this.dgCatList.RowHeadersVisible = false;
             this.dgCatList.RowHeadersWidth = 51;
             this.dgCatList.RowTemplate.Height = 36;
-            this.dgCatList.Size = new System.Drawing.Size(748, 251);
+            this.dgCatList.Size = new System.Drawing.Size(748, 337);
             this.dgCatList.TabIndex = 11;
             this.dgCatList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgCatList.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -161,55 +159,9 @@
             this.dgCatList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCatList_CellClick);
             this.dgCatList.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgCatList_ColumnHeaderMouseClick);
             // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
-            this.guna2Panel1.Controls.Add(this.btnCancel);
-            this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(748, 80);
-            this.guna2Panel1.TabIndex = 32;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
-            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.DefaultAutoSize = true;
-            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.HoverState.FillColor = System.Drawing.Color.Gray;
-            this.btnCancel.Location = new System.Drawing.Point(699, 3);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.PressedColor = System.Drawing.Color.Gray;
-            this.btnCancel.Size = new System.Drawing.Size(46, 39);
-            this.btnCancel.TabIndex = 47;
-            this.btnCancel.TabStop = false;
-            this.btnCancel.Text = "X";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(260, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 41);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Category Panel";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // txbCatName
             // 
-            this.txbCatName.BorderRadius = 10;
+            this.txbCatName.BorderRadius = 8;
             this.txbCatName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbCatName.DefaultText = "";
             this.txbCatName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -219,17 +171,17 @@
             this.txbCatName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbCatName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txbCatName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbCatName.Location = new System.Drawing.Point(12, 371);
+            this.txbCatName.Location = new System.Drawing.Point(203, 371);
             this.txbCatName.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.txbCatName.Name = "txbCatName";
-            this.txbCatName.PlaceholderText = "Category Name";
+            this.txbCatName.PlaceholderText = "";
             this.txbCatName.SelectedText = "";
-            this.txbCatName.Size = new System.Drawing.Size(350, 60);
+            this.txbCatName.Size = new System.Drawing.Size(153, 42);
             this.txbCatName.TabIndex = 43;
             // 
             // txbCatDesc
             // 
-            this.txbCatDesc.BorderRadius = 10;
+            this.txbCatDesc.BorderRadius = 8;
             this.txbCatDesc.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbCatDesc.DefaultText = "";
             this.txbCatDesc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -239,12 +191,12 @@
             this.txbCatDesc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbCatDesc.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txbCatDesc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbCatDesc.Location = new System.Drawing.Point(386, 371);
+            this.txbCatDesc.Location = new System.Drawing.Point(556, 371);
             this.txbCatDesc.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.txbCatDesc.Name = "txbCatDesc";
-            this.txbCatDesc.PlaceholderText = "Description";
+            this.txbCatDesc.PlaceholderText = "";
             this.txbCatDesc.SelectedText = "";
-            this.txbCatDesc.Size = new System.Drawing.Size(350, 60);
+            this.txbCatDesc.Size = new System.Drawing.Size(153, 42);
             this.txbCatDesc.TabIndex = 44;
             // 
             // lblSifre
@@ -255,28 +207,48 @@
             this.lblSifre.Size = new System.Drawing.Size(44, 16);
             this.lblSifre.TabIndex = 45;
             this.lblSifre.Text = "label2";
+            this.lblSifre.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(21, 380);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 23);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Category Name:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(413, 380);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 23);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Description:";
             // 
             // CategoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 541);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblSifre);
             this.Controls.Add(this.txbCatDesc);
             this.Controls.Add(this.txbCatName);
-            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.dgCatList);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCatSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CategoryForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CategoryForm";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCatList)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,11 +260,10 @@
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Button btnCatSave;
         private Guna.UI2.WinForms.Guna2DataGridView dgCatList;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button btnCancel;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txbCatDesc;
         private Guna.UI2.WinForms.Guna2TextBox txbCatName;
         private System.Windows.Forms.Label lblSifre;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

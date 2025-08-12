@@ -66,7 +66,7 @@ namespace CafeRestaurant.Services
                 return new AuthResult
                 {
                     IsSuccess = true,
-                    Action = "ShowOrderForm",
+                    Action = "ShowAdminForm",
                     UserId = user.USERID,
                     UserMail = user.USEREMAIL
                 };
@@ -74,7 +74,7 @@ namespace CafeRestaurant.Services
             return new AuthResult
             {
                 IsSuccess = true,
-                Action = "ShowUserForm",
+                Action = "ShowAdminForm",
                 UserId = user.USERID,
               
             };

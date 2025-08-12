@@ -25,6 +25,12 @@ namespace CafeRestaurant.Services
                         where i.USEREMAIL == userEmail select i).FirstOrDefault();
             return user ;
         }
+        public USER GetUserByID(int userId)
+        {
+            var user = (from i in db.USER
+                        where i.USERID == userId select i).FirstOrDefault();
+            return user ;
+        }
 
     }
 }

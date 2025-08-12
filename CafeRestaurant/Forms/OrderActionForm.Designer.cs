@@ -70,7 +70,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.InfoText;
+            this.btnCancel.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnCancel.BorderColor = System.Drawing.Color.LightGray;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.DefaultAutoSize = true;
@@ -78,11 +78,11 @@
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancel.FillColor = System.Drawing.Color.Gray;
+            this.btnCancel.FillColor = System.Drawing.Color.MidnightBlue;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.HoverState.FillColor = System.Drawing.Color.Gray;
-            this.btnCancel.Location = new System.Drawing.Point(434, 3);
+            this.btnCancel.HoverState.FillColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCancel.Location = new System.Drawing.Point(428, 16);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PressedColor = System.Drawing.Color.Gray;
             this.btnCancel.Size = new System.Drawing.Size(46, 39);
@@ -105,7 +105,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Gray;
+            this.guna2Panel1.BackColor = System.Drawing.Color.MidnightBlue;
             this.guna2Panel1.Controls.Add(this.btnCancel);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;

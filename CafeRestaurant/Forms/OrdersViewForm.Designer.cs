@@ -34,9 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpDateSearch = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cmbStatusSearch = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -56,7 +53,6 @@
             this.dgOrdersDetails = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel1.SuspendLayout();
             this.pnlFilters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgOrdersDetails)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -66,53 +62,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.InfoText;
-            this.btnCancel.BorderColor = System.Drawing.Color.LightGray;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.DefaultAutoSize = true;
-            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCancel.FillColor = System.Drawing.Color.Gray;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.HoverState.FillColor = System.Drawing.Color.Gray;
-            this.btnCancel.Location = new System.Drawing.Point(1477, 0);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.PressedColor = System.Drawing.Color.Gray;
-            this.btnCancel.Size = new System.Drawing.Size(46, 80);
-            this.btnCancel.TabIndex = 46;
-            this.btnCancel.TabStop = false;
-            this.btnCancel.Text = "X";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(804, 27);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 41);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Orders";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Gray;
-            this.guna2Panel1.Controls.Add(this.btnCancel);
-            this.guna2Panel1.Controls.Add(this.label7);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1523, 80);
-            this.guna2Panel1.TabIndex = 64;
             // 
             // label4
             // 
@@ -363,12 +312,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgOrdersDetails.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgOrdersDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgOrdersDetails.Location = new System.Drawing.Point(12, 80);
+            this.dgOrdersDetails.Location = new System.Drawing.Point(2, 0);
             this.dgOrdersDetails.Name = "dgOrdersDetails";
             this.dgOrdersDetails.RowHeadersVisible = false;
             this.dgOrdersDetails.RowHeadersWidth = 51;
             this.dgOrdersDetails.RowTemplate.Height = 24;
-            this.dgOrdersDetails.Size = new System.Drawing.Size(1080, 671);
+            this.dgOrdersDetails.Size = new System.Drawing.Size(1141, 751);
             this.dgOrdersDetails.TabIndex = 0;
             this.dgOrdersDetails.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgOrdersDetails.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -402,11 +351,11 @@
             this.guna2Panel2.Controls.Add(this.label6);
             this.guna2Panel2.Controls.Add(this.imgFilters);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel2.Location = new System.Drawing.Point(1095, 80);
+            this.guna2Panel2.Location = new System.Drawing.Point(1146, 0);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.guna2Panel2.Size = new System.Drawing.Size(428, 671);
+            this.guna2Panel2.Size = new System.Drawing.Size(377, 751);
             this.guna2Panel2.TabIndex = 65;
             // 
             // guna2Panel3
@@ -429,15 +378,12 @@
             this.ClientSize = new System.Drawing.Size(1523, 751);
             this.Controls.Add(this.dgOrdersDetails);
             this.Controls.Add(this.guna2Panel2);
-            this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OrdersViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrdersOrdersDetailForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.OrdersViewForm_Load);
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
             this.pnlFilters.ResumeLayout(false);
             this.pnlFilters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgOrdersDetails)).EndInit();
@@ -451,9 +397,6 @@
 
         #endregion
         private System.Windows.Forms.Timer timer1;
-        private Guna.UI2.WinForms.Guna2Button btnCancel;
-        private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDateSearch;
         private Guna.UI2.WinForms.Guna2ComboBox cmbStatusSearch;

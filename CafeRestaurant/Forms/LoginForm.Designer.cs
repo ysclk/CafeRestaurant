@@ -28,30 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlLoginHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.txtUserpass = new Guna.UI2.WinForms.Guna2TextBox();
             this.txbUsermail = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblPasswordForget = new System.Windows.Forms.Label();
-            this.guna2Panel1.SuspendLayout();
+            this.pnlLoginHeader.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2Panel1
+            // pnlLoginHeader
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Gray;
-            this.guna2Panel1.Controls.Add(this.btnCancel);
-            this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(421, 80);
-            this.guna2Panel1.TabIndex = 0;
+            this.pnlLoginHeader.BackColor = System.Drawing.Color.MidnightBlue;
+            this.pnlLoginHeader.Controls.Add(this.btnCancel);
+            this.pnlLoginHeader.Controls.Add(this.label1);
+            this.pnlLoginHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLoginHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlLoginHeader.Name = "pnlLoginHeader";
+            this.pnlLoginHeader.Size = new System.Drawing.Size(421, 80);
+            this.pnlLoginHeader.TabIndex = 0;
+            this.pnlLoginHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.InfoText;
+            this.btnCancel.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnCancel.BorderColor = System.Drawing.Color.LightGray;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.DefaultAutoSize = true;
@@ -59,11 +60,11 @@
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancel.FillColor = System.Drawing.Color.Gray;
+            this.btnCancel.FillColor = System.Drawing.Color.MidnightBlue;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.HoverState.FillColor = System.Drawing.Color.Gray;
-            this.btnCancel.Location = new System.Drawing.Point(372, 3);
+            this.btnCancel.HoverState.FillColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCancel.Location = new System.Drawing.Point(363, 21);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PressedColor = System.Drawing.Color.Gray;
             this.btnCancel.Size = new System.Drawing.Size(46, 39);
@@ -166,13 +167,13 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtUserpass);
             this.Controls.Add(this.txbUsermail);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.pnlLoginHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
+            this.pnlLoginHeader.ResumeLayout(false);
+            this.pnlLoginHeader.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,7 +181,7 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel pnlLoginHeader;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtUserpass;
         private Guna.UI2.WinForms.Guna2TextBox txbUsermail;

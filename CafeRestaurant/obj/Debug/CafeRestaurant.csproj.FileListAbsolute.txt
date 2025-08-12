@@ -23,3 +23,5 @@ C:\Users\zumra\source\repos\CafeRestaurant\CafeRestaurant\obj\Debug\CafeRestaura
 C:\Users\zumra\source\repos\CafeRestaurant\CafeRestaurant\obj\Debug\CafeRest.E07303DC.Up2Date
 C:\Users\zumra\source\repos\CafeRestaurant\CafeRestaurant\obj\Debug\CafeRestaurant.exe
 C:\Users\zumra\source\repos\CafeRestaurant\CafeRestaurant\obj\Debug\CafeRestaurant.pdb
+C:\Users\zumra\source\repos\CafeRestaurant\CafeRestaurant\obj\Debug\CafeRestaurant.exe.config
+C:\Users\zumra\source\repos\CafeRestaurant\CafeRestaurant\obj\Debug\CafeRestaurant.Forms.DashboardAdminForm.resources

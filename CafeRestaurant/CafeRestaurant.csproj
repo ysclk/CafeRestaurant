@@ -228,18 +228,6 @@
     <Compile Include="Services\StockTransactionService2.cs" />
     <Compile Include="Services\UserroleService.cs" />
     <Compile Include="Services\UserService.cs" />
-    <Compile Include="SP_DAILYTOTALAMOUNTA_Result.cs">
-      <DependentUpon>CafeModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SP_DAILYTOTALAMOUNT_Result.cs">
-      <DependentUpon>CafeModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SP_MONTHLYTOTALAMOUNTA_Result.cs">
-      <DependentUpon>CafeModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SP_MONTHLYTOTALAMOUNT_Result.cs">
-      <DependentUpon>CafeModels.tt</DependentUpon>
-    </Compile>
     <Compile Include="STOCKTRANSACTION.cs">
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
@@ -319,18 +307,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CafeModels.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CafeModels.edmx</DependentUpon>
-      <LastGenOutput>CafeModels.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="CafeModels.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CafeModels.edmx</DependentUpon>
-      <LastGenOutput>CafeModels.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Entities\" />
   </ItemGroup>
   <ItemGroup>
@@ -344,6 +320,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CafeModels.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CafeModels.edmx</DependentUpon>
+      <LastGenOutput>CafeModels.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CafeModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CafeModels.edmx</DependentUpon>
+      <LastGenOutput>CafeModels.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

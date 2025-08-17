@@ -33,8 +33,6 @@ namespace CafeRestaurant.Forms
 
             HideUnnecessaryColumns();
 
-         //   guna2Panel2.Top = guna2Panel1.Bottom;
-         //   dgOrdersDetails.Top = guna2Panel1.Bottom;
 
             dgOrdersDetails.DataSource = orderViewService.GetAll();
         }
@@ -148,7 +146,7 @@ namespace CafeRestaurant.Forms
             if (int.TryParse(cmbOrderStatus.SelectedValue?.ToString(), out int statusId))
             {
                 var source = filteredOrders?.Count > 0 ? filteredOrders : orderViewService.GetAll();
-                dgOrdersDetails.DataSource = orderViewService.GetOrdersByOrderstatus(source, statusId);
+                dgOrdersDetails.DataSource = orderViewService.GetOrdersByOrderStatus(source, statusId);
             }
         }
 
@@ -156,7 +154,7 @@ namespace CafeRestaurant.Forms
         {
             if (int.TryParse(cmbStatusSearch.SelectedValue?.ToString(), out int statusId))
             {
-                dgOrdersDetails.DataSource = orderViewService.GetOrdersByOrderstatus(orderViewService.GetAll(), statusId);
+                dgOrdersDetails.DataSource = orderViewService.GetOrdersByOrderStatus(orderViewService.GetAll(), statusId);
             }
         }
 

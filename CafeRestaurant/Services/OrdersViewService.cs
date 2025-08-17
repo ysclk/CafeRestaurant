@@ -1,48 +1,52 @@
-﻿using CafeRestaurant.Forms;
+﻿
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace CafeRestaurant.Services
 {
     public class OrdersViewService : BaseService<ORDERSVIEW>
     {
-     
-        public List<ORDERSVIEW> GetOrdersByCustomerName(List<ORDERSVIEW> listOrders, string customerName)  
+        /// <summary>
+        /// Filters orders by customer name (case-insensitive).
+        /// Returns all orders where the customer's name contains the provided string.
+        /// </summary>
+        public List<ORDERSVIEW> GetOrdersByCustomerName(List<ORDERSVIEW> listOrders, string customerName)
         {
-            var filteredOrders = listOrders.Where(o => !string.IsNullOrEmpty(o.CUSTOMERNAME) &&
-                    o.CUSTOMERNAME.IndexOf(customerName, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+            if (listOrders == null || string.IsNullOrWhiteSpace(customerName))
+                return new List<ORDERSVIEW>();
 
-
-            return filteredOrders;
-
-        }
-        public List<ORDERSVIEW> GetOrdersByDate(List<ORDERSVIEW> listOrders, DateTime date)  
-        {
-            List<ORDERSVIEW> filteredOrders = new List<ORDERSVIEW>();
-            if (listOrders != null && date != null)
-            {
-                filteredOrders   = listOrders.Where(o => o.ORDERDATE == date).ToList();    
-            }     
-                   
-            return filteredOrders;
-        } 
-        public List<ORDERSVIEW> GetOrdersByOrderstatus(List<ORDERSVIEW> listOrders, int orderStatus)  
-        {
-            List<ORDERSVIEW> filteredOrders = new List<ORDERSVIEW>();
-            if (listOrders != null && orderStatus != 0)
-            {
-                filteredOrders = listOrders.Where(o => o.ORDERSTATUS == orderStatus).ToList();
-                
-            }
-            return filteredOrders;
+            return listOrders
+                .Where(o => !string.IsNullOrEmpty(o.CUSTOMERNAME) &&
+                            o.CUSTOMERNAME.IndexOf(customerName, StringComparison.OrdinalIgnoreCase) >= 0)
+                .ToList();
         }
 
-       
+        /// <summary>
+        /// Filters orders by a specific order date.
+        /// </summary>
+        public List<ORDERSVIEW> GetOrdersByDate(List<ORDERSVIEW> listOrders, DateTime date)
+        {
+            if (listOrders == null)
+                return new List<ORDERSVIEW>();
 
+            return listOrders
+                .Where(o => o.ORDERDATE == date.Date) // Compare only the date part
+                .ToList();
+        }
+
+        /// <summary>
+        /// Filters orders by order status.
+        /// </summary>
+        public List<ORDERSVIEW> GetOrdersByOrderStatus(List<ORDERSVIEW> listOrders, int orderStatus)
+        {
+            if (listOrders == null || orderStatus == 0)
+                return new List<ORDERSVIEW>();
+
+            return listOrders
+                .Where(o => o.ORDERSTATUS == orderStatus)
+                .ToList();
+        }
     }
 }

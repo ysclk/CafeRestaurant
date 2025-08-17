@@ -154,5 +154,43 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_DAILYTOTALAMOUNT" FunctionName="CafeRestaurantModel.Store.SP_DAILYTOTALAMOUNT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CafeRestaurantModel.SP_DAILYTOTALAMOUNT_Result">
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="Daily_Amount" ColumnName="Daily Amount" />
+          <ScalarProperty Name="Total_Order" ColumnName="Total Order" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_MONTHLYTOTALAMOUNT" FunctionName="CafeRestaurantModel.Store.SP_MONTHLYTOTALAMOUNT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CafeRestaurantModel.SP_MONTHLYTOTALAMOUNT_Result">
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="MonthlyAmount" ColumnName="MonthlyAmount" />
+          <ScalarProperty Name="SiparisSayisi" ColumnName="SiparisSayisi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DAILYTOTALAMOUNTA" FunctionName="CafeRestaurantModel.Store.SP_DAILYTOTALAMOUNTA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CafeRestaurantModel.SP_DAILYTOTALAMOUNTA_Result">
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="DailyAmount" ColumnName="DailyAmount" />
+          <ScalarProperty Name="TotalOrder" ColumnName="TotalOrder" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_MONTHLYTOTALAMOUNTA" FunctionName="CafeRestaurantModel.Store.SP_MONTHLYTOTALAMOUNTA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CafeRestaurantModel.SP_MONTHLYTOTALAMOUNTA_Result">
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="MonthlyAmount" ColumnName="MonthlyAmount" />
+          <ScalarProperty Name="TotalOrder" ColumnName="TotalOrder" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

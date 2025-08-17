@@ -151,6 +151,20 @@
       <End Role="PRODUCTSTOCK" EntitySet="PRODUCTSTOCK" />
     </AssociationSet>
     <EntitySet Name="ORDERSVIEW" EntityType="CafeRestaurantModel.ORDERSVIEW" />
+    <FunctionImport Name="SP_DAILYTOTALAMOUNT" ReturnType="Collection(CafeRestaurantModel.SP_DAILYTOTALAMOUNT_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_MONTHLYTOTALAMOUNT" ReturnType="Collection(CafeRestaurantModel.SP_MONTHLYTOTALAMOUNT_Result)">
+      <Parameter Name="YEAR" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DAILYTOTALAMOUNTA" ReturnType="Collection(CafeRestaurantModel.SP_DAILYTOTALAMOUNTA_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_MONTHLYTOTALAMOUNTA" ReturnType="Collection(CafeRestaurantModel.SP_MONTHLYTOTALAMOUNTA_Result)">
+      <Parameter Name="YEAR" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="ORDERSVIEW">
     <Key>
@@ -175,4 +189,26 @@
     <Property Name="StatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="STOCK" Type="Int32" />
   </EntityType>
+  <ComplexType Name="SP_DAILYTOTALAMOUNT_Result">
+    <Property Type="DateTime" Name="OrderDate" Nullable="true" />
+    <Property Type="Decimal" Name="Daily_Amount" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Int32" Name="Total_Order" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_MONTHLYTOTALAMOUNT_Result">
+    <Property Type="Int32" Name="Year" Nullable="true" />
+    <Property Type="Int32" Name="Month" Nullable="true" />
+    <Property Type="Decimal" Name="MonthlyAmount" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Int32" Name="SiparisSayisi" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DAILYTOTALAMOUNTA_Result">
+    <Property Type="DateTime" Name="OrderDate" Nullable="true" />
+    <Property Type="Decimal" Name="DailyAmount" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Int32" Name="TotalOrder" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_MONTHLYTOTALAMOUNTA_Result">
+    <Property Type="Int32" Name="Year" Nullable="true" />
+    <Property Type="Int32" Name="Month" Nullable="true" />
+    <Property Type="Decimal" Name="MonthlyAmount" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Int32" Name="TotalOrder" Nullable="true" />
+  </ComplexType>
 </Schema>

@@ -167,7 +167,7 @@ namespace CafeRestaurant.Forms
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-
+            ShowForm(new ReportsForm());
         }
 
         private void panelContent_Paint(object sender, PaintEventArgs e)

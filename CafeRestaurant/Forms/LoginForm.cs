@@ -12,6 +12,7 @@ namespace CafeRestaurant.Forms
         public LoginForm()
         {          
             InitializeComponent();
+            this.AcceptButton = btnLogin;
         }
    
         

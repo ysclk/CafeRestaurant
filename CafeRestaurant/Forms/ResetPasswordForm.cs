@@ -13,28 +13,52 @@ namespace CafeRestaurant.Forms
 {
     public partial class ResetPasswordForm : Form
     {
+       
+        // Service to handle authentication-related operations
+        private readonly AuthService _authService = new AuthService();
+
         public ResetPasswordForm()
         {
             InitializeComponent();
+
+            // Set the Reset button as the default accept button
+            this.AcceptButton = btnReset;
         }
-        private AuthService authService = new AuthService();
+
+        /// <summary>
+        /// Handles the Cancel button click event.
+        /// Closes the application.
+        /// </summary>
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Handles the Reset button click event.
+        /// Validates the user email and opens the password change form if valid.
+        /// </summary>
         private void btnReset_Click(object sender, EventArgs e)
         {
-            int userId = authService.userId(txbUsermail.Text);
+            string userEmail = txbUsermail.Text.Trim();
+
+            // Get the user ID for the provided email
+            int userId = _authService.userId(userEmail);
+
             if (userId == 0)
             {
-                MessageBox.Show("Not User");
+                MessageBox.Show("User not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            PasswordChangeForm passForm = new PasswordChangeForm(userId,txbUsermail.Text);            
+
+            // Open the password change form
+            PasswordChangeForm passForm = new PasswordChangeForm(userId, userEmail);
+
+            // Close the current form before showing the next form
             this.Close();
             passForm.Show();
-
         }
-       
     }
+
 }
+

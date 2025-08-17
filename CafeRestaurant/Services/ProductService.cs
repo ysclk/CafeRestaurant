@@ -7,39 +7,62 @@ namespace CafeRestaurant.Services
 {
     internal class ProductService : BaseService<PRODUCT>
     {
-        // Özel bir sorgu örneği: Belirli kategoriye ait ürünleri getir
+        /// <summary>
+        /// Retrieves all products belonging to a specific category.
+        /// </summary>
         public List<PRODUCT> GetByCategory(int categoryId)
         {
-            return db.PRODUCT.Where(x => x.CATEGORYID == categoryId).ToList();
+            return db.PRODUCT
+                     .Where(p => p.CATEGORYID == categoryId)
+                     .ToList();
         }
 
+        /// <summary>
+        /// Retrieves all products along with their category information
+        /// using a stored procedure.
+        /// </summary>
         public List<ProductDTO> GetAllWithCategory()
         {
-            return db.Database.SqlQuery<ProductDTO>("EXEC sp_GetProductsWithCategory").ToList();
+            return db.Database
+                     .SqlQuery<ProductDTO>("EXEC sp_GetProductsWithCategory")
+                     .ToList();
         }
 
+        /// <summary>
+        /// Gets the price of a product by its ID.
+        /// Returns 0 if the product is not found.
+        /// </summary>
         public decimal GetPrice(int productId)
         {
-            var price = (from p in db.PRODUCT
-                         where (p.PRODUCTID == productId)
-                         select p.PRODUCTPRICE).FirstOrDefault();
-            return price ?? 0;
+            var price = db.PRODUCT
+                          .Where(p => p.PRODUCTID == productId)
+                          .Select(p => p.PRODUCTPRICE)
+                          .FirstOrDefault();
 
+            return price ?? 0;
         }
 
+        /// <summary>
+        /// Gets the stock quantity of a product by its ID.
+        /// Returns 0 if the product is not found.
+        /// </summary>
         public int GetStock(int productId)
         {
-            var stock = (from p in db.PRODUCT
-                         where (p.PRODUCTID == productId)
-                         select p.STOCK).FirstOrDefault();
-            return stock;
+            var stock = db.PRODUCT
+                          .Where(p => p.PRODUCTID == productId)
+                          .Select(p => p.STOCK)
+                          .FirstOrDefault();
 
+            return stock;
         }
 
-
-        public  virtual void UpdateStock(int productId, int stock)
+        /// <summary>
+        /// Updates the stock quantity of a product.
+        /// </summary>
+        public virtual void UpdateStock(int productId, int stock)
         {
-            var product = db.PRODUCT.FirstOrDefault(p => p.PRODUCTID == productId);
+            var product = db.PRODUCT
+                            .FirstOrDefault(p => p.PRODUCTID == productId);
 
             if (product != null)
             {

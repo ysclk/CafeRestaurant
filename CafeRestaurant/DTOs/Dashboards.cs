@@ -11,7 +11,7 @@ namespace CafeRestaurant.DTOs
 {
     public class Dashboards
     {
-
+        //The Welcomepage for admins and staffs
         public void WelcomeDate(DateTime date, System.Windows.Forms.Label lblDate, System.Windows.Forms.Label lblClock)
         {
             lblDate.Text = date.DayOfWeek.ToString() + ", " +

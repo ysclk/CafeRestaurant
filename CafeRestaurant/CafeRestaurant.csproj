@@ -102,7 +102,9 @@
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
     <Compile Include="DTOs\AuthResult.cs" />
+    <Compile Include="DTOs\DailyTotalAmountDTO.cs" />
     <Compile Include="DTOs\Dashboards.cs" />
+    <Compile Include="DTOs\MonthlyTotalAmountDTO.cs" />
     <Compile Include="DTOs\OrderDTO.cs" />
     <Compile Include="DTOs\ProductDTO.cs" />
     <Compile Include="DTOs\UserDTO.cs" />
@@ -163,6 +165,12 @@
     <Compile Include="Forms\ProductForm.Designer.cs">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportsForm.Designer.cs">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ResetPasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,11 +222,24 @@
     <Compile Include="Services\OrdersViewService.cs" />
     <Compile Include="Services\OrderService.cs" />
     <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Services\ReportService.cs" />
     <Compile Include="Services\StockService.cs" />
     <Compile Include="Services\StockTransactionService.cs" />
     <Compile Include="Services\StockTransactionService2.cs" />
     <Compile Include="Services\UserroleService.cs" />
     <Compile Include="Services\UserService.cs" />
+    <Compile Include="SP_DAILYTOTALAMOUNTA_Result.cs">
+      <DependentUpon>CafeModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_DAILYTOTALAMOUNT_Result.cs">
+      <DependentUpon>CafeModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_MONTHLYTOTALAMOUNTA_Result.cs">
+      <DependentUpon>CafeModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_MONTHLYTOTALAMOUNT_Result.cs">
+      <DependentUpon>CafeModels.tt</DependentUpon>
+    </Compile>
     <Compile Include="STOCKTRANSACTION.cs">
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
@@ -254,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportsForm.resx">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ResetPasswordForm.resx">
       <DependentUpon>ResetPasswordForm.cs</DependentUpon>

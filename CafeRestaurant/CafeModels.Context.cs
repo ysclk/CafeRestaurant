@@ -12,8 +12,6 @@ namespace CafeRestaurant
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Data.Entity.Core.Objects;
-    using System.Linq;
     
     public partial class CafeRestaurantEntities : DbContext
     {
@@ -40,49 +38,5 @@ namespace CafeRestaurant
         public virtual DbSet<ROLES> ROLES { get; set; }
         public virtual DbSet<USER> USER { get; set; }
         public virtual DbSet<ORDERSVIEW> ORDERSVIEW { get; set; }
-    
-        public virtual ObjectResult<SP_DAILYTOTALAMOUNT_Result> SP_DAILYTOTALAMOUNT(Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
-        {
-            var startDateParameter = startDate.HasValue ?
-                new ObjectParameter("StartDate", startDate) :
-                new ObjectParameter("StartDate", typeof(System.DateTime));
-    
-            var endDateParameter = endDate.HasValue ?
-                new ObjectParameter("EndDate", endDate) :
-                new ObjectParameter("EndDate", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_DAILYTOTALAMOUNT_Result>("SP_DAILYTOTALAMOUNT", startDateParameter, endDateParameter);
-        }
-    
-        public virtual ObjectResult<SP_MONTHLYTOTALAMOUNT_Result> SP_MONTHLYTOTALAMOUNT(Nullable<int> yEAR)
-        {
-            var yEARParameter = yEAR.HasValue ?
-                new ObjectParameter("YEAR", yEAR) :
-                new ObjectParameter("YEAR", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_MONTHLYTOTALAMOUNT_Result>("SP_MONTHLYTOTALAMOUNT", yEARParameter);
-        }
-    
-        public virtual ObjectResult<SP_DAILYTOTALAMOUNTA_Result> SP_DAILYTOTALAMOUNTA(Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
-        {
-            var startDateParameter = startDate.HasValue ?
-                new ObjectParameter("StartDate", startDate) :
-                new ObjectParameter("StartDate", typeof(System.DateTime));
-    
-            var endDateParameter = endDate.HasValue ?
-                new ObjectParameter("EndDate", endDate) :
-                new ObjectParameter("EndDate", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_DAILYTOTALAMOUNTA_Result>("SP_DAILYTOTALAMOUNTA", startDateParameter, endDateParameter);
-        }
-    
-        public virtual ObjectResult<SP_MONTHLYTOTALAMOUNTA_Result> SP_MONTHLYTOTALAMOUNTA(Nullable<int> yEAR)
-        {
-            var yEARParameter = yEAR.HasValue ?
-                new ObjectParameter("YEAR", yEAR) :
-                new ObjectParameter("YEAR", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_MONTHLYTOTALAMOUNTA_Result>("SP_MONTHLYTOTALAMOUNTA", yEARParameter);
-        }
     }
 }

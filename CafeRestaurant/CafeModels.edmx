@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="CafeRestaurantModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CafeRestaurantModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CafeRestaurant.dbo.CATEGORY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="CATEGORY">
@@ -175,119 +175,43 @@ warning 6002: The table/view 'CafeRestaurant.dbo.ORDERSVIEW' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="SP_DAILYTOTALAMOUNT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="StartDate" Type="date" Mode="In" />
-          <Parameter Name="EndDate" Type="date" Mode="In" />
-        </Function>
-        <Function Name="SP_DAILYTOTALAMOUNTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="StartDate" Type="date" Mode="In" />
-          <Parameter Name="EndDate" Type="date" Mode="In" />
-        </Function>
-        <Function Name="SP_MONTHLYTOTALAMOUNT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="YEAR" Type="int" Mode="In" />
-        </Function>
-        <Function Name="SP_MONTHLYTOTALAMOUNTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="YEAR" Type="int" Mode="In" />
-        </Function>
         <EntityContainer Name="CafeRestaurantModelStoreContainer">
           <EntitySet Name="ORDERSTATUSTYPES" EntityType="Self.ORDERSTATUSTYPES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ORDERTYPES" EntityType="Self.ORDERTYPES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="STOCKTRANSACTION" EntityType="Self.STOCKTRANSACTION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CATEGORY" EntityType="Self.CATEGORY" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [CATEGORY].[CATEGORYID] AS [CATEGORYID], 
-    [CATEGORY].[CATEGORYNAME] AS [CATEGORYNAME], 
-    [CATEGORY].[CATEGORYDESC] AS [CATEGORYDESC]
-    FROM [dbo].[CATEGORY] AS [CATEGORY]</DefiningQuery>
+          <EntitySet Name="CATEGORY" EntityType="Self.CATEGORY" store:Type="Tables" Schema="dbo">
+      
           </EntitySet>
-          <EntitySet Name="ORDER" EntityType="Self.ORDER" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ORDER].[ORDERID] AS [ORDERID], 
-    [ORDER].[CUSTOMERID] AS [CUSTOMERID], 
-    [ORDER].[ORDERDATE] AS [ORDERDATE], 
-    [ORDER].[TOTALAMOUNT] AS [TOTALAMOUNT], 
-    [ORDER].[STAFFID] AS [STAFFID]
-    FROM [dbo].[ORDER] AS [ORDER]</DefiningQuery>
+          <EntitySet Name="ORDER" EntityType="Self.ORDER" store:Type="Tables" Schema="dbo">
+          
           </EntitySet>
-          <EntitySet Name="ORDERDETAIL" EntityType="Self.ORDERDETAIL" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ORDERDETAIL].[ORDERDETAILID] AS [ORDERDETAILID], 
-    [ORDERDETAIL].[ORDERID] AS [ORDERID], 
-    [ORDERDETAIL].[PRODUCTID] AS [PRODUCTID], 
-    [ORDERDETAIL].[QUANTITY] AS [QUANTITY], 
-    [ORDERDETAIL].[UNITPRICE] AS [UNITPRICE], 
-    [ORDERDETAIL].[SUBTOTAL] AS [SUBTOTAL], 
-    [ORDERDETAIL].[ORDERPAID] AS [ORDERPAID], 
-    [ORDERDETAIL].[ORDERTYPE] AS [ORDERTYPE], 
-    [ORDERDETAIL].[ORDERNOTE] AS [ORDERNOTE], 
-    [ORDERDETAIL].[STAFFID] AS [STAFFID], 
-    [ORDERDETAIL].[ORDERSTATUS] AS [ORDERSTATUS]
-    FROM [dbo].[ORDERDETAIL] AS [ORDERDETAIL]</DefiningQuery>
+          <EntitySet Name="ORDERDETAIL" EntityType="Self.ORDERDETAIL" store:Type="Tables" Schema="dbo">
+       
           </EntitySet>
-          <EntitySet Name="PAYMENT" EntityType="Self.PAYMENT" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [PAYMENT].[PAYMENTID] AS [PAYMENTID], 
-    [PAYMENT].[ORDERID] AS [ORDERID], 
-    [PAYMENT].[PAYMENTMETHOD] AS [PAYMENTMETHOD], 
-    [PAYMENT].[PAYMENTAMOUNT] AS [PAYMENTAMOUNT], 
-    [PAYMENT].[PAYMENTDATE] AS [PAYMENTDATE], 
-    [PAYMENT].[PAYMENTSTATU] AS [PAYMENTSTATU]
-    FROM [dbo].[PAYMENT] AS [PAYMENT]</DefiningQuery>
+          <EntitySet Name="PAYMENT" EntityType="Self.PAYMENT" store:Type="Tables" Schema="dbo">
+        
           </EntitySet>
-          <EntitySet Name="PRODUCTSTOCK" EntityType="Self.PRODUCTSTOCK" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [PRODUCTSTOCK].[PRODUCT_ID] AS [PRODUCT_ID], 
-    [PRODUCTSTOCK].[STOCK] AS [STOCK]
-    FROM [dbo].[PRODUCTSTOCK] AS [PRODUCTSTOCK]</DefiningQuery>
+          <EntitySet Name="PRODUCTSTOCK" EntityType="Self.PRODUCTSTOCK" store:Type="Tables" Schema="dbo">
+        
           </EntitySet>
-          <EntitySet Name="ROLES" EntityType="Self.ROLES" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ROLES].[ROLEID] AS [ROLEID], 
-    [ROLES].[ROLENAME] AS [ROLENAME]
-    FROM [dbo].[ROLES] AS [ROLES]</DefiningQuery>
+          <EntitySet Name="ROLES" EntityType="Self.ROLES" store:Type="Tables" Schema="dbo">
+        
           </EntitySet>
-          <EntitySet Name="USER" EntityType="Self.USER" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [USER].[USERID] AS [USERID], 
-    [USER].[USERNAME] AS [USERNAME], 
-    [USER].[USERSURNAME] AS [USERSURNAME], 
-    [USER].[USERPHONE] AS [USERPHONE], 
-    [USER].[USEREMAIL] AS [USEREMAIL], 
-    [USER].[USERADDRESS] AS [USERADDRESS], 
-    [USER].[USERROLEID] AS [USERROLEID], 
-    [USER].[ISFIRSTLOGIN] AS [ISFIRSTLOGIN], 
-    [USER].[PASSWORDHASH] AS [PASSWORDHASH]
-    FROM [dbo].[USER] AS [USER]</DefiningQuery>
+          <EntitySet Name="USER" EntityType="Self.USER" store:Type="Tables" Schema="dbo">
+         
           </EntitySet>
-          <EntitySet Name="ORDERSVIEW" EntityType="Self.ORDERSVIEW" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ORDERSVIEW].[ORDERDETAILID] AS [ORDERDETAILID], 
-    [ORDERSVIEW].[ORDERID] AS [ORDERID], 
-    [ORDERSVIEW].[CUSTOMERID] AS [CUSTOMERID], 
-    [ORDERSVIEW].[CUSTOMERNAME] AS [CUSTOMERNAME], 
-    [ORDERSVIEW].[USERPHONE] AS [USERPHONE], 
-    [ORDERSVIEW].[ORDERDATE] AS [ORDERDATE], 
-    [ORDERSVIEW].[TOTALAMOUNT] AS [TOTALAMOUNT], 
-    [ORDERSVIEW].[PRODUCTID] AS [PRODUCTID], 
-    [ORDERSVIEW].[PRODUCTNAME] AS [PRODUCTNAME], 
-    [ORDERSVIEW].[PRODUCTPRICE] AS [PRODUCTPRICE], 
-    [ORDERSVIEW].[QUANTITY] AS [QUANTITY], 
-    [ORDERSVIEW].[SUBTOTAL] AS [SUBTOTAL], 
-    [ORDERSVIEW].[ORDERTYPE] AS [ORDERTYPE], 
-    [ORDERSVIEW].[ORDERNOTE] AS [ORDERNOTE], 
-    [ORDERSVIEW].[ORDERSTATUS] AS [ORDERSTATUS], 
-    [ORDERSVIEW].[StatusCode] AS [StatusCode], 
-    [ORDERSVIEW].[STOCK] AS [STOCK]
-    FROM [dbo].[ORDERSVIEW] AS [ORDERSVIEW]</DefiningQuery>
+          <EntitySet Name="ORDERSVIEW" EntityType="Self.ORDERSVIEW" store:Type="Views" Schema="dbo">
+       
           </EntitySet>
           <AssociationSet Name="FK_STOCK" Association="Self.FK_STOCK">
             <End Role="PRODUCT" EntitySet="PRODUCT" />
             <End Role="PRODUCTSTOCK" EntitySet="PRODUCTSTOCK" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CafeRestaurantModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -412,6 +336,29 @@ warning 6002: The table/view 'CafeRestaurant.dbo.ORDERSVIEW' does not have a pri
           <Property Name="ISFIRSTLOGIN" Type="Boolean" />
           <Property Name="PASSWORDHASH" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="ORDERSVIEW">
+          <Key>
+            <PropertyRef Name="ORDERDETAILID" />
+            <PropertyRef Name="ORDERID" />
+          </Key>
+          <Property Name="ORDERDETAILID" Type="Int32" Nullable="false" />
+          <Property Name="ORDERID" Type="Int32" Nullable="false" />
+          <Property Name="CUSTOMERID" Type="Int32" />
+          <Property Name="CUSTOMERNAME" Type="String" MaxLength="101" FixedLength="false" Unicode="true" />
+          <Property Name="USERPHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ORDERDATE" Type="DateTime" Precision="0" />
+          <Property Name="TOTALAMOUNT" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="PRODUCTID" Type="Int32" />
+          <Property Name="PRODUCTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRODUCTPRICE" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="QUANTITY" Type="Int32" />
+          <Property Name="SUBTOTAL" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="ORDERTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ORDERNOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ORDERSTATUS" Type="Int32" />
+          <Property Name="StatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STOCK" Type="Int32" />
+        </EntityType>
         <Association Name="FK_STOCK">
           <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
           <End Role="PRODUCTSTOCK" Type="Self.PRODUCTSTOCK" Multiplicity="0..1" />
@@ -437,71 +384,12 @@ warning 6002: The table/view 'CafeRestaurant.dbo.ORDERSVIEW' does not have a pri
           <EntitySet Name="PRODUCTSTOCK" EntityType="Self.PRODUCTSTOCK" />
           <EntitySet Name="ROLES" EntityType="Self.ROLES" />
           <EntitySet Name="USER" EntityType="Self.USER" />
+          <EntitySet Name="ORDERSVIEW" EntityType="Self.ORDERSVIEW" />
           <AssociationSet Name="FK_STOCK" Association="Self.FK_STOCK">
             <End Role="PRODUCT" EntitySet="PRODUCT" />
             <End Role="PRODUCTSTOCK" EntitySet="PRODUCTSTOCK" />
           </AssociationSet>
-          <EntitySet Name="ORDERSVIEW" EntityType="CafeRestaurantModel.ORDERSVIEW" />
-          <FunctionImport Name="SP_DAILYTOTALAMOUNT" ReturnType="Collection(CafeRestaurantModel.SP_DAILYTOTALAMOUNT_Result)">
-            <Parameter Name="StartDate" Mode="In" Type="DateTime" />
-            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="SP_MONTHLYTOTALAMOUNT" ReturnType="Collection(CafeRestaurantModel.SP_MONTHLYTOTALAMOUNT_Result)">
-          <Parameter Name="YEAR" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_DAILYTOTALAMOUNTA" ReturnType="Collection(CafeRestaurantModel.SP_DAILYTOTALAMOUNTA_Result)">
-            <Parameter Name="StartDate" Mode="In" Type="DateTime" />
-            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="SP_MONTHLYTOTALAMOUNTA" ReturnType="Collection(CafeRestaurantModel.SP_MONTHLYTOTALAMOUNTA_Result)">
-            <Parameter Name="YEAR" Mode="In" Type="Int32" />
-          </FunctionImport>
         </EntityContainer>
-        <EntityType Name="ORDERSVIEW">
-          <Key>
-            <PropertyRef Name="ORDERDETAILID" />
-            <PropertyRef Name="ORDERID" />
-          </Key>
-          <Property Name="ORDERDETAILID" Type="Int32" Nullable="false" />
-          <Property Name="ORDERID" Type="Int32" Nullable="false" />
-          <Property Name="CUSTOMERID" Type="Int32" />
-          <Property Name="CUSTOMERNAME" Type="String" MaxLength="101" FixedLength="false" Unicode="true" />
-          <Property Name="USERPHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="ORDERDATE" Type="DateTime" Precision="0" />
-          <Property Name="TOTALAMOUNT" Type="Decimal" Precision="8" Scale="2" />
-          <Property Name="PRODUCTID" Type="Int32" />
-          <Property Name="PRODUCTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PRODUCTPRICE" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="QUANTITY" Type="Int32" />
-          <Property Name="SUBTOTAL" Type="Decimal" Precision="8" Scale="2" />
-          <Property Name="ORDERTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ORDERNOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ORDERSTATUS" Type="Int32" />
-          <Property Name="StatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="STOCK" Type="Int32" />
-        </EntityType>
-        <ComplexType Name="SP_DAILYTOTALAMOUNT_Result">
-          <Property Type="DateTime" Name="OrderDate" Nullable="true" />
-          <Property Type="Decimal" Name="Daily_Amount" Nullable="true" Precision="38" Scale="2" />
-          <Property Type="Int32" Name="Total_Order" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="SP_MONTHLYTOTALAMOUNT_Result">
-          <Property Type="Int32" Name="Year" Nullable="true" />
-          <Property Type="Int32" Name="Month" Nullable="true" />
-          <Property Type="Decimal" Name="MonthlyAmount" Nullable="true" Precision="38" Scale="2" />
-          <Property Type="Int32" Name="SiparisSayisi" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="SP_DAILYTOTALAMOUNTA_Result">
-          <Property Type="DateTime" Name="OrderDate" Nullable="true" />
-          <Property Type="Decimal" Name="DailyAmount" Nullable="true" Precision="38" Scale="2" />
-          <Property Type="Int32" Name="TotalOrder" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="SP_MONTHLYTOTALAMOUNTA_Result">
-          <Property Type="Int32" Name="Year" Nullable="true" />
-          <Property Type="Int32" Name="Month" Nullable="true" />
-          <Property Type="Decimal" Name="MonthlyAmount" Nullable="true" Precision="38" Scale="2" />
-          <Property Type="Int32" Name="TotalOrder" Nullable="true" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -641,64 +529,26 @@ warning 6002: The table/view 'CafeRestaurant.dbo.ORDERSVIEW' does not have a pri
           <EntitySetMapping Name="ORDERSVIEW">
             <EntityTypeMapping TypeName="CafeRestaurantModel.ORDERSVIEW">
               <MappingFragment StoreEntitySet="ORDERSVIEW">
-                <ScalarProperty Name="STOCK" ColumnName="STOCK" />
-                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
-                <ScalarProperty Name="ORDERSTATUS" ColumnName="ORDERSTATUS" />
-                <ScalarProperty Name="ORDERNOTE" ColumnName="ORDERNOTE" />
-                <ScalarProperty Name="ORDERTYPE" ColumnName="ORDERTYPE" />
-                <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
-                <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
-                <ScalarProperty Name="PRODUCTPRICE" ColumnName="PRODUCTPRICE" />
-                <ScalarProperty Name="PRODUCTNAME" ColumnName="PRODUCTNAME" />
-                <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
-                <ScalarProperty Name="TOTALAMOUNT" ColumnName="TOTALAMOUNT" />
-                <ScalarProperty Name="ORDERDATE" ColumnName="ORDERDATE" />
-                <ScalarProperty Name="USERPHONE" ColumnName="USERPHONE" />
-                <ScalarProperty Name="CUSTOMERNAME" ColumnName="CUSTOMERNAME" />
-                <ScalarProperty Name="CUSTOMERID" ColumnName="CUSTOMERID" />
-                <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
                 <ScalarProperty Name="ORDERDETAILID" ColumnName="ORDERDETAILID" />
+                <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
+                <ScalarProperty Name="CUSTOMERID" ColumnName="CUSTOMERID" />
+                <ScalarProperty Name="CUSTOMERNAME" ColumnName="CUSTOMERNAME" />
+                <ScalarProperty Name="USERPHONE" ColumnName="USERPHONE" />
+                <ScalarProperty Name="ORDERDATE" ColumnName="ORDERDATE" />
+                <ScalarProperty Name="TOTALAMOUNT" ColumnName="TOTALAMOUNT" />
+                <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
+                <ScalarProperty Name="PRODUCTNAME" ColumnName="PRODUCTNAME" />
+                <ScalarProperty Name="PRODUCTPRICE" ColumnName="PRODUCTPRICE" />
+                <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+                <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
+                <ScalarProperty Name="ORDERTYPE" ColumnName="ORDERTYPE" />
+                <ScalarProperty Name="ORDERNOTE" ColumnName="ORDERNOTE" />
+                <ScalarProperty Name="ORDERSTATUS" ColumnName="ORDERSTATUS" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+                <ScalarProperty Name="STOCK" ColumnName="STOCK" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SP_DAILYTOTALAMOUNT" FunctionName="CafeRestaurantModel.Store.SP_DAILYTOTALAMOUNT">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CafeRestaurantModel.SP_DAILYTOTALAMOUNT_Result">
-                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-                <ScalarProperty Name="Daily_Amount" ColumnName="Daily Amount" />
-                <ScalarProperty Name="Total_Order" ColumnName="Total Order" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_MONTHLYTOTALAMOUNT" FunctionName="CafeRestaurantModel.Store.SP_MONTHLYTOTALAMOUNT">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CafeRestaurantModel.SP_MONTHLYTOTALAMOUNT_Result">
-                <ScalarProperty Name="Year" ColumnName="Year" />
-                <ScalarProperty Name="Month" ColumnName="Month" />
-                <ScalarProperty Name="MonthlyAmount" ColumnName="MonthlyAmount" />
-                <ScalarProperty Name="SiparisSayisi" ColumnName="SiparisSayisi" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_DAILYTOTALAMOUNTA" FunctionName="CafeRestaurantModel.Store.SP_DAILYTOTALAMOUNTA">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CafeRestaurantModel.SP_DAILYTOTALAMOUNTA_Result">
-                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-                <ScalarProperty Name="DailyAmount" ColumnName="DailyAmount" />
-                <ScalarProperty Name="TotalOrder" ColumnName="TotalOrder" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_MONTHLYTOTALAMOUNTA" FunctionName="CafeRestaurantModel.Store.SP_MONTHLYTOTALAMOUNTA">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CafeRestaurantModel.SP_MONTHLYTOTALAMOUNTA_Result">
-                <ScalarProperty Name="Year" ColumnName="Year" />
-                <ScalarProperty Name="Month" ColumnName="Month" />
-                <ScalarProperty Name="MonthlyAmount" ColumnName="MonthlyAmount" />
-                <ScalarProperty Name="TotalOrder" ColumnName="TotalOrder" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

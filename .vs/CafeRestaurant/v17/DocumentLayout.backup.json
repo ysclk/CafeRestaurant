@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\orderdetailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\orderdetailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\ibaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\ibaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\istockservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\istockservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\forms\\ordersviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\ordersviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\stockservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -106,8 +126,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\AuthService.cs",
+              "RelativeToolTip": "CafeRestaurant\\Services\\AuthService.cs",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T16:10:58.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\CategoryService.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\CategoryService.cs",
+              "RelativeToolTip": "CafeRestaurant\\Services\\CategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T16:10:53.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IBaseService.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\IBaseService.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\IBaseService.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\IBaseService.cs",
+              "RelativeToolTip": "CafeRestaurant\\Services\\IBaseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T16:10:35.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IStockService.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\IStockService.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\IStockService.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\IStockService.cs",
+              "RelativeToolTip": "CafeRestaurant\\Services\\IStockService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T16:00:34.962Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -123,50 +195,24 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "OrderService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\OrderService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderService.cs*",
-              "RelativeToolTip": "CafeRestaurant\\Services\\OrderService.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
+              "Title": "OrderDetailService.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderDetailService.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\OrderDetailService.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderDetailService.cs*",
+              "RelativeToolTip": "CafeRestaurant\\Services\\OrderDetailService.cs*",
+              "ViewState": "AgIAACAAAAAAAAAAAAAUwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T16:09:04.502Z",
+              "WhenOpened": "2025-08-17T16:10:19.153Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "OrderStatusService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderStatusService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\OrderStatusService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderStatusService.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\OrderStatusService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T16:09:02.291Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrdersViewService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrdersViewService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\OrdersViewService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrdersViewService.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\OrdersViewService.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAA3wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T16:06:56.732Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "ProductService.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\ProductService.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Services\\ProductService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\ProductService.cs*",
-              "RelativeToolTip": "CafeRestaurant\\Services\\ProductService.cs*",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\ProductService.cs",
+              "RelativeToolTip": "CafeRestaurant\\Services\\ProductService.cs",
               "ViewState": "AgIAAD0AAAAAAAAAAAAewEkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-17T16:05:38.244Z",
@@ -174,7 +220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "StockService.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\StockService.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Services\\StockService.cs",
@@ -187,7 +233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "StockTransactionService2.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\StockTransactionService2.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Services\\StockTransactionService2.cs",
@@ -200,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "StockTransactionService.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\StockTransactionService.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Services\\StockTransactionService.cs",
@@ -213,7 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "UserForm.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\UserForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\UserForm.cs",
@@ -226,7 +272,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "ProductForm.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\ProductForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\ProductForm.cs",
@@ -239,7 +285,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 5,
+              "Title": "ReportService.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\ReportService.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\ReportService.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\ReportService.cs",
+              "RelativeToolTip": "CafeRestaurant\\Services\\ReportService.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAUwDoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T15:52:34.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrdersViewService.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrdersViewService.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\OrdersViewService.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrdersViewService.cs",
+              "RelativeToolTip": "CafeRestaurant\\Services\\OrdersViewService.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAA3wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T16:06:56.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\OrderService.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderService.cs",
+              "RelativeToolTip": "CafeRestaurant\\Services\\OrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T16:09:04.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderStatusService.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderStatusService.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\OrderStatusService.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderStatusService.cs",
+              "RelativeToolTip": "CafeRestaurant\\Services\\OrderStatusService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T16:09:02.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "PasswordChangeForm.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\PasswordChangeForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\PasswordChangeForm.cs",
@@ -252,7 +350,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "OrderForm.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrderForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\OrderForm.cs",
@@ -265,7 +363,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "OrdersViewForm.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrdersViewForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\OrdersViewForm.cs",
@@ -278,7 +376,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "OrdersViewForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrdersViewForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\OrdersViewForm.cs",
@@ -290,7 +388,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "OrderForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrderForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\OrderForm.cs",
@@ -302,7 +400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "OrderActionForm.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrderActionForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\OrderActionForm.cs",
@@ -315,7 +413,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "OrderActionForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrderActionForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\OrderActionForm.cs",
@@ -327,7 +425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 25,
               "Title": "LoginForm.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\LoginForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\LoginForm.cs",
@@ -340,7 +438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 26,
               "Title": "LoginForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\LoginForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\LoginForm.cs",
@@ -352,7 +450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 23,
               "Title": "ResetPasswordForm.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\ResetPasswordForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\ResetPasswordForm.cs",
@@ -365,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "ResetPasswordForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\ResetPasswordForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\ResetPasswordForm.cs",
@@ -377,20 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ReportService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\ReportService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\ReportService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\ReportService.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\ReportService.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAArwBUAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T15:52:34.243Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 28,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Program.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Program.cs",
@@ -403,7 +488,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 27,
               "Title": "ReportsForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\ReportsForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\ReportsForm.cs",
@@ -415,7 +500,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "ReportsForm.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\ReportsForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\ReportsForm.cs",

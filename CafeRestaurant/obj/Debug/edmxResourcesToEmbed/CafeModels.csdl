@@ -121,6 +121,29 @@
     <Property Name="ISFIRSTLOGIN" Type="Boolean" />
     <Property Name="PASSWORDHASH" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="ORDERSVIEW">
+    <Key>
+      <PropertyRef Name="ORDERDETAILID" />
+      <PropertyRef Name="ORDERID" />
+    </Key>
+    <Property Name="ORDERDETAILID" Type="Int32" Nullable="false" />
+    <Property Name="ORDERID" Type="Int32" Nullable="false" />
+    <Property Name="CUSTOMERID" Type="Int32" />
+    <Property Name="CUSTOMERNAME" Type="String" MaxLength="101" FixedLength="false" Unicode="true" />
+    <Property Name="USERPHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ORDERDATE" Type="DateTime" Precision="0" />
+    <Property Name="TOTALAMOUNT" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="PRODUCTID" Type="Int32" />
+    <Property Name="PRODUCTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCTPRICE" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="QUANTITY" Type="Int32" />
+    <Property Name="SUBTOTAL" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="ORDERTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORDERNOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORDERSTATUS" Type="Int32" />
+    <Property Name="StatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STOCK" Type="Int32" />
+  </EntityType>
   <Association Name="FK_STOCK">
     <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
     <End Role="PRODUCTSTOCK" Type="Self.PRODUCTSTOCK" Multiplicity="0..1" />
@@ -146,69 +169,10 @@
     <EntitySet Name="PRODUCTSTOCK" EntityType="Self.PRODUCTSTOCK" />
     <EntitySet Name="ROLES" EntityType="Self.ROLES" />
     <EntitySet Name="USER" EntityType="Self.USER" />
+    <EntitySet Name="ORDERSVIEW" EntityType="Self.ORDERSVIEW" />
     <AssociationSet Name="FK_STOCK" Association="Self.FK_STOCK">
       <End Role="PRODUCT" EntitySet="PRODUCT" />
       <End Role="PRODUCTSTOCK" EntitySet="PRODUCTSTOCK" />
     </AssociationSet>
-    <EntitySet Name="ORDERSVIEW" EntityType="CafeRestaurantModel.ORDERSVIEW" />
-    <FunctionImport Name="SP_DAILYTOTALAMOUNT" ReturnType="Collection(CafeRestaurantModel.SP_DAILYTOTALAMOUNT_Result)">
-      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
-      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
-    </FunctionImport>
-    <FunctionImport Name="SP_MONTHLYTOTALAMOUNT" ReturnType="Collection(CafeRestaurantModel.SP_MONTHLYTOTALAMOUNT_Result)">
-      <Parameter Name="YEAR" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="SP_DAILYTOTALAMOUNTA" ReturnType="Collection(CafeRestaurantModel.SP_DAILYTOTALAMOUNTA_Result)">
-      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
-      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
-    </FunctionImport>
-    <FunctionImport Name="SP_MONTHLYTOTALAMOUNTA" ReturnType="Collection(CafeRestaurantModel.SP_MONTHLYTOTALAMOUNTA_Result)">
-      <Parameter Name="YEAR" Mode="In" Type="Int32" />
-    </FunctionImport>
   </EntityContainer>
-  <EntityType Name="ORDERSVIEW">
-    <Key>
-      <PropertyRef Name="ORDERDETAILID" />
-      <PropertyRef Name="ORDERID" />
-    </Key>
-    <Property Name="ORDERDETAILID" Type="Int32" Nullable="false" />
-    <Property Name="ORDERID" Type="Int32" Nullable="false" />
-    <Property Name="CUSTOMERID" Type="Int32" />
-    <Property Name="CUSTOMERNAME" Type="String" MaxLength="101" FixedLength="false" Unicode="true" />
-    <Property Name="USERPHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="ORDERDATE" Type="DateTime" Precision="0" />
-    <Property Name="TOTALAMOUNT" Type="Decimal" Precision="8" Scale="2" />
-    <Property Name="PRODUCTID" Type="Int32" />
-    <Property Name="PRODUCTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="PRODUCTPRICE" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="QUANTITY" Type="Int32" />
-    <Property Name="SUBTOTAL" Type="Decimal" Precision="8" Scale="2" />
-    <Property Name="ORDERTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ORDERNOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ORDERSTATUS" Type="Int32" />
-    <Property Name="StatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="STOCK" Type="Int32" />
-  </EntityType>
-  <ComplexType Name="SP_DAILYTOTALAMOUNT_Result">
-    <Property Type="DateTime" Name="OrderDate" Nullable="true" />
-    <Property Type="Decimal" Name="Daily_Amount" Nullable="true" Precision="38" Scale="2" />
-    <Property Type="Int32" Name="Total_Order" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="SP_MONTHLYTOTALAMOUNT_Result">
-    <Property Type="Int32" Name="Year" Nullable="true" />
-    <Property Type="Int32" Name="Month" Nullable="true" />
-    <Property Type="Decimal" Name="MonthlyAmount" Nullable="true" Precision="38" Scale="2" />
-    <Property Type="Int32" Name="SiparisSayisi" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="SP_DAILYTOTALAMOUNTA_Result">
-    <Property Type="DateTime" Name="OrderDate" Nullable="true" />
-    <Property Type="Decimal" Name="DailyAmount" Nullable="true" Precision="38" Scale="2" />
-    <Property Type="Int32" Name="TotalOrder" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="SP_MONTHLYTOTALAMOUNTA_Result">
-    <Property Type="Int32" Name="Year" Nullable="true" />
-    <Property Type="Int32" Name="Month" Nullable="true" />
-    <Property Type="Decimal" Name="MonthlyAmount" Nullable="true" Precision="38" Scale="2" />
-    <Property Type="Int32" Name="TotalOrder" Nullable="true" />
-  </ComplexType>
 </Schema>

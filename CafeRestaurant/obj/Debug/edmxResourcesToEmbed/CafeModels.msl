@@ -134,63 +134,25 @@
     <EntitySetMapping Name="ORDERSVIEW">
       <EntityTypeMapping TypeName="CafeRestaurantModel.ORDERSVIEW">
         <MappingFragment StoreEntitySet="ORDERSVIEW">
-          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
-          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
-          <ScalarProperty Name="ORDERSTATUS" ColumnName="ORDERSTATUS" />
-          <ScalarProperty Name="ORDERNOTE" ColumnName="ORDERNOTE" />
-          <ScalarProperty Name="ORDERTYPE" ColumnName="ORDERTYPE" />
-          <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
-          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
-          <ScalarProperty Name="PRODUCTPRICE" ColumnName="PRODUCTPRICE" />
-          <ScalarProperty Name="PRODUCTNAME" ColumnName="PRODUCTNAME" />
-          <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
-          <ScalarProperty Name="TOTALAMOUNT" ColumnName="TOTALAMOUNT" />
-          <ScalarProperty Name="ORDERDATE" ColumnName="ORDERDATE" />
-          <ScalarProperty Name="USERPHONE" ColumnName="USERPHONE" />
-          <ScalarProperty Name="CUSTOMERNAME" ColumnName="CUSTOMERNAME" />
-          <ScalarProperty Name="CUSTOMERID" ColumnName="CUSTOMERID" />
-          <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
           <ScalarProperty Name="ORDERDETAILID" ColumnName="ORDERDETAILID" />
+          <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
+          <ScalarProperty Name="CUSTOMERID" ColumnName="CUSTOMERID" />
+          <ScalarProperty Name="CUSTOMERNAME" ColumnName="CUSTOMERNAME" />
+          <ScalarProperty Name="USERPHONE" ColumnName="USERPHONE" />
+          <ScalarProperty Name="ORDERDATE" ColumnName="ORDERDATE" />
+          <ScalarProperty Name="TOTALAMOUNT" ColumnName="TOTALAMOUNT" />
+          <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
+          <ScalarProperty Name="PRODUCTNAME" ColumnName="PRODUCTNAME" />
+          <ScalarProperty Name="PRODUCTPRICE" ColumnName="PRODUCTPRICE" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
+          <ScalarProperty Name="ORDERTYPE" ColumnName="ORDERTYPE" />
+          <ScalarProperty Name="ORDERNOTE" ColumnName="ORDERNOTE" />
+          <ScalarProperty Name="ORDERSTATUS" ColumnName="ORDERSTATUS" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="SP_DAILYTOTALAMOUNT" FunctionName="CafeRestaurantModel.Store.SP_DAILYTOTALAMOUNT">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="CafeRestaurantModel.SP_DAILYTOTALAMOUNT_Result">
-          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-          <ScalarProperty Name="Daily_Amount" ColumnName="Daily Amount" />
-          <ScalarProperty Name="Total_Order" ColumnName="Total Order" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_MONTHLYTOTALAMOUNT" FunctionName="CafeRestaurantModel.Store.SP_MONTHLYTOTALAMOUNT">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="CafeRestaurantModel.SP_MONTHLYTOTALAMOUNT_Result">
-          <ScalarProperty Name="Year" ColumnName="Year" />
-          <ScalarProperty Name="Month" ColumnName="Month" />
-          <ScalarProperty Name="MonthlyAmount" ColumnName="MonthlyAmount" />
-          <ScalarProperty Name="SiparisSayisi" ColumnName="SiparisSayisi" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_DAILYTOTALAMOUNTA" FunctionName="CafeRestaurantModel.Store.SP_DAILYTOTALAMOUNTA">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="CafeRestaurantModel.SP_DAILYTOTALAMOUNTA_Result">
-          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-          <ScalarProperty Name="DailyAmount" ColumnName="DailyAmount" />
-          <ScalarProperty Name="TotalOrder" ColumnName="TotalOrder" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_MONTHLYTOTALAMOUNTA" FunctionName="CafeRestaurantModel.Store.SP_MONTHLYTOTALAMOUNTA">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="CafeRestaurantModel.SP_MONTHLYTOTALAMOUNTA_Result">
-          <ScalarProperty Name="Year" ColumnName="Year" />
-          <ScalarProperty Name="Month" ColumnName="Month" />
-          <ScalarProperty Name="MonthlyAmount" ColumnName="MonthlyAmount" />
-          <ScalarProperty Name="TotalOrder" ColumnName="TotalOrder" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

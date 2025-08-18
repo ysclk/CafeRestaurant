@@ -170,113 +170,20 @@ warning 6002: The table/view 'CafeRestaurant.dbo.ORDERSVIEW' does not have a pri
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="SP_DAILYTOTALAMOUNT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="StartDate" Type="date" Mode="In" />
-    <Parameter Name="EndDate" Type="date" Mode="In" />
-  </Function>
-  <Function Name="SP_DAILYTOTALAMOUNTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="StartDate" Type="date" Mode="In" />
-    <Parameter Name="EndDate" Type="date" Mode="In" />
-  </Function>
-  <Function Name="SP_MONTHLYTOTALAMOUNT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="YEAR" Type="int" Mode="In" />
-  </Function>
-  <Function Name="SP_MONTHLYTOTALAMOUNTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="YEAR" Type="int" Mode="In" />
-  </Function>
   <EntityContainer Name="CafeRestaurantModelStoreContainer">
     <EntitySet Name="ORDERSTATUSTYPES" EntityType="Self.ORDERSTATUSTYPES" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ORDERTYPES" EntityType="Self.ORDERTYPES" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="STOCKTRANSACTION" EntityType="Self.STOCKTRANSACTION" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CATEGORY" EntityType="Self.CATEGORY" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [CATEGORY].[CATEGORYID] AS [CATEGORYID], 
-    [CATEGORY].[CATEGORYNAME] AS [CATEGORYNAME], 
-    [CATEGORY].[CATEGORYDESC] AS [CATEGORYDESC]
-    FROM [dbo].[CATEGORY] AS [CATEGORY]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="ORDER" EntityType="Self.ORDER" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [ORDER].[ORDERID] AS [ORDERID], 
-    [ORDER].[CUSTOMERID] AS [CUSTOMERID], 
-    [ORDER].[ORDERDATE] AS [ORDERDATE], 
-    [ORDER].[TOTALAMOUNT] AS [TOTALAMOUNT], 
-    [ORDER].[STAFFID] AS [STAFFID]
-    FROM [dbo].[ORDER] AS [ORDER]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="ORDERDETAIL" EntityType="Self.ORDERDETAIL" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [ORDERDETAIL].[ORDERDETAILID] AS [ORDERDETAILID], 
-    [ORDERDETAIL].[ORDERID] AS [ORDERID], 
-    [ORDERDETAIL].[PRODUCTID] AS [PRODUCTID], 
-    [ORDERDETAIL].[QUANTITY] AS [QUANTITY], 
-    [ORDERDETAIL].[UNITPRICE] AS [UNITPRICE], 
-    [ORDERDETAIL].[SUBTOTAL] AS [SUBTOTAL], 
-    [ORDERDETAIL].[ORDERPAID] AS [ORDERPAID], 
-    [ORDERDETAIL].[ORDERTYPE] AS [ORDERTYPE], 
-    [ORDERDETAIL].[ORDERNOTE] AS [ORDERNOTE], 
-    [ORDERDETAIL].[STAFFID] AS [STAFFID], 
-    [ORDERDETAIL].[ORDERSTATUS] AS [ORDERSTATUS]
-    FROM [dbo].[ORDERDETAIL] AS [ORDERDETAIL]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="PAYMENT" EntityType="Self.PAYMENT" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [PAYMENT].[PAYMENTID] AS [PAYMENTID], 
-    [PAYMENT].[ORDERID] AS [ORDERID], 
-    [PAYMENT].[PAYMENTMETHOD] AS [PAYMENTMETHOD], 
-    [PAYMENT].[PAYMENTAMOUNT] AS [PAYMENTAMOUNT], 
-    [PAYMENT].[PAYMENTDATE] AS [PAYMENTDATE], 
-    [PAYMENT].[PAYMENTSTATU] AS [PAYMENTSTATU]
-    FROM [dbo].[PAYMENT] AS [PAYMENT]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="PRODUCTSTOCK" EntityType="Self.PRODUCTSTOCK" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [PRODUCTSTOCK].[PRODUCT_ID] AS [PRODUCT_ID], 
-    [PRODUCTSTOCK].[STOCK] AS [STOCK]
-    FROM [dbo].[PRODUCTSTOCK] AS [PRODUCTSTOCK]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="ROLES" EntityType="Self.ROLES" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [ROLES].[ROLEID] AS [ROLEID], 
-    [ROLES].[ROLENAME] AS [ROLENAME]
-    FROM [dbo].[ROLES] AS [ROLES]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="USER" EntityType="Self.USER" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [USER].[USERID] AS [USERID], 
-    [USER].[USERNAME] AS [USERNAME], 
-    [USER].[USERSURNAME] AS [USERSURNAME], 
-    [USER].[USERPHONE] AS [USERPHONE], 
-    [USER].[USEREMAIL] AS [USEREMAIL], 
-    [USER].[USERADDRESS] AS [USERADDRESS], 
-    [USER].[USERROLEID] AS [USERROLEID], 
-    [USER].[ISFIRSTLOGIN] AS [ISFIRSTLOGIN], 
-    [USER].[PASSWORDHASH] AS [PASSWORDHASH]
-    FROM [dbo].[USER] AS [USER]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="ORDERSVIEW" EntityType="Self.ORDERSVIEW" store:Type="Views" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [ORDERSVIEW].[ORDERDETAILID] AS [ORDERDETAILID], 
-    [ORDERSVIEW].[ORDERID] AS [ORDERID], 
-    [ORDERSVIEW].[CUSTOMERID] AS [CUSTOMERID], 
-    [ORDERSVIEW].[CUSTOMERNAME] AS [CUSTOMERNAME], 
-    [ORDERSVIEW].[USERPHONE] AS [USERPHONE], 
-    [ORDERSVIEW].[ORDERDATE] AS [ORDERDATE], 
-    [ORDERSVIEW].[TOTALAMOUNT] AS [TOTALAMOUNT], 
-    [ORDERSVIEW].[PRODUCTID] AS [PRODUCTID], 
-    [ORDERSVIEW].[PRODUCTNAME] AS [PRODUCTNAME], 
-    [ORDERSVIEW].[PRODUCTPRICE] AS [PRODUCTPRICE], 
-    [ORDERSVIEW].[QUANTITY] AS [QUANTITY], 
-    [ORDERSVIEW].[SUBTOTAL] AS [SUBTOTAL], 
-    [ORDERSVIEW].[ORDERTYPE] AS [ORDERTYPE], 
-    [ORDERSVIEW].[ORDERNOTE] AS [ORDERNOTE], 
-    [ORDERSVIEW].[ORDERSTATUS] AS [ORDERSTATUS], 
-    [ORDERSVIEW].[StatusCode] AS [StatusCode], 
-    [ORDERSVIEW].[STOCK] AS [STOCK]
-    FROM [dbo].[ORDERSVIEW] AS [ORDERSVIEW]</DefiningQuery>
-    </EntitySet>
+    <EntitySet Name="CATEGORY" EntityType="Self.CATEGORY" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ORDER" EntityType="Self.ORDER" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ORDERDETAIL" EntityType="Self.ORDERDETAIL" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PAYMENT" EntityType="Self.PAYMENT" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PRODUCTSTOCK" EntityType="Self.PRODUCTSTOCK" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ROLES" EntityType="Self.ROLES" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="USER" EntityType="Self.USER" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ORDERSVIEW" EntityType="Self.ORDERSVIEW" store:Type="Views" Schema="dbo" />
     <AssociationSet Name="FK_STOCK" Association="Self.FK_STOCK">
       <End Role="PRODUCT" EntitySet="PRODUCT" />
       <End Role="PRODUCTSTOCK" EntitySet="PRODUCTSTOCK" />

@@ -17,7 +17,7 @@ namespace CafeRestaurant
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ReportsForm());
+            Application.Run(new CategoryForm());
         }
     }
 }

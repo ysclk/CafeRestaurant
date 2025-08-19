@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CafeRestaurant
+namespace CafeRestaurant.Models
 {
     using System;
     using System.Collections.Generic;

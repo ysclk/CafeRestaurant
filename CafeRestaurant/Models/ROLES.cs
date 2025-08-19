@@ -7,14 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CafeRestaurant
+namespace CafeRestaurant.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ORDERTYPES
+    public partial class ROLES
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
+        public int ROLEID { get; set; }
+        public string ROLENAME { get; set; }
     }
 }

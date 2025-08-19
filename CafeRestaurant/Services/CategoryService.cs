@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using CafeRestaurant.Models;
 
 namespace CafeRestaurant.Services
 {

@@ -1,12 +1,7 @@
 ﻿using CafeRestaurant.Services;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using CafeRestaurant.Models;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CafeRestaurant.Forms

@@ -7,17 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CafeRestaurant
+namespace CafeRestaurant.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ORDER
+    public partial class ORDERSTATUSTYPES
     {
-        public int ORDERID { get; set; }
-        public Nullable<int> CUSTOMERID { get; set; }
-        public Nullable<System.DateTime> ORDERDATE { get; set; }
-        public Nullable<decimal> TOTALAMOUNT { get; set; }
-        public Nullable<int> STAFFID { get; set; }
+        public byte StatusID { get; set; }
+        public string StatusCode { get; set; }
     }
 }

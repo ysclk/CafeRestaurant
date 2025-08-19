@@ -7,17 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CafeRestaurant
+namespace CafeRestaurant.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class USER
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int USERID { get; set; }
+        public string USERNAME { get; set; }
+        public string USERSURNAME { get; set; }
+        public string USERPHONE { get; set; }
+        public string USEREMAIL { get; set; }
+        public string USERADDRESS { get; set; }
+        public Nullable<int> USERROLEID { get; set; }
+        public Nullable<bool> ISFIRSTLOGIN { get; set; }
+        public string PASSWORDHASH { get; set; }
     }
 }

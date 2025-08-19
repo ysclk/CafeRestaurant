@@ -1,7 +1,6 @@
 ﻿using CafeRestaurant.Services;
 using System;
-using System.Collections.Generic;
-using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
+using CafeRestaurant.Models;
 using System.Windows.Forms;
 
 namespace CafeRestaurant.Forms

@@ -7,15 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CafeRestaurant
+namespace CafeRestaurant.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class CATEGORY
+    public partial class PRODUCTSTOCK
     {
-        public int CATEGORYID { get; set; }
-        public string CATEGORYNAME { get; set; }
-        public string CATEGORYDESC { get; set; }
+        public int PRODUCT_ID { get; set; }
+        public Nullable<int> STOCK { get; set; }
+    
+        public virtual PRODUCT PRODUCT { get; set; }
     }
 }

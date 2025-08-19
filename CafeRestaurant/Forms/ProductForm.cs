@@ -1,6 +1,7 @@
 ﻿using CafeRestaurant.Services;
 using System;
 using System.Windows.Forms;
+using CafeRestaurant.Models;
 
 namespace CafeRestaurant.Forms
 {

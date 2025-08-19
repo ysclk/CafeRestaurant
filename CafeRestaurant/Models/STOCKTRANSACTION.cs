@@ -7,21 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CafeRestaurant
+namespace CafeRestaurant.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class USER
+    public partial class STOCKTRANSACTION
     {
-        public int USERID { get; set; }
-        public string USERNAME { get; set; }
-        public string USERSURNAME { get; set; }
-        public string USERPHONE { get; set; }
-        public string USEREMAIL { get; set; }
-        public string USERADDRESS { get; set; }
-        public Nullable<int> USERROLEID { get; set; }
-        public Nullable<bool> ISFIRSTLOGIN { get; set; }
-        public string PASSWORDHASH { get; set; }
+        public int STOCKID { get; set; }
+        public int PRODUCTID { get; set; }
+        public int QUANTITY { get; set; }
+        public System.DateTime TRANSACTIONDATE { get; set; }
+        public string REASON { get; set; }
+        public string PERFORMEDBY { get; set; }
     }
 }

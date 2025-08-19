@@ -1,11 +1,12 @@
 ﻿using CafeRestaurant.DTOs;
-using CafeRestaurant.Enums;
 using CafeRestaurant.Services;
 using System;
+using CafeRestaurant.Models;
 using System.Collections.Generic;
 using System.Data;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CafeRestaurant.Forms
@@ -110,7 +111,7 @@ namespace CafeRestaurant.Forms
         //Comboboxes OrderType and IsPaid fill
         private void SetupOrderTypeAndPaymentComboBoxes()
         {
-            cmbOrdertype.DataSource = Enum.GetValues(typeof(OrderType));
+            cmbOrdertype.DataSource = Enum.GetValues(typeof(Models.Enums.OrderType));
             //cmbPaid.DataSource = Enum.GetValues(typeof(PaymentStatus));
         }
 

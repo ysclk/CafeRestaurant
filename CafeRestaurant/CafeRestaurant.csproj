@@ -83,22 +83,22 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CafeModels.Context.cs">
+    <Compile Include="Models\CafeModels.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CafeModels.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="CafeModels.cs">
+    <Compile Include="Models\CafeModels.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="CafeModels.Designer.cs">
+    <Compile Include="Models\CafeModels.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CafeModels.edmx</DependentUpon>
     </Compile>
-    <Compile Include="CATEGORY.cs">
+    <Compile Include="Models\CATEGORY.cs">
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
     <Compile Include="DTOs\AuthResult.cs" />
@@ -109,8 +109,6 @@
     <Compile Include="DTOs\ProductDTO.cs" />
     <Compile Include="DTOs\UserDTO.cs" />
     <Compile Include="DTOs\UserListItem.cs" />
-    <Compile Include="Enums\OrderType.cs" />
-    <Compile Include="Enums\PaymentStatus.cs" />
     <Compile Include="Forms\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,33 +181,34 @@
     <Compile Include="Forms\UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ORDER.cs">
+    <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\ORDER.cs">
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="ORDERDETAIL.cs">
+    <Compile Include="Models\ORDERDETAIL.cs">
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="ORDERSTATUSTYPES.cs">
+    <Compile Include="Models\ORDERSTATUSTYPES.cs">
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="ORDERSVIEW.cs">
+    <Compile Include="Models\ORDERSVIEW.cs">
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="ORDERTYPES.cs">
+    <Compile Include="Models\ORDERTYPES.cs">
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="PAYMENT.cs">
+    <Compile Include="Models\PAYMENT.cs">
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="PRODUCT.cs">
+    <Compile Include="Models\PRODUCT.cs">
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="PRODUCTSTOCK.cs">
+    <Compile Include="Models\PRODUCTSTOCK.cs">
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ROLES.cs">
+    <Compile Include="Models\ROLES.cs">
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Services\AuthService.cs" />
@@ -228,13 +227,13 @@
     <Compile Include="Services\StockTransactionService2.cs" />
     <Compile Include="Services\UserroleService.cs" />
     <Compile Include="Services\UserService.cs" />
-    <Compile Include="STOCKTRANSACTION.cs">
+    <Compile Include="Models\STOCKTRANSACTION.cs">
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagrams.cs">
+    <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="USER.cs">
+    <Compile Include="Models\USER.cs">
       <DependentUpon>CafeModels.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\AdminForm.resx">
@@ -282,11 +281,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="CafeModels.edmx">
+    <EntityDeploy Include="Models\CafeModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CafeModels.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="CafeModels.edmx.diagram">
+    <None Include="Models\CafeModels.edmx.diagram">
       <DependentUpon>CafeModels.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -308,6 +307,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Tests\" />
+    <Folder Include="Utilities\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -322,12 +325,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CafeModels.Context.tt">
+    <Content Include="Models\CafeModels.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CafeModels.edmx</DependentUpon>
       <LastGenOutput>CafeModels.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="CafeModels.tt">
+    <Content Include="Models\CafeModels.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CafeModels.edmx</DependentUpon>
       <LastGenOutput>CafeModels.cs</LastGenOutput>

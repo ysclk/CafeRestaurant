@@ -7,14 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CafeRestaurant
+namespace CafeRestaurant.Models
 {
     using System;
     using System.Collections.Generic;
+    using CafeRestaurant.Models;
     
-    public partial class ORDERSTATUSTYPES
+    public partial class CATEGORY
     {
-        public byte StatusID { get; set; }
-        public string StatusCode { get; set; }
+        public int CATEGORYID { get; set; }
+        public string CATEGORYNAME { get; set; }
+        public string CATEGORYDESC { get; set; }
     }
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CafeRestaurant.Forms
@@ -21,14 +14,7 @@ namespace CafeRestaurant.Forms
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Handles form load event. Currently unused but kept for future initialization.
-        /// </summary>
-        private void OrderActionForm_Load(object sender, EventArgs e)
-        {
-            // You can initialize form controls here if needed
-        }
-
+     
         /// <summary>
         /// Handles Delivered button click.
         /// Invokes the OnDeliveredClicked event and closes the form.

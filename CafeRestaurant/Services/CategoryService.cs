@@ -1,10 +1,17 @@
-﻿using System.Linq;
-using CafeRestaurant.Models;
+﻿using CafeRestaurant.Models;
+using System.Data.Entity;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace CafeRestaurant.Services
 {
-    internal class CategoryService : BaseService<CATEGORY>
+
+    public class CategoryService : BaseService<CATEGORY>
     {
+       
+        public CategoryService(CafeRestaurantEntities db) : base(db)
+        {
+        }
 
         /// <summary>
         /// Returns the category name for a given category ID.

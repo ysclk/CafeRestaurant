@@ -33,10 +33,10 @@ namespace CafeRestaurant.Forms
         /// <summary>
         /// Loads daily report data between the given start and end dates.
         /// </summary>
-        private void LoadDailyReport(DateTime startDate, DateTime endDate)
+        private async void LoadDailyReport(DateTime startDate, DateTime endDate)
         {
-            _dataReport = _reportService.GetDailyTotalAmountFromSP(startDate, endDate);
-            dgReport.DataSource = _dataReport;
+            var dt = await _reportService.GetDailyTotalAmountFromSPAsync(startDate, endDate);
+            dgReport.DataSource = dt;
         }
 
         /// <summary>
@@ -71,13 +71,11 @@ namespace CafeRestaurant.Forms
         /// Handles the Monthly Report button click.
         /// Loads monthly aggregated data based on the selected year.
         /// </summary>
-        private void btnMonthly_Click(object sender, EventArgs e)
+        private async void btnMonthly_Click(object sender, EventArgs e)
         {
             if (cmbYears.SelectedItem == null) return;
-
             int selectedYear = (int)cmbYears.SelectedItem;
-            DataTable monthlyReport = _reportService.GetMonthlyTotalAmountFromSP(selectedYear);
-
+            DataTable monthlyReport = await _reportService.GetMonthlyTotalAmountFromSPAsync(selectedYear);     
             dgReport.DataSource = monthlyReport;
         }
     }

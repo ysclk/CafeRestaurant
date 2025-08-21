@@ -49,7 +49,7 @@ namespace CafeRestaurant.Forms
 
             if (_userId != 0)
             {
-                _authService.ChangePassword(_userId, newPassword, confirmPassword);
+                _authService.ChangePasswordAsync(_userId, newPassword, confirmPassword);
                 MessageBox.Show("Password changed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close(); // Close the form after success
             }

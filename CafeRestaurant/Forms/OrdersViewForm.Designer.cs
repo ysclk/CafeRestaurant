@@ -242,7 +242,7 @@
             this.cmbOrderStatus.Name = "cmbOrderStatus";
             this.cmbOrderStatus.Size = new System.Drawing.Size(252, 41);
             this.cmbOrderStatus.TabIndex = 46;
-            this.cmbOrderStatus.SelectedIndexChanged += new System.EventHandler(this.cmbOrderStatus_SelectedIndexChanged);
+           
             // 
             // label10
             // 

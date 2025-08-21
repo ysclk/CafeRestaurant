@@ -8,20 +8,21 @@ using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Threading.Tasks;
 
 namespace CafeRestaurant.Forms
 {
     public partial class OrderForm : Form
     {
 
-        private readonly CategoryService cs = new CategoryService();
-        private readonly OrderService orderService = new OrderService();
-        private readonly OrderDetailService orderDetailService = new OrderDetailService();
-        private readonly ProductService ps = new ProductService();
-        private readonly UserService us = new UserService();
-        private readonly StockTransactionService2 stockTransService  = new StockTransactionService2();
+        private readonly CategoryService cs;
+        private readonly OrderService orderService = new OrderService(new CafeRestaurantEntities());
+        private readonly OrderDetailService orderDetailService; 
+        private readonly ProductService ps;
+        private readonly UserService us = new UserService(new CafeRestaurantEntities());
+        private readonly StockTransactionService2 stockTransService  = new StockTransactionService2(new CafeRestaurantEntities());
         private readonly CafeRestaurantEntities db = new CafeRestaurantEntities();
-        private readonly StockService stockService = new StockService();
+        private readonly StockService stockService; 
 
         private readonly DataTable dtOrder = new DataTable();
         private readonly DataGridViewButtonColumn btnIncrease = new DataGridViewButtonColumn();
@@ -36,6 +37,10 @@ namespace CafeRestaurant.Forms
         public OrderForm(int _userId)
         {
             InitializeComponent();
+            cs = new CategoryService(new CafeRestaurantEntities());
+            ps = new ProductService(new CafeRestaurantEntities());
+            stockService = new StockService(new CafeRestaurantEntities());
+            orderDetailService = new OrderDetailService(new CafeRestaurantEntities()); ;
             this.userId = _userId;
             //CAST(getdate() AS DATE)
             // Initializes form elements and default settings
@@ -101,9 +106,9 @@ namespace CafeRestaurant.Forms
         }
 
         //Customer Combobox fill
-        private void SetupCustomerComboBox()
+        private async void SetupCustomerComboBox()
         {
-            cmbCustomer.DataSource = us.UserSameRoleList(3);
+            cmbCustomer.DataSource = await us.UserSameRoleListAsync(3);
             cmbCustomer.DisplayMember = "Fullname";
             cmbCustomer.ValueMember = "USERID";
         }
@@ -116,9 +121,9 @@ namespace CafeRestaurant.Forms
         }
 
         //Category Combobox fill
-        private void SetupCategoryComboBox()
+        private async void SetupCategoryComboBox()
         {
-            var categories = cs.GetAll();
+            var categories =await cs.GetAllAsync();
             categories.Insert(0, new CATEGORY { CATEGORYID = 0, CATEGORYNAME = "-- Select --" });
 
             cmbCategories.DataSource = categories;
@@ -128,13 +133,13 @@ namespace CafeRestaurant.Forms
         }
 
        
-        private void cmbCategories_SelectedIndexChanged(object sender, EventArgs e)
+        private async void cmbCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbCategories.SelectedIndex > 0)
             {
                 int categoryId = Convert.ToInt32(cmbCategories.SelectedValue);
-                var products = ps.GetByCategory(categoryId);
-                products.Insert(0, new PRODUCT { PRODUCTID = 0, PRODUCTNAME = "--Select--" });
+                var products = await ps.GetByCategoryAsync(categoryId);
+           //     products.InsertAsync(0, new PRODUCT { PRODUCTID = 0, PRODUCTNAME = "--Select--" });
 
                 cmbProducts.DataSource = products;
                 cmbProducts.DisplayMember = "PRODUCTNAME";
@@ -143,13 +148,13 @@ namespace CafeRestaurant.Forms
         }
 
 
-        private void cmbProducts_SelectedIndexChanged(object sender, EventArgs e)
+        private async void cmbProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbProducts.SelectedIndex > 0)
             {
                 int productId = (int)cmbProducts.SelectedValue;
-                ndPrice.Value = ps.GetPrice(productId);
-                ndCurrent.Value = stockService.GetStock(productId);   
+                ndPrice.Value = Convert.ToDecimal(await ps.GetPriceAsync(productId));
+                ndCurrent.Value = Convert.ToDecimal(stockService.GetStockAsync(productId));   
             }
         }
 
@@ -163,7 +168,7 @@ namespace CafeRestaurant.Forms
         }
 
         //In Order and OrderDetail saving die Inputs
-        private void btnCatSave_Click(object sender, EventArgs e)
+        private async Task btnCatSave_Click(object sender, EventArgs e)
         {
             
             cmbCustomer.Enabled = true;
@@ -179,7 +184,7 @@ namespace CafeRestaurant.Forms
                     CUSTOMERID = (int)cmbCustomer.SelectedValue,
                     TOTALAMOUNT = Convert.ToDecimal(lblTotalAmount.Text)
                 };
-                orderService.Insert(order);
+                await orderService.InsertAsync(order);
 
                 for (int i = 0; i < dgOrders.Rows.Count - 1; i++)
                 {
@@ -196,10 +201,10 @@ namespace CafeRestaurant.Forms
                         STAFFID = userId,
                         ORDERSTATUS = 1
                     };
-                    orderDetailService.Insert(detail);
+                    await orderDetailService.InsertAsync(detail);
                     
                     
-                    var productStockEx = stockService.ProductStockByProductid((int)dgOrders.Rows[i].Cells["PRODUCTID"].Value);
+                    var productStockEx = await stockService.ProductStockByProductIdAsync((int)dgOrders.Rows[i].Cells["PRODUCTID"].Value);
                     
                     if (productStockEx != null) 
                     {
@@ -207,7 +212,7 @@ namespace CafeRestaurant.Forms
                         productStockEx.STOCK = stockProduct - (int)dgOrders.Rows[i].Cells["QUANTITY"].Value;
 
                     }
-                    stockService.Update(productStockEx);
+                    await stockService.UpdateAsync(productStockEx);
                     ndCurrent.Value = ndCurrent.Value - (int)dgOrders.Rows[i].Cells["QUANTITY"].Value;
                 }
                 
@@ -318,7 +323,7 @@ namespace CafeRestaurant.Forms
         private void btnOrderlistForDay_Click(object sender, EventArgs e)
         {
 
-            dgOrders.DataSource = orderService.UpdateOrderWithDetails(custPhone, DateTime.Parse("2025-07-18"));
+            dgOrders.DataSource = orderService.UpdateOrderWithDetailsAsync(custPhone, DateTime.Parse("2025-07-18"));
         }
       
         private void cmbCustomer_SelectedIndexChanged(object sender, EventArgs e)
@@ -333,7 +338,7 @@ namespace CafeRestaurant.Forms
 
 
         private int tiklama = 0;
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private async void btnUpdate_Click(object sender, EventArgs e)
         {
 
             var transaction = db.Database.BeginTransaction();
@@ -343,7 +348,7 @@ namespace CafeRestaurant.Forms
                 {
                     if (txbCustomerPhone.Text.Trim() != string.Empty)
                     {
-                        var orderdetails = orderService.UpdateOrder(txbCustomerPhone.Text, 3, DateTime.Now); //Convert.ToDateTime("2025-07-30"));
+                        var orderdetails = orderService.UpdateOrderAsync(txbCustomerPhone.Text, 3, DateTime.Now); //Convert.ToDateTime("2025-07-30"));
                         dgOrders.AutoGenerateColumns = false;
                         if (orderdetails != null)
                         {
@@ -367,23 +372,23 @@ namespace CafeRestaurant.Forms
                     if (dgOrders.Rows.Count != 0)
                     {
                         int orderId = Convert.ToInt32(dgOrders.Rows[0].Cells["ORDERID"].Value);
-                        var orderEx = orderService.GetById(orderId);
+                        var orderEx =await orderService.GetByIdAsync(orderId);
 
                         if (orderEx != null)
                         {
                             orderEx.TOTALAMOUNT = Convert.ToDecimal(lblTotalAmount.Text);
                         }
-                        orderService.Update(orderEx);
+                        await orderService.UpdateAsync(orderEx);
 
                         for (int i = 0; i < dgOrders.Rows.Count; i++)
                         {
                             int orderDetailId = Convert.ToInt32(dgOrders.Rows[i].Cells["ORDERDETAILID"].Value);
-                            var orderDetailEx = orderDetailService.GetById(orderDetailId);
+                            var orderDetailEx = await orderDetailService.GetByIdAsync(orderDetailId);
                             if (orderDetailEx != null)
                             {
                                 orderDetailEx.QUANTITY = Convert.ToInt32(dgOrders.Rows[i].Cells["QUANTITY"].Value);
                             }
-                            orderDetailService.Update(orderDetailEx);
+                            await orderDetailService.UpdateAsync(orderDetailEx);
 
                             var stockTransaction = new STOCKTRANSACTION
                             {
@@ -394,7 +399,7 @@ namespace CafeRestaurant.Forms
                                 PERFORMEDBY = "Ali Veli"
 
                             };
-                            stockTransService.Insert(stockTransaction);
+                            await stockTransService.InsertAsync(stockTransaction);
 
                         }
                     }

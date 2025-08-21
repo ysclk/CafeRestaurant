@@ -7,8 +7,8 @@ namespace CafeRestaurant.Forms
 {
     public partial class ProductForm : Form
     {
-        private readonly ProductService ps = new ProductService();
-        private readonly CategoryService cts = new CategoryService();
+        private readonly ProductService ps = new ProductService(new CafeRestaurantEntities());
+        private readonly CategoryService cts = new CategoryService(new CafeRestaurantEntities());
         private readonly StockTransactionService sts = new StockTransactionService();
         private readonly CafeRestaurantEntities db = new CafeRestaurantEntities();
 
@@ -18,15 +18,15 @@ namespace CafeRestaurant.Forms
             InitializeFormData();
         }
 
-        private void InitializeFormData()
+        private async void InitializeFormData()
         {
             // Populate ComboBox with category data
-            cbCategories.DataSource = cts.GetAll();
+            cbCategories.DataSource = await cts.GetAllAsync();
             cbCategories.DisplayMember = "CATEGORYNAME";
             cbCategories.ValueMember = "CATEGORYID";
 
             // Populate DataGridView with product list (including category info)
-            dgProdList.DataSource = ps.GetAllWithCategory();
+            dgProdList.DataSource = await ps.GetAllWithCategoryAsync();
 
             // Hide internal ID columns
             dgProdList.Columns["CATEGORYID"].Visible = false;
@@ -39,7 +39,7 @@ namespace CafeRestaurant.Forms
             dgProdList.Columns[4].HeaderText = "Stock";
         }
 
-        private void btnProdSave_Click(object sender, EventArgs e)
+        private async void btnProdSave_Click(object sender, EventArgs e)
         {
             using (var transaction = db.Database.BeginTransaction())
             {
@@ -54,7 +54,7 @@ namespace CafeRestaurant.Forms
                         STOCK = Convert.ToInt32(txbProStock.Text)
                     };
 
-                    ps.Insert(newProduct);
+                    await ps.InsertAsync(newProduct);
                     MessageBox.Show("Product inserted successfully!");
 
                     // Log stock transaction (starting quantity)
@@ -81,10 +81,10 @@ namespace CafeRestaurant.Forms
             }
         }
 
-        private void btnProdUpt_Click(object sender, EventArgs e)
+        private async void btnProdUpt_Click(object sender, EventArgs e)
         {
             var prodId = Convert.ToInt32(lblSifre.Text);
-            var prodEx = ps.GetById(prodId);
+            var prodEx = await ps.GetByIdAsync(prodId);
 
             if (prodEx != null)
             {
@@ -96,7 +96,7 @@ namespace CafeRestaurant.Forms
 
                 try
                 {
-                    ps.Update(prodEx);
+                    await ps.UpdateAsync(prodEx);
                     MessageBox.Show("Product updated!");
                     RefreshForm();
                 }
@@ -107,13 +107,13 @@ namespace CafeRestaurant.Forms
             }
         }
 
-        private void btnProdDelete_Click(object sender, EventArgs e)
+        private async void btnProdDelete_Click(object sender, EventArgs e)
         {
             var prodId = Convert.ToInt32(lblSifre.Text);
 
             try
             {
-                ps.Delete(prodId);
+                await ps.DeleteAsync(prodId);
                 MessageBox.Show("Product deleted!");
                 RefreshForm();
             }
@@ -155,7 +155,7 @@ namespace CafeRestaurant.Forms
         // Refresh DataGridView and clear input fields
         private void RefreshForm()
         {
-            dgProdList.DataSource = ps.GetAllWithCategory();
+            dgProdList.DataSource = ps.GetAllWithCategoryAsync();
             txbProName.Clear();
             txbProPrice.Clear();
             txbProStock.Clear();

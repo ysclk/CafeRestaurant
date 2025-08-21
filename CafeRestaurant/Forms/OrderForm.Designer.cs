@@ -194,7 +194,7 @@
             this.btnCatSave.Size = new System.Drawing.Size(180, 42);
             this.btnCatSave.TabIndex = 16;
             this.btnCatSave.Text = "Save Order";
-            this.btnCatSave.Click += new System.EventHandler(this.btnCatSave_Click);
+       
             // 
             // ndPrice
             // 

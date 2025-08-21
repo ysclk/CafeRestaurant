@@ -1,15 +1,19 @@
 ﻿using System.Collections.Generic;
-using System.Deployment.Internal;
-using System.Runtime.InteropServices;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace CafeRestaurant.Services
 {
-    internal interface IBaseService<T> where T : class
+    public interface IBaseService<T> where T : class
     {
-        List<T> GetAll();
-        T GetById(int id );
-        void Insert(T entity);
-        void Delete(int id);
-        void Update(T entity);
+        Task<List<T>> GetAllAsync(CancellationToken ct = default);
+        Task<T> GetByIdAsync(int id, CancellationToken ct = default); // null dönecekse class zaten nullable
+        Task InsertAsync(T entity, CancellationToken ct = default);
+        Task DeleteAsync(int id, CancellationToken ct = default);
+        Task UpdateAsync(T entity, CancellationToken ct = default);
+
+
+
     }
 }
+

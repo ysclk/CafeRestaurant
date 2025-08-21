@@ -1,45 +1,50 @@
-﻿using System;
+﻿using CafeRestaurant.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using CafeRestaurant.Models;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CafeRestaurant.Services
 {
-    internal class OrderDetailService : BaseService<ORDERDETAIL>
+    public class OrderDetailService : BaseService<ORDERDETAIL>
     {
+        public OrderDetailService(CafeRestaurantEntities db) : base(db)
+        {
+        }
+
+
         /// <summary>
         /// Marks an order detail as delivered by setting its status to 2.
         /// </summary>
         /// <param name="orderDetailId">The ID of the order detail to update.</param>
-        public void MarkOrderAsDelivered(int orderDetailId)
+        public async Task MarkOrderAsDeliveredAsync(int orderDetailId)
         {
-            var order = db.ORDERDETAIL.FirstOrDefault(o => o.ORDERDETAILID == orderDetailId);
+            var order = await db.ORDERDETAIL
+                                .FirstOrDefaultAsync(o => o.ORDERDETAILID == orderDetailId);
 
             if (order == null)
                 throw new Exception("Order not found.");
 
-            order.ORDERSTATUS = 2; // Status 2 = Delivered
-            db.SaveChanges();
+            order.ORDERSTATUS = 2; // Delivered
+            await db.SaveChangesAsync();
         }
 
         /// <summary>
-        /// Cancels an order by setting its status to 3 and shows a confirmation message.
+        /// Cancels an order by setting its status to 3.
         /// </summary>
         /// <param name="orderDetailId">The ID of the order detail to cancel.</param>
-        public void CancelOrder(int orderDetailId)
+        public async Task CancelOrderAsync(int orderDetailId)
         {
-            var order = db.ORDERDETAIL.FirstOrDefault(o => o.ORDERDETAILID == orderDetailId);
+            var order = await db.ORDERDETAIL
+                                .FirstOrDefaultAsync(o => o.ORDERDETAILID == orderDetailId);
 
             if (order == null)
                 throw new Exception("Order not found.");
 
-            order.ORDERSTATUS = 3; // Status 3 = Canceled
-            db.SaveChanges();
-
-            // Notify the user that the order has been canceled
-            MessageBox.Show("Order has been canceled.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            order.ORDERSTATUS = 3; // Canceled
+            await db.SaveChangesAsync();
         }
     }
 }

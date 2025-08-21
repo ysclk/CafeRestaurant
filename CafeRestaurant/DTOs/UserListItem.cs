@@ -11,7 +11,7 @@ namespace CafeRestaurant.DTOs
     /// Represents a simplified user item for display in a list,
     /// including the user's full name, ID, and phone number.
     /// </summary>
-    internal class UserListItem
+    public class UserListItem
     {
         public string Fullname { get; set; }
         public int USERID { get; set; }

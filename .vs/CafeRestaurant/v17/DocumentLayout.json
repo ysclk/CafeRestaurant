@@ -3,104 +3,124 @@
   "WorkspaceRootPath": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\forms\\orderform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\orderform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\models\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\models\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.Old.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.Old.csproj|solutionrelative:caferestaurant\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\forms\\productform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\productform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\userroleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\userroleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\forms\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\forms\\categoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\categoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\forms\\userform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\userform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\stocktransactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\stocktransactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\orderdetailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\orderdetailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\orderstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\orderstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\stocktransactionservice2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\stocktransactionservice2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\ordersviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\ordersviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\stockservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\stockservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\forms\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\forms\\ordersviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\ordersviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\forms\\ordersviewform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\ordersviewform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.Old.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.Old.csproj|solutionrelative:caferestaurant\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\forms\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\forms\\orderform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\orderform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\forms\\productform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\productform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\forms\\userform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\userform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\ibaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\ibaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|c:\\users\\zumra\\source\\repos\\caferestaurant\\caferestaurant\\forms\\categoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\categoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\forms\\resetpasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\resetpasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\forms\\reportsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\reportsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\forms\\orderform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\orderform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\forms\\productform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\productform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\forms\\userform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\userform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\forms\\passwordchangeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\passwordchangeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\forms\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\forms\\dashboardadminform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\dashboardadminform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\forms\\orderform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\orderform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\forms\\dashboardadminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\forms\\dashboardadminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\caferestaurant\\dtos\\userlistitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{706AE8C0-F6AE-4E09-A559-58A07C3E1707}|CafeRestaurant\\CafeRestaurant.csproj|solutionrelative:caferestaurant\\dtos\\userlistitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -110,7 +130,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -126,327 +146,381 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Enums.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Models\\Enums.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Models\\Enums.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Models\\Enums.cs",
-              "RelativeToolTip": "CafeRestaurant\\Models\\Enums.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T12:32:42.142Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Program.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Program.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Program.cs",
-              "RelativeToolTip": "CafeRestaurant\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T12:12:50.664Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ReportService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\ReportService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\ReportService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\ReportService.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\ReportService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAhwAIAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:46:54.017Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "CategoryForm.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\CategoryForm.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\CategoryForm.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\CategoryForm.cs",
-              "RelativeToolTip": "CafeRestaurant\\Forms\\CategoryForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:46:45.431Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AdminForm.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\AdminForm.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\AdminForm.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\AdminForm.cs",
-              "RelativeToolTip": "CafeRestaurant\\Forms\\AdminForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:46:34.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserroleService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\UserroleService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\UserroleService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\UserroleService.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\UserroleService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:46:17.912Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "ProductForm.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\ProductForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\ProductForm.cs",
               "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\ProductForm.cs",
               "RelativeToolTip": "CafeRestaurant\\Forms\\ProductForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAASwBcAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:46:06.128Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OrderForm.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrderForm.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\OrderForm.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrderForm.cs",
-              "RelativeToolTip": "CafeRestaurant\\Forms\\OrderForm.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAASwHEAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:37:22.984Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UserForm.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\UserForm.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\UserForm.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\UserForm.cs",
-              "RelativeToolTip": "CafeRestaurant\\Forms\\UserForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:47:05.026Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\App.config",
-              "RelativeDocumentMoniker": "CafeRestaurant\\App.config",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\App.config",
-              "RelativeToolTip": "CafeRestaurant\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-08-18T12:57:50.233Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BaseService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\BaseService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\BaseService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\BaseService.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\BaseService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:41:50.327Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\AuthService.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\AuthService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:47:13.415Z",
+              "WhenOpened": "2025-08-20T20:03:51.131Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "StockTransactionService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\StockTransactionService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\StockTransactionService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\StockTransactionService.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\StockTransactionService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAcAAAAAAAAAA==",
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\AuthService.cs",
+              "RelativeToolTip": "CafeRestaurant\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:45:49.762Z",
+              "WhenOpened": "2025-08-20T15:36:39.368Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "OrderService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\OrderService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderService.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\OrderService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "OrderForm.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrderForm.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\OrderForm.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrderForm.cs",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\OrderForm.cs",
+              "ViewState": "AgIAALEAAAAAAAAAAAAtwJMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:45:20.132Z",
+              "WhenOpened": "2025-08-20T15:34:38.897Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "OrderDetailService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderDetailService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\OrderDetailService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderDetailService.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\OrderDetailService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "OrdersViewForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrdersViewForm.Designer.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\OrdersViewForm.Designer.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrdersViewForm.Designer.cs",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\OrdersViewForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:45:05.169Z",
+              "WhenOpened": "2025-08-21T11:37:21.609Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "OrderStatusService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderStatusService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\OrderStatusService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderStatusService.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\OrderStatusService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:44:51.78Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\UserService.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\UserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:44:37.492Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "StockTransactionService2.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\StockTransactionService2.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\StockTransactionService2.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\StockTransactionService2.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\StockTransactionService2.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:44:22.439Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 0,
               "Title": "OrdersViewService.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrdersViewService.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Services\\OrdersViewService.cs",
               "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrdersViewService.cs",
               "RelativeToolTip": "CafeRestaurant\\Services\\OrdersViewService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAhwBYAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:44:08.594Z",
+              "WhenOpened": "2025-08-21T11:10:36.236Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CategoryService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\CategoryService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\CategoryService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\CategoryService.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\CategoryService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA+AAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "BaseService.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\BaseService.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\BaseService.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\BaseService.cs",
+              "RelativeToolTip": "CafeRestaurant\\Services\\BaseService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAewBcAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:36:07.313Z",
+              "WhenOpened": "2025-08-21T11:20:10.905Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "StockService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\StockService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\StockService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\StockService.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\StockService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "AdminForm.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\AdminForm.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\AdminForm.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\AdminForm.cs",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\AdminForm.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwK8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:43:49.226Z",
+              "WhenOpened": "2025-08-20T15:22:32.46Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\ProductService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\ProductService.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\ProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:43:32.825Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 2,
               "Title": "OrdersViewForm.cs",
               "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrdersViewForm.cs",
               "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\OrdersViewForm.cs",
               "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrdersViewForm.cs",
               "RelativeToolTip": "CafeRestaurant\\Forms\\OrdersViewForm.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAowHoAAABcAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAawFUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:42:19.875Z",
+              "WhenOpened": "2025-08-20T15:36:15.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ReportService.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\ReportService.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\ReportService.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\ReportService.cs",
+              "RelativeToolTip": "CafeRestaurant\\Services\\ReportService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T11:29:46.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\ProductService.cs",
+              "RelativeToolTip": "CafeRestaurant\\Services\\ProductService.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T11:29:48.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserForm.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\UserForm.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\UserForm.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\UserForm.cs",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\UserForm.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAawFgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T19:58:41.013Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\AdminForm.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\AdminForm.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\AdminForm.cs [Design]",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\AdminForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T11:46:43.067Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\OrderService.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\OrderService.cs",
+              "RelativeToolTip": "CafeRestaurant\\Services\\OrderService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAjwA8AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T15:56:42.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Program.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Program.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Program.cs",
+              "RelativeToolTip": "CafeRestaurant\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T11:40:10.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IBaseService.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\IBaseService.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\IBaseService.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\IBaseService.cs",
+              "RelativeToolTip": "CafeRestaurant\\Services\\IBaseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T11:23:30.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CategoryForm.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\CategoryForm.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\CategoryForm.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\CategoryForm.cs",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\CategoryForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T11:23:40.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UserForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\UserForm.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\UserForm.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\UserForm.cs [Design]",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\UserForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T20:03:00.108Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ReportsForm.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\ReportsForm.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\ReportsForm.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\ReportsForm.cs",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\ReportsForm.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAawEsAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T15:54:10.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ResetPasswordForm.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\ResetPasswordForm.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\ResetPasswordForm.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\ResetPasswordForm.cs",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\ResetPasswordForm.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAhwC0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T20:00:56.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ProductForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\ProductForm.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\ProductForm.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\ProductForm.cs [Design]",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\ProductForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T20:03:49.403Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "OrderForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrderForm.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\OrderForm.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrderForm.cs [Design]",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\OrderForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T20:04:19.918Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "PasswordChangeForm.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\PasswordChangeForm.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\PasswordChangeForm.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\PasswordChangeForm.cs",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\PasswordChangeForm.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAhwDMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T19:59:32.404Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "DashboardAdminForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\DashboardAdminForm.Designer.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\DashboardAdminForm.Designer.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\DashboardAdminForm.Designer.cs",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\DashboardAdminForm.Designer.cs",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAhwL4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T15:41:23.51Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "OrderForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrderForm.Designer.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\OrderForm.Designer.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\OrderForm.Designer.cs",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\OrderForm.Designer.cs",
+              "ViewState": "AgIAALEAAAAAAAAAAAAhwMQAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T15:47:08.763Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 23,
-              "Title": "CATEGORY.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Models\\CATEGORY.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Models\\CATEGORY.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Models\\CATEGORY.cs",
-              "RelativeToolTip": "CafeRestaurant\\Models\\CATEGORY.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\LoginForm.cs",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\LoginForm.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAhwCoAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:39:14.364Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-20T15:54:53.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "LoginForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\LoginForm.Designer.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\LoginForm.Designer.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\LoginForm.Designer.cs",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\LoginForm.Designer.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAhwGoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T15:56:06.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "UserDTO.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\DTOs\\UserDTO.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\DTOs\\UserDTO.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\DTOs\\UserDTO.cs",
+              "RelativeToolTip": "CafeRestaurant\\DTOs\\UserDTO.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T15:21:04.52Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 24,
-              "Title": "CategoryService.cs",
-              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\CategoryService.cs",
-              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\CategoryService.cs",
-              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\CategoryService.cs",
-              "RelativeToolTip": "CafeRestaurant\\Services\\CategoryService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Services\\UserService.cs",
+              "RelativeToolTip": "CafeRestaurant\\Services\\UserService.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAqwDIAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T12:45:28.629Z"
+              "WhenOpened": "2025-08-19T11:44:37.492Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "UserListItem.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\DTOs\\UserListItem.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\DTOs\\UserListItem.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\DTOs\\UserListItem.cs",
+              "RelativeToolTip": "CafeRestaurant\\DTOs\\UserListItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T15:22:11.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "DashboardAdminForm.cs",
+              "DocumentMoniker": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\DashboardAdminForm.cs",
+              "RelativeDocumentMoniker": "CafeRestaurant\\Forms\\DashboardAdminForm.cs",
+              "ToolTip": "C:\\Users\\zumra\\source\\repos\\CafeRestaurant\\CafeRestaurant\\Forms\\DashboardAdminForm.cs",
+              "RelativeToolTip": "CafeRestaurant\\Forms\\DashboardAdminForm.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T15:33:26.535Z"
             }
           ]
         }

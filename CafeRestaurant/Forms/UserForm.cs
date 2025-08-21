@@ -7,11 +7,12 @@ namespace CafeRestaurant.Forms
 {
     public partial class UserForm : Form
     {
-        private readonly UserService _userService = new UserService();
-        private readonly UserroleService _userroleService = new UserroleService();
+        private readonly UserService _userService = new UserService(new CafeRestaurantEntities());
+        private readonly UserroleService _userroleService; 
 
         public UserForm()
         {
+            _userroleService = new UserroleService(new CafeRestaurantEntities());
             InitializeComponent();
             InitializeRoleComboBox();
             LoadUserList();
@@ -20,9 +21,9 @@ namespace CafeRestaurant.Forms
         /// <summary>
         /// Initializes the role ComboBox with role data.
         /// </summary>
-        private void InitializeRoleComboBox()
+        private async void InitializeRoleComboBox()
         {
-            cbRole.DataSource = _userroleService.GetAll();
+            cbRole.DataSource = await _userroleService.GetAllAsync();
             cbRole.DisplayMember = "ROLENAME";
             cbRole.ValueMember = "ROLEID";
         }
@@ -30,9 +31,9 @@ namespace CafeRestaurant.Forms
         /// <summary>
         /// Loads user list into the DataGridView.
         /// </summary>
-        private void LoadUserList()
+        private async void LoadUserList()
         {
-            dgUserList.DataSource = _userService.GetAllWithRoleName();
+            dgUserList.DataSource = await _userService.GetAllWithRoleNameAsync();
             dgUserList.Columns["USERID"].Visible = false;
             dgUserList.Columns["USERNAME"].HeaderText = "Name";
             dgUserList.Columns["USERSURNAME"].HeaderText = "Surname";
@@ -46,7 +47,7 @@ namespace CafeRestaurant.Forms
         /// <summary>
         /// Handles the Save button click to insert a new user.
         /// </summary>
-        private void btnProdSave_Click(object sender, EventArgs e)
+        private async void btnProdSave_Click(object sender, EventArgs e)
         {
             var user = new USER
             {
@@ -60,7 +61,7 @@ namespace CafeRestaurant.Forms
 
             try
             {
-                _userService.Insert(user);
+                await _userService.InsertAsync(user);
                 MessageBox.Show("User inserted!");
                 LoadUserList();
                 ClearInputs();
@@ -74,10 +75,10 @@ namespace CafeRestaurant.Forms
         /// <summary>
         /// Handles the Update button click to modify an existing user.
         /// </summary>
-        private void btnProdUpdate_Click(object sender, EventArgs e)
+        private async void btnProdUpdate_Click(object sender, EventArgs e)
         {
             int userId = Convert.ToInt32(lblSifre.Text);
-            var user = _userService.GetById(userId);
+            var user = await _userService.GetByIdAsync(userId);
             if (user == null) return;
 
             user.USERNAME = txbName.Text;
@@ -89,7 +90,7 @@ namespace CafeRestaurant.Forms
 
             try
             {
-                _userService.Update(user);
+                await _userService.UpdateAsync(user);
                 MessageBox.Show("User updated!");
                 LoadUserList();
                 ClearInputs();
@@ -103,14 +104,14 @@ namespace CafeRestaurant.Forms
         /// <summary>
         /// Handles the Delete button click to remove a user.
         /// </summary>
-        private void btnProdDelete_Click(object sender, EventArgs e)
+        private async void btnProdDelete_Click(object sender, EventArgs e)
         {
             if (lblSifre.Text == "label1") return;
 
             int userId = Convert.ToInt32(lblSifre.Text);
             try
             {
-                _userService.Delete(userId);
+                await _userService.DeleteAsync(userId);
                 MessageBox.Show("User deleted!");
                 LoadUserList();
                 ClearInputs();

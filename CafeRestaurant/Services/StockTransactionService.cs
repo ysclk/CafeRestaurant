@@ -5,7 +5,7 @@ using CafeRestaurant.Models;
 
 namespace CafeRestaurant.Services
 {
-    internal class StockTransactionService:IStockService
+    public class StockTransactionService:IStockService
     {
 
         // buna gerek duymayabilirim. diger service den bir extends yapip sadece 

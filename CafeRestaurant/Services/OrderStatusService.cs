@@ -2,7 +2,10 @@
 
 namespace CafeRestaurant.Services
 {
-    internal class OrderStatusService:BaseService<ORDERSTATUSTYPES>
+    public class OrderStatusService : BaseService<ORDERSTATUSTYPES>
     {
+        public OrderStatusService(CafeRestaurantEntities db) : base(db)
+        {
+        }
     }
 }

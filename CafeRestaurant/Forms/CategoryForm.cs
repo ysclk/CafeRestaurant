@@ -13,23 +13,26 @@ namespace CafeRestaurant.Forms
         public CategoryForm()
         {
             InitializeComponent();
+             
+            cts  = new CategoryService(new CafeRestaurantEntities());
             // Load category list on form initialization
             LoadCategoryList();
            
         }
 
         //Service instance
-        private CategoryService cts = new CategoryService();     
+        private CategoryService cts;   
 
 
         /// <summary>
         /// Loads the category list and sets column headers.
         /// </summary>
-        private void LoadCategoryList()
+        private async void LoadCategoryList()
         {
-            var list = cts.GetAll()
-                       .OrderBy(c => c.CATEGORYNAME) // A-Z sıralama
-                       .ToList();
+            var list = (await cts.GetAllAsync())
+           .OrderBy(c => c.CATEGORYNAME)
+           .ToList();
+
             if (list == null || list.Count == 0)
             {
                 MessageBox.Show("No categories found.");
@@ -58,7 +61,7 @@ namespace CafeRestaurant.Forms
                         CATEGORYDESC = txbCatDesc.Text
                     };
 
-                    cts.Insert(newCategory);
+                _ = cts.InsertAsync(newCategory);
                     MessageBox.Show("Category inserted successfully!");
 
                     LoadCategoryList(); // Refresh list
@@ -81,10 +84,10 @@ namespace CafeRestaurant.Forms
            
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private async void btnUpdate_Click(object sender, EventArgs e)
         {        
                 int categoryId = Convert.ToInt32(lblSifre.Text);
-                var categoryEx = cts.GetById(categoryId);
+                var categoryEx = await cts.GetByIdAsync(categoryId);
 
                 if (categoryEx != null)
                 {
@@ -93,7 +96,7 @@ namespace CafeRestaurant.Forms
 
                     try
                     {
-                        cts.Update(categoryEx);
+                        await  cts.UpdateAsync(categoryEx);
                         MessageBox.Show("Category updated successfully!");
 
                         LoadCategoryList(); // Refresh list
@@ -106,14 +109,14 @@ namespace CafeRestaurant.Forms
                 }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private async void btnDelete_Click(object sender, EventArgs e)
         {
             if (lblSifre.Text != "label1")
             {
                 int categoryId = Convert.ToInt32(lblSifre.Text);
                 try
                 {
-                    cts.Delete(categoryId);
+                    await cts.DeleteAsync(categoryId);
                     MessageBox.Show("Category deleted successfully!");
 
                     LoadCategoryList(); // Refresh list
@@ -161,9 +164,9 @@ namespace CafeRestaurant.Forms
         }
 
         private bool sortAscending = true; // Başlangıçta A-Z
-        private void dgCatList_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private async void dgCatList_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var allCategories = cts.GetAll();
+            var allCategories = await cts.GetAllAsync();
             // Sadece kategori adına göre sıralama yapılacaksa, sütun indexi 1'dir
             if (e.ColumnIndex == 1)
             {

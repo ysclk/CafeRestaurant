@@ -38,12 +38,12 @@ namespace CafeRestaurant.Forms
         /// Handles the Reset button click event.
         /// Validates the user email and opens the password change form if valid.
         /// </summary>
-        private void btnReset_Click(object sender, EventArgs e)
+        private async void btnReset_Click(object sender, EventArgs e)
         {
             string userEmail = txbUsermail.Text.Trim();
 
             // Get the user ID for the provided email
-            int userId = _authService.userId(userEmail);
+            int userId =await _authService.UserIdAsync(userEmail);
 
             if (userId == 0)
             {

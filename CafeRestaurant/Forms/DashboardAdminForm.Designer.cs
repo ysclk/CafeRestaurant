@@ -189,7 +189,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DashboardForm";
             this.Text = "DashboardForm";
-            this.Load += new System.EventHandler(this.DashboardForm_Load);
             this.pnlWelcome.ResumeLayout(false);
             this.pnlWelcome.PerformLayout();
             this.pnlCustomer.ResumeLayout(false);

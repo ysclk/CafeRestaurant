@@ -1,5 +1,6 @@
 ﻿using CafeRestaurant.Services;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CafeRestaurant.Forms
@@ -16,7 +17,7 @@ namespace CafeRestaurant.Forms
         }
    
         
-        private void btnLogin_Click_1(object sender, EventArgs e)
+        private async Task btnLogin_Click_1(object sender, EventArgs e)
         {
             // Simple validation: Check email and password fields.
             if (!IsValidEmail(txbUsermail.Text.Trim()))
@@ -39,7 +40,7 @@ namespace CafeRestaurant.Forms
             try
                 {
                     //Login on the Authservice
-                    var result = authService.Login(txbUsermail.Text.Trim(), txtUserpass.Text);
+                    var result =await authService.LoginAsync(txbUsermail.Text.Trim(), txtUserpass.Text);
 
                     if (!result.IsSuccess)
                     {

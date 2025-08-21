@@ -1,13 +1,19 @@
-﻿using System.Linq;
-using CafeRestaurant.Models;
+﻿using CafeRestaurant.Models;
+using System.Data.Entity;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace CafeRestaurant.Services
 {
-    internal class UserroleService:BaseService<ROLES>
+    public class UserroleService:BaseService<ROLES>
     {
-        public string GetRoleName(int roleId)
+        public UserroleService(CafeRestaurantEntities db) : base(db)
         {
-            return db.ROLES.Where(x => x.ROLEID == roleId).Select(x=>x.ROLENAME).FirstOrDefault();
+        }
+
+        public async Task<string> GetRoleName(int roleId)
+        {
+             return await db.ROLES.Where(x => x.ROLEID == roleId).Select(x=>x.ROLENAME).FirstOrDefaultAsync();
         }
     }
 }

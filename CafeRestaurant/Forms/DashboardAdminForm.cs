@@ -2,26 +2,31 @@
 using System;
 using System.Windows.Forms;
 using CafeRestaurant.DTOs;
+using CafeRestaurant.Models;
 
 namespace CafeRestaurant.Forms
 {
     public partial class DashboardAdminForm : Form
     {
         private int userId = 0;
+      
+
+        UserService userService = new UserService(new CafeRestaurantEntities() );
+
         public DashboardAdminForm(int userId)
         {
             InitializeComponent();
             this.userId = userId;
-            new Dashboards().WelcomeDate(DateTime.Now,lblDate,lblClock);
-            lblCustomerCount.Text = userService.UserSameRoleList(3).Count.ToString();
+            new Dashboards().WelcomeDate(DateTime.Now, lblDate, lblClock);
+
+            // Async işi Load eventinde halledelim
+            this.Load += DashboardAdminForm_LoadAsync;
         }
 
-        UserService userService = new UserService();
-
-      
-        private void DashboardForm_Load(object sender, EventArgs e)
+        private async void DashboardAdminForm_LoadAsync(object sender, EventArgs e)
         {
-
+            var list = await userService.UserSameRoleListAsync(3);
+            lblCustomerCount.Text = list.Count.ToString();
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)

@@ -2,73 +2,80 @@
 using System.Collections.Generic;
 using System.Linq;
 using CafeRestaurant.Models;
+using System.Data.Entity;
+using System.Threading.Tasks;
 
-namespace CafeRestaurant.Services
-{
-    internal class ProductService : BaseService<PRODUCT>
+    namespace CafeRestaurant.Services
     {
-        /// <summary>
-        /// Retrieves all products belonging to a specific category.
-        /// </summary>
-        public List<PRODUCT> GetByCategory(int categoryId)
+        internal class ProductService : BaseService<PRODUCT>
         {
-            return db.PRODUCT
-                     .Where(p => p.CATEGORYID == categoryId)
-                     .ToList();
-        }
-
-        /// <summary>
-        /// Retrieves all products along with their category information
-        /// using a stored procedure.
-        /// </summary>
-        public List<ProductDTO> GetAllWithCategory()
-        {
-            return db.Database
-                     .SqlQuery<ProductDTO>("EXEC sp_GetProductsWithCategory")
-                     .ToList();
-        }
-
-        /// <summary>
-        /// Gets the price of a product by its ID.
-        /// Returns 0 if the product is not found.
-        /// </summary>
-        public decimal GetPrice(int productId)
-        {
-            var price = db.PRODUCT
-                          .Where(p => p.PRODUCTID == productId)
-                          .Select(p => p.PRODUCTPRICE)
-                          .FirstOrDefault();
-
-            return price ?? 0;
-        }
-
-        /// <summary>
-        /// Gets the stock quantity of a product by its ID.
-        /// Returns 0 if the product is not found.
-        /// </summary>
-        public int GetStock(int productId)
-        {
-            var stock = db.PRODUCT
-                          .Where(p => p.PRODUCTID == productId)
-                          .Select(p => p.STOCK)
-                          .FirstOrDefault();
-
-            return stock;
-        }
-
-        /// <summary>
-        /// Updates the stock quantity of a product.
-        /// </summary>
-        public virtual void UpdateStock(int productId, int stock)
-        {
-            var product = db.PRODUCT
-                            .FirstOrDefault(p => p.PRODUCTID == productId);
-
-            if (product != null)
+            public ProductService(CafeRestaurantEntities db) : base(db)
             {
-                product.STOCK = stock;
-                db.SaveChanges();
+            }
+
+
+        /// <summary>
+        /// Retrieves all products belonging to a specific category asynchronously.
+        /// </summary>
+        public async Task<List<PRODUCT>> GetByCategoryAsync(int categoryId)
+            {
+                return await db.PRODUCT
+                    .Where(p => p.CATEGORYID == categoryId)
+                    .ToListAsync();
+            }
+
+            /// <summary>
+            /// Retrieves all products along with their category information using a stored procedure asynchronously.
+            /// </summary>
+            public async Task<List<ProductDTO>> GetAllWithCategoryAsync()
+            {
+                return await db.Database
+                    .SqlQuery<ProductDTO>("EXEC sp_GetProductsWithCategory")
+                    .ToListAsync();
+            }
+
+            /// <summary>
+            /// Gets the price of a product by its ID asynchronously.
+            /// Returns 0 if the product is not found.
+            /// </summary>
+            public async Task<decimal> GetPriceAsync(int productId)
+            {
+                var price = await db.PRODUCT
+                    .Where(p => p.PRODUCTID == productId)
+                    .Select(p => p.PRODUCTPRICE)
+                    .FirstOrDefaultAsync();
+
+                return price ?? 0;
+            }
+
+            /// <summary>
+            /// Gets the stock quantity of a product by its ID asynchronously.
+            /// Returns 0 if the product is not found.
+            /// </summary>
+            public async Task<int> GetStockAsync(int productId)
+            {
+                var stock = await db.PRODUCT
+                    .Where(p => p.PRODUCTID == productId)
+                    .Select(p => p.STOCK)
+                    .FirstOrDefaultAsync();
+
+                return stock;
+            }
+
+            /// <summary>
+            /// Updates the stock quantity of a product asynchronously.
+            /// </summary>
+            public async Task UpdateStockAsync(int productId, int stock)
+            {
+                var product = await db.PRODUCT
+                    .FirstOrDefaultAsync(p => p.PRODUCTID == productId);
+
+                if (product != null)
+                {
+                    product.STOCK = stock;
+                    await db.SaveChangesAsync();
+                }
             }
         }
     }
-}
+   

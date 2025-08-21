@@ -1,46 +1,80 @@
-﻿using System.Collections.Generic;
+﻿using CafeRestaurant.Models;
+using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using CafeRestaurant.Models;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace CafeRestaurant.Services
 {
+
     public class BaseService<T> : IBaseService<T> where T : class
     {
         protected CafeRestaurantEntities db = new CafeRestaurantEntities();
 
-        public virtual List<T> GetAll()
+        public BaseService(CafeRestaurantEntities db)
         {
-            return db.Set<T>().ToList();
+            this.db = db;
         }
 
-        public virtual T GetById(int id)
+        public virtual async Task<List<T>> GetAllAsync()
         {
-            return db.Set<T>().Find(id);
+            var context = new CafeRestaurantEntities();
+            return await context.Set<T>().ToListAsync();
         }
 
-        public virtual void Insert(T entity)
+        public virtual async Task<T> GetByIdAsync(int id)
+        {
+            return await db.Set<T>().FindAsync(id);
+        }
+
+        public virtual async Task InsertAsync(T entity)
         {
             db.Set<T>().Add(entity);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
         }
 
-        public virtual void Delete(int id)
+        public virtual async Task DeleteAsync(int id)
         {
-            var entity = db.Set<T>().Find(id);
+            var entity = await db.Set<T>().FindAsync(id);
             if (entity != null)
             {
                 db.Set<T>().Remove(entity);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
             }
         }
 
-        public virtual void Update(T entity)
+        public virtual async Task UpdateAsync(T entity)
         {
-            db.Set<T>().Attach(entity);  // context'e nesneyi ekle, takibe al
+            db.Set<T>().Attach(entity);
             db.Entry(entity).State = EntityState.Modified;
-            db.SaveChanges();
+            await db.SaveChangesAsync();
         }
 
+        public Task<List<T>> GetAllAsync(CancellationToken ct = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> GetByIdAsync(int id, CancellationToken ct = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task InsertAsync(T entity, CancellationToken ct = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteAsync(int id, CancellationToken ct = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateAsync(T entity, CancellationToken ct = default)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

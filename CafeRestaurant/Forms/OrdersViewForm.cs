@@ -6,14 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using CafeRestaurant.Models;
+using System.Threading.Tasks;
 
 namespace CafeRestaurant.Forms
 {
     public partial class OrdersViewForm : Form
     {
-        private readonly OrdersViewService orderViewService = new OrdersViewService();
-        private readonly OrderStatusService orderStatusService = new OrderStatusService();
-        private readonly OrderDetailService orderDetailService = new OrderDetailService();
+        private readonly OrdersViewService orderViewService = new OrdersViewService(new CafeRestaurantEntities());
+        private readonly OrderStatusService orderStatusService; 
+        private readonly OrderDetailService orderDetailService;
 
         private List<ORDERSVIEW> allOrders = new List<ORDERSVIEW>();
         private List<ORDERSVIEW> filteredOrders = new List<ORDERSVIEW>();
@@ -28,6 +29,9 @@ namespace CafeRestaurant.Forms
         public OrdersViewForm()
         {
             InitializeComponent();
+            orderStatusService = new OrderStatusService(new CafeRestaurantEntities());
+            orderDetailService = new OrderDetailService(new CafeRestaurantEntities());
+            orderStatusService = new OrderStatusService(new CafeRestaurantEntities());
 
             FillOrderStatusComboBox(cmbOrderStatus);
             FillOrderStatusComboBox(cmbStatusSearch);
@@ -35,7 +39,7 @@ namespace CafeRestaurant.Forms
             HideUnnecessaryColumns();
 
 
-            dgOrdersDetails.DataSource = orderViewService.GetAll();
+            dgOrdersDetails.DataSource = orderViewService.GetAllAsync();
         }
 
         private void OrdersViewForm_Load(object sender, EventArgs e)
@@ -70,9 +74,9 @@ namespace CafeRestaurant.Forms
         /// <summary>
         /// Fills combobox with order status options.
         /// </summary>
-        private void FillOrderStatusComboBox(Guna2ComboBox cmb)
+        private async void FillOrderStatusComboBox(Guna2ComboBox cmb)
         {
-            var statusList = orderStatusService.GetAll();
+            var statusList = await orderStatusService.GetAllAsync();
             statusList.Insert(0, new ORDERSTATUSTYPES { StatusID = 0, StatusCode = "-- Select --" });
 
             cmb.DisplayMember = "StatusCode";
@@ -94,9 +98,9 @@ namespace CafeRestaurant.Forms
             }
         }
 
-        private void LoadAllOrders()
+        private async void LoadAllOrders()
         {
-            dgOrdersDetails.DataSource = orderViewService.GetAll();
+            dgOrdersDetails.DataSource =await orderViewService.GetAllAsync();
             dgOrdersDetails.ClearSelection();
             RowsPaintedByStatus();
         }
@@ -112,22 +116,22 @@ namespace CafeRestaurant.Forms
             FilterByCustomerName(txbCustomerNameSearch.Text.Trim());
         }
 
-        private void FilterByCustomerName(string keyword)
+        private async void FilterByCustomerName(string keyword)
         {
             if (string.IsNullOrWhiteSpace(keyword))
             {
-                dgOrdersDetails.DataSource = orderViewService.GetAll();
+                dgOrdersDetails.DataSource = await orderViewService.GetAllAsync();
                 return;
             }
 
-            var source = filteredOrders?.Count > 0 ? filteredOrders : orderViewService.GetAll();
-            dgOrdersDetails.DataSource = orderViewService.GetOrdersByCustomerName(source, keyword);
+            var source = filteredOrders?.Count > 0 ? filteredOrders :await orderViewService.GetAllAsync();
+            dgOrdersDetails.DataSource = await orderViewService.GetOrdersByCustomerNameAsync(source, keyword);
         }
 
         // Filters with date
         private void guna2DateTimePicker1_CloseUp(object sender, EventArgs e)
         {
-            FilterByDate(guna2DateTimePicker1.Value.Date);
+            _ = FilterByDate(guna2DateTimePicker1.Value.Date);
         }
 
         private void dtpDateSearch_CloseUp(object sender, EventArgs e)
@@ -135,27 +139,27 @@ namespace CafeRestaurant.Forms
             FilterByDate(dtpDateSearch.Value.Date);
         }
 
-        private void FilterByDate(DateTime date)
+        private async Task FilterByDate(DateTime date)
         {
-            var source = filteredOrders?.Count > 0 ? filteredOrders : orderViewService.GetAll();
-            dgOrdersDetails.DataSource = orderViewService.GetOrdersByDate(source, date);
+            var source = filteredOrders?.Count > 0 ? filteredOrders :await orderViewService.GetAllAsync();
+            dgOrdersDetails.DataSource = orderViewService.GetOrdersByDateAsync(source, date);
         }
 
         // Filters with Orderstatus
-        private void cmbOrderStatus_SelectedIndexChanged(object sender, EventArgs e)
+        private async Task cmbOrderStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (int.TryParse(cmbOrderStatus.SelectedValue?.ToString(), out int statusId))
             {
-                var source = filteredOrders?.Count > 0 ? filteredOrders : orderViewService.GetAll();
-                dgOrdersDetails.DataSource = orderViewService.GetOrdersByOrderStatus(source, statusId);
+                var source = filteredOrders?.Count > 0 ? filteredOrders :await orderViewService.GetAllAsync();
+                dgOrdersDetails.DataSource = orderViewService.GetOrdersByOrderStatusAsync(source, statusId);
             }
         }
 
-        private void cmbStatuSearch_SelectedIndexChanged(object sender, EventArgs e)
+        private async void cmbStatuSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (int.TryParse(cmbStatusSearch.SelectedValue?.ToString(), out int statusId))
             {
-                dgOrdersDetails.DataSource = orderViewService.GetOrdersByOrderStatus(orderViewService.GetAll(), statusId);
+                dgOrdersDetails.DataSource = orderViewService.GetOrdersByOrderStatusAsync(await orderViewService.GetAllAsync(), statusId);
             }
         }
 
@@ -245,15 +249,15 @@ namespace CafeRestaurant.Forms
 
             var popup = new OrderActionForm();
 
-            popup.OnCancelClicked += () =>
+            popup.OnCancelClicked += async () =>
             {
-                orderDetailService.CancelOrder(selectedOrderDetailID);
+                await orderDetailService.CancelOrderAsync(selectedOrderDetailID);
                 LoadAllOrders();
             };
 
-            popup.OnDeliveredClicked += () =>
+            popup.OnDeliveredClicked += async () =>
             {
-                orderDetailService.MarkOrderAsDelivered(selectedOrderDetailID);
+                await orderDetailService.MarkOrderAsDeliveredAsync(selectedOrderDetailID);
                 LoadAllOrders();
             };
 

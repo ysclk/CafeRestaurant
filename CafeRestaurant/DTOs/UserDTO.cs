@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CafeRestaurant.DTOs
 {
-    internal class UserDTO
+    public class UserDTO
     {
         public int USERID { get; set; }
         public string USERNAME { get; set; }

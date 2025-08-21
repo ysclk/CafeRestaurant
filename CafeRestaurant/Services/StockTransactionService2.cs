@@ -2,7 +2,10 @@
 
 namespace CafeRestaurant.Services
 {
-    internal class StockTransactionService2:BaseService<STOCKTRANSACTION>
+    public class StockTransactionService2 : BaseService<STOCKTRANSACTION>
     {
+        public StockTransactionService2(CafeRestaurantEntities db) : base(db)
+        {
+        }
     }
 }

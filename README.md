@@ -29,19 +29,22 @@ Includes user login, order tracking, and database integration for efficient work
 
 ## 📸 Screenshots
 ### 🔐 Login Panel
-!<img width="391" height="448" alt="image" src="https://github.com/user-attachments/assets/43462a30-2520-4e54-8424-6d407cf7cb72" />
+!<img width="421" height="452" alt="image" src="https://github.com/user-attachments/assets/3e92f345-2cc8-419a-adfa-a67febd7a897" />
 ### Password Change Panel
-!<img width="396" height="447" alt="image" src="https://github.com/user-attachments/assets/ea14a929-3c5a-4c03-90bd-e214ddf75cd6" />
-### Admin Panel
-!<img width="401" height="501" alt="image" src="https://github.com/user-attachments/assets/9195e767-85aa-4392-b55f-0f0821b0a95c" />
-### Category Panel
-!<img width="692" height="552" alt="image" src="https://github.com/user-attachments/assets/a53a9de9-e67e-45e8-8111-3575db21c15f" />
+!<img width="427" height="443" alt="image" src="https://github.com/user-attachments/assets/cc4a5b9d-4a75-4f90-9e00-af1ebebd0730" />
+### Dashboard Panel
+!<img width="1918" height="717" alt="image" src="https://github.com/user-attachments/assets/18575e1d-30d3-42a2-ae11-459784aca42e" />
+!<img width="1918" height="822" alt="image" src="https://github.com/user-attachments/assets/e94cf430-c6e9-48cc-82a5-2342074fb499" />
 ### Product Panel
-!<img width="842" height="572" alt="image" src="https://github.com/user-attachments/assets/c8e12dd7-6493-429f-8360-6126ee1e5d44" />
+!<img width="1907" height="757" alt="image" src="https://github.com/user-attachments/assets/be2a2eba-522d-48d4-86b8-199cc2898733" />
 ### Order Panel
-!<img width="1060" height="722" alt="image" src="https://github.com/user-attachments/assets/af3f2f19-e2dd-423d-8c80-936ab7163712" />
+!<img width="1912" height="832" alt="image" src="https://github.com/user-attachments/assets/5b29c673-9c61-4b54-8a53-9d7cf49ac92c" />
 ### User Add Panel
-!<img width="817" height="627" alt="image" src="https://github.com/user-attachments/assets/f8b1220a-ff5a-4ada-818b-d839001c35de" />
+!<img width="1906" height="885" alt="image" src="https://github.com/user-attachments/assets/462b2ddf-6b67-4d07-b0a7-d8f088b02bf0" />
+### Order List
+!<img width="1918" height="1056" alt="image" src="https://github.com/user-attachments/assets/cba4dc77-ff53-477a-880e-3a5872925b04" />
+
+
 
 ## 📄 License
 
